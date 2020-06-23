@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+import style from "./header.module.css"
+
 const pagesLink = [
   {
     link: "/categories",
@@ -20,7 +22,7 @@ const pagesLink = [
     as: "/faq"
   },
   {
-    link: "/about-us",
+    link: "/about",
     name: "о нас",
     id: 3,
     as: "/aboutUs"
@@ -28,11 +30,17 @@ const pagesLink = [
 ];
 
 const NavHeader = () => {
-  return pagesLink.map(item => {
+  const links = pagesLink.map(item => {
     return (
-      <Link href={item.link} as={item.as}><a>{item.name}</a></Link>
+      <Link key={item.id} href={item.link}><a>{item.name}</a></Link>
     );
   });
+
+  return (
+    <div className={style.headerNav}>
+      {links}
+    </div>
+  )
 };
 
 export default NavHeader;

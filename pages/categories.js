@@ -1,6 +1,14 @@
-const Contacts = () => {
+import Head from 'next/head';
+import Layout, { siteTitle } from '../components/Layout';
+
+const Categories = () => {
   return (
-    <div>Contacts</div>
+    <Layout>
+      <div>Categories</div>
+      <Head>
+        <title>{siteTitle}</title>
+      </Head>
+    </Layout>
   );
 };
-export default Contacts;
+export default Categories;

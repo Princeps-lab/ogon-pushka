@@ -1,6 +1,6 @@
 const Logo = () => {
   return (
-    <div className="logo">
+    <div>
       <img src="/images/logo.svg" alt="logo"></img>
     </div>
   );
