@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/Layout';
+import Main from '../components/Main';
 
 const App = () => {
   return (
@@ -7,6 +8,7 @@ const App = () => {
       <Head>
         <title>{siteTitle}</title>
       </Head>
+      <Main/>
     </Layout>
   )
 };
