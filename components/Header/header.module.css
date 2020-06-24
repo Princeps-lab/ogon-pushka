@@ -4,6 +4,11 @@
   align-items: center;
   justify-content: space-between;
   z-index: 2;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: #fff;
 }
 
 .headerNav a + a {
@@ -11,7 +16,7 @@
 }
 
 .headerNav a {
-  color: #151515;
+  color: #361515;
   text-transform: uppercase;
   font-weight: 300;
   font-size: 12px;
