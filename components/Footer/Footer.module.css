@@ -1,0 +1,18 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 40px;
+  background-color: #2B2B2A;
+}
+.footer div {
+  width: 33.333%;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  font-size: 14px;
+}
+div.number {
+  font-weight: bold;
+  font-size: 20px;
+}
