@@ -7,4 +7,10 @@
   color: #fff;
   font-size: 12px;
   width: 220px;
+  transition: all .3s;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.button:active {
+  opacity: .9;
 }
