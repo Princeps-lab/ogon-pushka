@@ -1,0 +1,25 @@
+.extra {
+  width: 100%;
+};
+
+.extraLeft {
+  width: 65%;
+  display: flex;
+}
+.top {
+  padding: 120px 54px;
+}
+
+.topTitle {
+  font-weight: 900;
+  font-size: 34px;
+  color: #131313;
+}
+
+.top p {
+  font-size: 18px;
+  color: #141414;
+  font-weight: 300;
+  margin-top: 32px;
+  margin-bottom: 64px;
+}

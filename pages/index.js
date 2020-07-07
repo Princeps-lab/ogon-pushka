@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/Layout';
 import Main from '../components/Main';
-import Footer from '../components/Footer';
+import Extra from '../components/Extra';
 
 const App = () => {
   return (
@@ -10,6 +10,7 @@ const App = () => {
         <title>{siteTitle}</title>
       </Head>
       <Main/>
+      <Extra/>
     </Layout>
   )
 };

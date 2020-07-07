@@ -3,10 +3,6 @@
   height: calc(100vh - 77.66px);
   background: url("../../public/images/main-2.jpg") center / cover;
   padding-top: 77px;
-  /* position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0; */
   z-index: 1;
   display: flex;
   justify-content: center;
