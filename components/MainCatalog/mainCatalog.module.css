@@ -1,0 +1,62 @@
+
+.catalog {
+  display: flex;
+  height: 120vh;
+  width: 100%;
+}
+
+.left {
+  padding: 0px 54px;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.top {
+  width: 100%;
+  height: 50%;
+  display: flex;
+}
+
+.topTitle {
+  font-weight: 900;
+  font-size: 34px;
+  color: #131313;
+}
+
+.top p {
+  font-size: 18px;
+  color: #141414;
+  font-weight: 300;
+  margin-top: 32px;
+  margin-bottom: 64px;
+  width: 100%;
+}
+
+.right {
+  display: flex;
+  width: 50%;
+  height: 100%;
+}
+
+.right .catalogItem {
+  height: 100%;
+  width: 50%;
+  position: relative;
+}
+
+.right .button {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+}
+
+.right .itemTitle {
+  font-size: 18px;
+  font-weight: bold;
+  position: absolute;
+  left: 40px;
+  bottom: 72px;
+}
