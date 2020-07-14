@@ -1,5 +1,7 @@
 import Button from '../Button';
+import SimpleSlider from '../SimpleSlider';
 import style from './mainCatalog.module.css';
+
 
 const CatalogItem = ({url, title}) => {
   return(
@@ -40,7 +42,9 @@ const MainCatalog = () => {
         <Left />
         <Right />
       </div>
-
+      <div className={style.bottom}>
+        <SimpleSlider />
+      </div>
     </div>
   );
 };
