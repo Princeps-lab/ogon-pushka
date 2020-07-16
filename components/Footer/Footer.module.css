@@ -1,11 +1,44 @@
-.footer {
+.footerTop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 40px 0;
+  background-color: #383838;
+}
+
+.footerTop > div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.nav {
+  width: 100%;
+}
+
+.nav div {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+}
+
+.nav a {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.footerBotoom {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 32px 40px;
   background-color: #2B2B2A;
 }
-.footer div {
+.footerBotoom div {
   width: 33.333%;
   display: flex;
   justify-content: center;
@@ -15,4 +48,31 @@
 div.number {
   font-weight: bold;
   font-size: 20px;
+}
+
+.socialLinks {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.socialLinksTitle {
+  margin-bottom: 32px;
+}
+
+.socialLinksList a {
+  margin-right: 16px;
+  transition: all .3s;
+}
+
+.socialLinksList a:hover {
+  opacity: .85;
+}
+
+.logo {
+  transition: all .3s;
+}
+
+.logo:hover {
+  opacity: .8;
 }

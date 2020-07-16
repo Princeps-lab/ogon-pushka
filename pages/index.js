@@ -4,6 +4,7 @@ import Main from '../components/Main';
 import Extra from '../components/Extra';
 import Description from '../components/Description';
 import MainCatalog from '../components/MainCatalog';
+import SocialBlock from '../components/SocialBlock';
 
 const App = () => {
   return (
@@ -15,6 +16,8 @@ const App = () => {
       <Extra/>
       <Description />
       <MainCatalog />
+      <Description />
+      <SocialBlock />
     </Layout>
   )
 };

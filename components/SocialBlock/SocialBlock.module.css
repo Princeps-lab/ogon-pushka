@@ -1,0 +1,25 @@
+.social {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  border-top: 1px solid #fff;
+}
+
+.social div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: 100;
+  color: #fff;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.social div:hover {
+  filter: grayscale(100%);
+  transition: all .3s linear;
+}

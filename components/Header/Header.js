@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from 'next/link';
 import Logo from './Logo';
 import NavHeader from './NavHeader';
 import Basket from './Basket';
