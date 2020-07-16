@@ -52,7 +52,6 @@ const SimpleSlider = () => {
       <SwiperSlide>
         <ItemSlider url="/images/extraLeft.jpg" title="Paragraphs" />
       </SwiperSlide>
-
     </Swiper>
   )
 }

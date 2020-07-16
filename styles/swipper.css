@@ -1,4 +1,32 @@
 .swiper-container {
   height: 100%;
   width: 100%;
+  position: initial;
+}
+.swiper-button-next {
+  left: 10px;
+  right: auto;
+  top: -54px;
+  left: 160px;
+  height: 14px;
+  width: 82px;
+}
+
+.swiper-button-prev {
+  right: 10px;
+  left: 54px;
+  top: -54px;
+  width: auto;
+  height: auto;
+  height: 14px;
+  width: 82px;
+  transform: rotate(180deg);
+}
+
+.swiper-button-prev:after, .swiper-button-next:after {
+  font-family: auto;
+  content: '';
+  background: url('../public/icons/arrow.svg') no-repeat center / contain;
+  height: 100%;
+  width: 100%;
 }
