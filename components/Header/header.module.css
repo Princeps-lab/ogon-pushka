@@ -39,3 +39,36 @@
 .icons div:first-child {
   margin-right: 16px;
 }
+
+.basketOff {
+  transform: translate(100%, 0);
+}
+
+.basketOff, .basket {
+  padding: 40px;
+  transition: all .3s;
+  width: 35%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0 0 25px rgba(0,0,0,.1);
+  background-color: #fff;
+}
+
+.basket {
+  transition: all .3s;
+  transform: translate(0, 0);
+}
+
+.basketHeader {
+  height: 83.63px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.basketHeader h2 {
+  font-size: 18px;
+  color: #151515;
+  font-weight: bold;
+}

@@ -11,5 +11,4 @@ const Faq = () => {
     </Layout>
   );
 };
-
 export default Faq;
