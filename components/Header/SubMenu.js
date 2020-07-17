@@ -25,6 +25,32 @@ const up = [
   }
 ];
 
+const down = [
+  {
+    id: 0,
+    title: "шорты"
+  },
+  {
+    id: 1,
+    title: "спортивные штаны"
+  },
+  {
+    id: 2,
+    title: "брюки"
+  }
+];
+
+const access = [
+  {
+    id: 0,
+    title: "сумки"
+  },
+  {
+    id: 1,
+    title: "носки"
+  }
+];
+
 const ItemSub = ({list, title}) => {
   return (
     <>
@@ -51,11 +77,11 @@ const SubMenu = ({isShown}) => {
       </div>
 
       <div className={styles.subItem}>
-        <ItemSub title='Верх' list={up} />
+        <ItemSub title='Низ' list={down} />
       </div>
 
       <div className={styles.subItem}>
-        <ItemSub title='Верх' list={up} />
+        <ItemSub title='аксессуары' list={access} />
       </div>
 
       <div className={styles.subBg}  style={{"background" : `url('/images/background.jpg') center / cover`}} >
