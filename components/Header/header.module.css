@@ -4,14 +4,14 @@
   align-items: center;
   justify-content: space-between;
   z-index: 2;
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   top: 0;
   background-color: #fff;
 }
 
-.headerNav a + a {
+.headerNav > a + a {
   margin-left: 40px;
 }
 
@@ -71,4 +71,12 @@
   font-size: 18px;
   color: #151515;
   font-weight: bold;
+}
+
+.iconsItem {
+  display: flex;
+}
+
+.iconsItem div {
+  width: 26px;
 }

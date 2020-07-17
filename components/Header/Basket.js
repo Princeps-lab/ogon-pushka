@@ -7,8 +7,13 @@ const Basket = () => {
 
   return (
     <div className={style.icons}>
-      <div><img src="/icons/heart.svg"></img></div>
-      <div onClick={() => setShow(true)}><img src="/icons/basket.svg"></img></div>
+      <div className={style.iconsItem}>
+        <div>
+          <img src="/icons/heart.svg"></img></div>
+        <div onClick={() => setShow(true)}>
+          <img src="/icons/basket.svg"></img>
+        </div>
+      </div>
 
       <div className={basketShow ? style.basket : style.basketOff}>
         <div className={style.basketHeader}>
