@@ -1,5 +1,5 @@
 .main {
-  height: 100vh;
+  height: calc(100vh - 83.625px);
   width: 100%;
   display: flex;
   align-items: center;
@@ -12,15 +12,10 @@
   flex-direction: column;
 }
 
-.rightBlock {
-  height: 100%;
-  flex-grow: 1;
-}
-
 .menu {
   width: 100%;
   height: auto;
-  padding: 56px;
+  padding: 120px 56px 56px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -46,4 +41,25 @@
   margin-top: auto;
   display: flex;
   align-items: center;
+  position: relative;
+}
+
+.rightBlock {
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.content {
+  padding: 40px;
+}
+
+.content p {
+  margin-bottom: 32px;
+  text-align: right;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
 }

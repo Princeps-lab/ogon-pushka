@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import style from './CategorisMenu.module.css';
 import CatalogItem from '../CatalogItem';
+import Button from '../Button';
 
-const Button = ({title}) => {
+const ButtonCategories = ({title}) => {
   return (
     <div className={style.btnCategories}>
       <Link href="/catalog"><a>{title}</a></Link>
@@ -19,7 +20,7 @@ const CategoriesMenu = ({arr}) => {
           {
             arr.map((item) => {
               return (
-                <Button title={item.title} key={item.id} />
+                <ButtonCategories title={item.title} key={item.id} />
               )
             })
           }
@@ -30,8 +31,11 @@ const CategoriesMenu = ({arr}) => {
         </div>
       </div>
 
-      <div className={style.rightBlock}>
-          
+      <div className={style.rightBlock}  style={{"background" : `url("/images/CatalogMenu.jpg") center / cover`}} >
+        <div className={style.content}>
+          <p>Paragraph</p>
+          <Button white text="Подробнее" />
+        </div>
       </div>
     </div>
   )
