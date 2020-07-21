@@ -1,18 +1,6 @@
-import Button from '../Button';
 import SimpleSlider from '../SimpleSlider';
+import CatalogItem from '../CatalogItem';
 import style from './mainCatalog.module.css';
-
-
-const CatalogItem = ({url, title}) => {
-  return(
-    <div className={style.catalogItem} style={{"background" : `url(${url}) center / cover`}}>
-      <div className={style.button}>
-        <div className={style.itemTitle}>{title}</div>
-        <Button text="Подробнее" />
-      </div>
-    </div>
-  )
-};
 
 const Left = () => {
   return (

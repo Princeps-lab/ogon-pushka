@@ -1,0 +1,21 @@
+
+.catalogItem {
+  height: 100%;
+  width: 50%;
+  position: relative;
+}
+
+.button {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+}
+
+.itemTitle {
+  font-size: 18px;
+  font-weight: bold;
+  position: absolute;
+  left: 0px;
+  bottom: 69px;
+  color: #fff;
+}
