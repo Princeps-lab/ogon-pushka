@@ -75,8 +75,11 @@
 
 .iconsItem {
   display: flex;
+  align-items: center;
 }
 
 .iconsItem div {
   width: 26px;
+  display: flex;
+  align-items: center;
 }
