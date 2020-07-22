@@ -4,7 +4,7 @@
   justify-content: center;
   width: 100%;
   padding: 2.5rem 0;
-  background-color: #383838;
+  background-color: #1f1d1d;
 }
 
 .footerTop > div {
@@ -27,7 +27,7 @@
   color: #fff;
   text-transform: uppercase;
   font-weight: 300;
-  font-size: 1rem;
+  font-size: .9rem;
   margin-bottom: 1rem;
 }
 
@@ -61,9 +61,15 @@ div.number {
   margin-bottom: 2rem;
 }
 
+.socialLinksList {
+  display: flex;
+}
+
 .socialLinksList a {
   margin-right: 1rem;
   transition: all .3s;
+  display: block;
+  width: 3rem;
 }
 
 .socialLinksList a:hover {
@@ -72,6 +78,8 @@ div.number {
 
 .logo {
   transition: all .3s;
+  display: block;
+  width: 5rem;
 }
 
 .logo:hover {
@@ -79,5 +87,5 @@ div.number {
 }
 
 @media ( max-width:1440px ) {
-  
+
 }
