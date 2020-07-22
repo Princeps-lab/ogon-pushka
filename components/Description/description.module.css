@@ -17,12 +17,12 @@
 
 .window div {
   font-weight: 900;
-  font-size: 34px;
+  font-size: 2rem;
   color: #131313;
 }
 
 .window p {
-  font-size: 18px;
+  font-size: 1rem;
   color: #141414;
   font-weight: 300;
   width: 100%;
