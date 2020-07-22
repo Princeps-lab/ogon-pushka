@@ -1,5 +1,5 @@
 .main {
-  height: calc(100vh - 4rem);
+  height: calc(120vh - 4rem);
   width: 100%;
   display: flex;
   align-items: center;
@@ -21,8 +21,8 @@
 }
 
 .btnCategories {
-  padding: 1rem 2rem;
-  min-width: 8rem;
+  padding: .8rem 1.4rem;
+  min-width: 7.5rem;
   background-color: #141414;
   display: flex;
   justify-content: center;
@@ -31,7 +31,7 @@
   text-transform: uppercase;
   color: #fff;
   font-weight: 100;
-  font-size: 1rem;
+  font-size: .8rem;
   margin-left: 1rem;
   margin-right: 1rem;
 }
