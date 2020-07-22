@@ -1,5 +1,5 @@
 .header {
-  padding: 16px 40px;
+  padding: 0px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -9,6 +9,8 @@
   right: 0;
   top: 0;
   background-color: #fff;
+  line-height: 1;
+  height: 4rem;
 }
 
 .headerNav > a + a {
@@ -19,7 +21,7 @@
   color: #361515;
   text-transform: uppercase;
   font-weight: 300;
-  font-size: 12px;
+  font-size: .7rem;
   letter-spacing: 1.2px;
 }
 
