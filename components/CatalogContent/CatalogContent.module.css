@@ -1,0 +1,51 @@
+.catalog {
+  padding-top: 4rem;
+  display: flex;
+}
+
+.nav {
+  width: 25%;
+  padding-top: 4rem;
+  padding-left: 2rem;
+}
+
+.nav > div {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav span {
+  text-transform: uppercase;
+  font-size: .8rem;
+  margin-bottom: .8rem;
+  color: #141414;
+  transition: all .3s;
+  cursor: pointer;
+}
+
+.nav span:hover {
+  opacity: .7;
+  color: #000;
+}
+
+.nav h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #141414;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.items {
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.items > div {
+  width: 50%;
+  height: 90vh;
+  border: 1px solid #fff;
+}
