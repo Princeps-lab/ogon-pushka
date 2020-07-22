@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/Layout';
 import SocialBlock from '../components/SocialBlock';
+import ContactBlock from '../components/ContactBlock';
 
 const Contacts = () => {
   return (
@@ -8,6 +9,8 @@ const Contacts = () => {
       <Head>
         <title>{siteTitle}</title>
       </Head>
+
+      <ContactBlock />
       <SocialBlock />
     </Layout>
   );

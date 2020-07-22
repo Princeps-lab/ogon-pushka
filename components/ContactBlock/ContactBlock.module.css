@@ -1,0 +1,47 @@
+.contact {
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10% 0 0 20%;
+}
+
+.contact h2 {
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 3rem;
+  color: #141414;
+  margin-bottom: 2rem;
+}
+
+.contact p {
+  color: #CCCCCC;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.number {
+  font-weight: 600;
+  font-size: 2rem;
+  color: #141414;
+  margin-bottom: 4rem;
+}
+
+.socialLinksTitle {
+  font-size: 1rem;
+  color: #CCCCCC;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.socialLinksList {
+  display: flex;
+}
+
+.socialLinksList a + a {
+  margin-left: 1rem;
+}
+
+.socialLinksList svg {
+  fill: #141414;
+}
