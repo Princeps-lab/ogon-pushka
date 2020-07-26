@@ -90,3 +90,66 @@
   margin: .5rem 0;
   cursor: pointer;
 }
+
+.groupBtn {
+  display: flex;
+  align-items: center;
+}
+
+.groupBtn div {
+  background-color: #141414;
+  font-size: .8rem;
+  color: #fff;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.groupBtn div:hover {
+  opacity: .8;
+}
+
+.buy {
+  padding: .5rem;
+  width: 60%;
+}
+
+.basket {
+  padding: .5rem;
+  width: 40%;
+  margin: 0 1px;
+}
+
+.heart {
+  padding: .5rem;
+}
+
+.nav {
+  margin-top: 2rem;
+  font-size: .9rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  color: #141414;
+  font-weight: bold;
+}
+
+.nav div {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.nav div:hover {
+  opacity: .8;
+}
+
+.nav div:last-child {
+  justify-content: flex-end;
+}
