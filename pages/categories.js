@@ -4,50 +4,7 @@ import Layout, { siteTitle } from '../components/Layout';
 import CategoriesMenu from '../components/CategoriesMenu';
 import Extra from '../components/Extra';
 
-import style from '../styles/catalog.module.css';
-
-const links = [
-  {
-    id: 0,
-    title: "футболки"
-  },
-  {
-    id: 1,
-    title: "шорты"
-  },
-  {
-    id: 2,
-    title: "спортивные штаны"
-  },
-  {
-    id: 3,
-    title: "брюки"
-  },
-  {
-    id: 4,
-    title: "худи"
-  },
-  {
-    id: 5,
-    title: "Свитшоты"
-  },
-  {
-    id: 6,
-    title: "ветровки"
-  },
-  {
-    id: 7,
-    title: "куртки"
-  },
-  {
-    id: 8,
-    title: "сумки"
-  },
-  {
-    id: 9,
-    title: "носки"
-  }
-];
+import products from '../api/api';
 
 const Categories = () => {
   return (
@@ -56,7 +13,7 @@ const Categories = () => {
         <title>{siteTitle}</title>
       </Head>
 
-      <CategoriesMenu arr={links} />
+      <CategoriesMenu arr={[...products[0].categories,...products[1].categories, ...products[2].categories]} />
       <Extra />
 
     </Layout>

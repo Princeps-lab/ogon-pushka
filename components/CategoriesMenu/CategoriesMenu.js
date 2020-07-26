@@ -3,11 +3,11 @@ import style from './CategorisMenu.module.css';
 import CatalogItem from '../CatalogItem';
 import Button from '../Button';
 
-const ButtonCategories = ({title}) => {
+const ButtonCategories = ({item}) => {
   return (
-    <div className={style.btnCategories}>
-      <Link href="/catalog"><a>{title}</a></Link>
-    </div>
+      <Link
+      as={`/catalog/${item.id}`}
+      href={`/catalog/[categorieID]`}><a className={style.btnCategories}>{item.title}</a></Link>
   );
 };
 
@@ -20,7 +20,7 @@ const CategoriesMenu = ({arr}) => {
           {
             arr.map((item) => {
               return (
-                <ButtonCategories title={item.title} key={item.id} />
+                <ButtonCategories item={item} key={item.id} />
               )
             })
           }
