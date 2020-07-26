@@ -26,8 +26,6 @@ const SimpleSlider = () => {
     <Swiper
       slidesPerView={4}
       navigation
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
     >
       <SwiperSlide>
         <ItemSlider url="/images/catalog/item1.jpg" title="Paragraphs" />

@@ -44,8 +44,12 @@
   flex-wrap: wrap;
 }
 
-.items > div {
+.items > a {
   width: 50%;
   height: 90vh;
   border: 1px solid #fff;
+}
+
+.items > a > div {
+  width: 100%;
 }

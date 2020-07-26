@@ -37,10 +37,17 @@ const CatalogContent = ({idCategorie, api}) => {
     if (idCategorie) {
       const arr = arrProduct[idCategorie].products.map((product) => {
         return (
-          <CatalogItem key={product.id}
-            textBtn="Купить"
-            title={product.title}
-            url={product.url} />
+          <Link
+            as={`/product/${product.id}`}
+            key={product.id}
+            href={'/product/[productId]'}>
+            <a onClick={() => localStorage.setItem('parentId', `${product.parentId}`)}>
+              <CatalogItem
+              textBtn="Купить"
+              title={product.title}
+              url={product.url} />
+            </a>
+          </Link>
         )
       });
 
@@ -62,13 +69,7 @@ const CatalogContent = ({idCategorie, api}) => {
       </div>
 
       <div className={style.items} >
-
         {products}
-
-        {/* <CatalogItem textBtn="Купить" title="Худи Scratch" url='/images/catalog/item4.jpg' />
-        <CatalogItem textBtn="Купить" title="Худи Scratch" url='/images/catalog/item5.jpg' />
-        <CatalogItem textBtn="Купить" title="Худи Scratch" url='/images/catalog/item6.jpg' />
-        <CatalogItem textBtn="Купить" title="Худи Scratch" url='/images/catalog/item7.jpg' /> */}
       </div>
     </div>
   )

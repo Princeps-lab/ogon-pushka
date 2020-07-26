@@ -1,0 +1,58 @@
+.product {
+  width: 100%;
+  display: flex;
+  margin-top: 4rem;
+}
+.galery {
+  height: 100%;
+  width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.galery > div {
+  height: 85vh;
+  width: 50%;
+  border: 1px solid #fff;
+
+}
+
+.description {
+  width: 25%;
+  background-color: #fff;
+  padding: 5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title h3, .title span {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #141414;
+}
+
+.article {
+  text-transform: uppercase;
+  color: #979797;
+  font-size: 1rem;
+  font-weight: 100;
+  margin-top: 1rem;
+  margin-bottom: 1.6rem;
+}
+
+.colors {
+  display: flex;
+}
+
+.colors div {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 1rem;
+}
