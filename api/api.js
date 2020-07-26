@@ -77,7 +77,7 @@ const products = [
         products: [
           {
             id: 0,
-            Title: 'Худи Basic',
+            title: 'Худи Basic',
             parentId: 1,
             price: 400,
             url: "/images/catalog/item2.jpg",
