@@ -1,13 +1,16 @@
 import { useState } from 'react';
 import style from './ProductContent.module.css';
 
+import { ProductsContext } from '../../context/context.js';
+import React, { useContext } from 'react';
+
 const ItemGalery = ({url}) => {
   return (
     <div  style={{"background" : `url(${url}) center / cover`}}></div>
   )
 };
 
-const Select = ({sizes}) => {
+const Select = ({sizes, changeSize}) => {
 
   let maxId = 0;
   const [ select, setSelect] = useState(sizes[0]);
@@ -33,6 +36,7 @@ const Select = ({sizes}) => {
               return <div onClick={() => {
                 setShow(false);
                 setSelect(item);
+                changeSize(item);
               }} key={maxId}>{item}</div>
             })
           }
@@ -43,6 +47,23 @@ const Select = ({sizes}) => {
 };
 
 const ProductContent = ({product}) => {
+
+  const store = useContext(ProductsContext);
+  const [ buyed, setBuyed ] = useState(false);
+  const [ color, setColor ] = useState(product.colors[0]);
+  const [ size, setSize ] = useState(product.size[0]);
+
+  const productBuyed = {
+    title: product.title,
+    price: product.price,
+    id: product.id,
+    color,
+    size,
+  };
+  
+
+  console.log(store);
+
   return (
     <div className={style.product}>
       <div className={style.galery}>
@@ -62,13 +83,16 @@ const ProductContent = ({product}) => {
         <div className={style.colors}>
           {
             product.colors ? product.colors.map(color => {
-              return <div style={{"background" : `#${color.colorTitle}`}} key={color.id} />
+              return <div onClick={() => setColor(color)} style={{"background" : `#${color.colorTitle}`}} key={color.id} />
             }) : null
           }
         </div>
 
         <div>
-          <Select sizes={product.size} />
+          <Select changeSize = {(size) => {
+              setSize(size);
+              console.log(size);
+              }} sizes={product.size} />
         </div>
 
         <div className={style.groupBtn}>
@@ -76,9 +100,18 @@ const ProductContent = ({product}) => {
             Купить в один клик
           </div>
 
-          <div className={style.basket}>
+          {
+            !buyed ? 
+            <div onClick={() => {
+              store.addProduct(productBuyed);
+              setBuyed(true);
+            }} className={style.basket}>
+              В корзину
+            </div> : 
+          <div style={{"opacity" : ".9"}} className={style.basket}>
             В корзину
           </div>
+          }
 
           <div  className={style.heart}>
             <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
