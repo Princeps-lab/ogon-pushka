@@ -76,7 +76,7 @@ const products = [
         parentId: 0,
         products: [
           {
-            id: 0,
+            id: 2,
             title: 'Худи Basic',
             parentId: 1,
             price: 400,
@@ -103,7 +103,7 @@ const products = [
             ]
           },
           {
-            id: 1,
+            id: 3,
             title: 'Худи Twins',
             parentId: 1,
             price: 450,
@@ -130,7 +130,7 @@ const products = [
             ]
           },
           {
-            id: 2,
+            id: 4,
             title: 'Худи Flame',
             parentId: 1,
             price: 450,
@@ -164,7 +164,7 @@ const products = [
         parentId: 0,
         products: [
           {
-            id: 0,
+            id: 5,
             title: 'Свитшот 0309',
             parentId: 2,
             price: 500,
@@ -186,7 +186,7 @@ const products = [
             ]
           },
           {
-            id: 1,
+            id: 6,
             title: 'Свитшот Mate',
             parentId: 2,
             price: 500,
@@ -225,7 +225,7 @@ const products = [
         parentId: 0,
         products: [
           {
-            id: 0,
+            id: 7,
             title: 'Ветровка OST',
             parentId: 3,
             price: 600,
@@ -242,7 +242,7 @@ const products = [
             ]
           },
           {
-            id: 1,
+            id: 8,
             title: 'Ветровка Wildscar',
             parentId: 3,
             price: 600,
@@ -250,16 +250,21 @@ const products = [
             size: [
               'XS', 'M', 'L', 'XL'
             ],
-            colorTitle: [
+            colors: [
               {
                 id: 0,
-                colorTitle: '000000',
+                colorTitle: '99ff0b',
                 url:  "./images/catalog/item1.jpg"
+              },
+              {
+                id: 1,
+                colorTitle: '000000',
+                url:  "./images/catalog/item2.jpg"
               }
             ]
           },
           {
-            id: 2,
+            id: 9,
             title: 'Ветровка Zakuda',
             parentId: 3,
             price: 700,
@@ -267,11 +272,16 @@ const products = [
             size: [
               'M', 'L', 'XL'
             ],
-            colorTitle: [
+            colors: [
               {
                 id: 0,
-                colorTitle: '000000',
+                colorTitle: '99ff0b',
                 url:  "./images/catalog/item1.jpg"
+              },
+              {
+                id: 1,
+                colorTitle: '000000',
+                url:  "./images/catalog/item2.jpg"
               }
             ]
           }
@@ -283,7 +293,7 @@ const products = [
         parentId: 0,
         products: [
           {
-            id: 0,
+            id: 10,
             title: 'куртка Borra',
             parentId: 4,
             price: 1500,
@@ -299,13 +309,13 @@ const products = [
               },
               {
                 id: 1,
-                colorTitle: 'FFFFFF',
+                colorTitle: '000000',
                 url:  "./images/catalog/item2.jpg"
               }
             ]
           },
           {
-            id: 1,
+            id: 11,
             title: 'Куртка Frost',
             parentId: 4,
             price: 1500,
@@ -322,7 +332,7 @@ const products = [
             ]
           },
           {
-            id: 2,
+            id: 12,
             title: 'Куртка Reflective',
             parentId: 4,
             price: 1500,
@@ -357,7 +367,7 @@ const products = [
         parentId: 1,
         products: [
           {
-            id: 0,
+            id: 13,
             title: 'Breet',
             parentId: 5,
             price: 300,
@@ -384,7 +394,7 @@ const products = [
             ]
           },
           {
-            id: 1,
+            id: 14,
             title: 'Pants',
             parentId: 5,
             price: 400,
@@ -401,7 +411,7 @@ const products = [
             ]
           },
           {
-            id: 2,
+            id: 15,
             title: 'Prozo',
             parentId: 5,
             price: 350,
@@ -425,7 +435,7 @@ const products = [
         parentId: 1,
         products: [
           {
-            id: 0,
+            id: 16,
             title: 'Flare',
             parentId: 6,
             price: 400,
@@ -442,7 +452,7 @@ const products = [
             ]
           },
           {
-            id: 1,
+            id: 17,
             title: 'Joker',
             parentId: 6,
             price: 400,
@@ -459,7 +469,7 @@ const products = [
             ]
           },
           {
-            id: 2,
+            id: 18,
             title: 'Wline',
             parentId: 6,
             price: 500,
@@ -493,7 +503,7 @@ const products = [
         parentId: 1,
         products: [
           {
-            id: 0,
+            id: 19,
             title: 'Angry Flash',
             parentId: 7,
             price: 700,
@@ -510,7 +520,7 @@ const products = [
             ]
           },
           {
-            id: 1,
+            id: 20,
             title: 'Zuran',
             parentId: 7,
             price: 600,
@@ -537,7 +547,7 @@ const products = [
             ]
           },
           {
-            id: 2,
+            id: 21,
             title: 'Brave',
             parentId: 7,
             price: 700,
@@ -564,14 +574,17 @@ const products = [
       {
         id: 8,
         title: 'сумки',
-        parentId: 1,
+        parentId: 2,
         products: [
           {
-            id: 0,
+            id: 22,
             title: 'Кобура',
             parentId: 8,
             price: 300,
             url: "/images/catalog/item3.jpg",
+            size: [
+              'M', 'L'
+            ],
             colors: [
               {
                 id: 0,
@@ -581,11 +594,14 @@ const products = [
             ]
           },
           {
-            id: 1,
+            id: 23,
             title: 'Месенджер Combo',
             parentId: 8,
             price: 500,
             url: "/images/catalog/item2.jpg",
+            size: [
+              'M', 'L', 'XL'
+            ],
             colors: [
               {
                 id: 0,
@@ -615,11 +631,14 @@ const products = [
             ]
           },
           {
-            id: 2,
+            id: 24,
             title: 'Месенджер Sample',
             parentId: 8,
             price: 550,
             url: "/images/catalog/item4.jpg",
+            size: [
+              'XL'
+            ],
             colors: [
               {
                 id: 2,
@@ -643,14 +662,17 @@ const products = [
       {
         id: 9,
         title: 'носки',
-        parentId: 1,
+        parentId: 2,
         products: [
           {
-            id: 0,
+            id: 25,
             title: 'Огонь',
             parentId: 9,
             price: 100,
             url: "/images/catalog/item7.jpg",
+            size: [
+              'M', 'L', 'XL'
+            ],
             colors: [
               {
                 id: 0,
@@ -670,11 +692,14 @@ const products = [
             ]
           },
           {
-            id: 1,
+            id: 26,
             title: 'Шальная Императрица',
             parentId: 9,
             price: 100,
             url: "/images/catalog/item1.jpg",
+            size: [
+              'M', 'L'
+            ],
             colors: [
               {
                 id: 0,
@@ -694,11 +719,14 @@ const products = [
             ]
           },
           {
-            id: 2,
+            id: 27,
             title: 'Пицца',
             parentId: 9,
             price: 100,
             url: "/images/catalog/item4.jpg",
+            size: [
+              'M', 'L', 'XL'
+            ],
             colors: [
               {
                 id: 0,

@@ -13,9 +13,15 @@ const Product = () => {
   const arrProduct = [...api[0].categories, ...api[1].categories, ...api[2].categories];
 
   useEffect(() => {
-    const product = arrProduct[localStorage.parentId].products[router.query.productId];
-    setProduct(product);
+    const productItem = arrProduct[localStorage.parentId].products.filter(item => item.id == router.query.productId);
+    
+    if(productItem.length) {
+      setProduct(productItem[0]);
+      console.log(productItem[0]);
+    }
   }, [router]);
+
+  console.log(product);
 
   return (
     <Layout>
