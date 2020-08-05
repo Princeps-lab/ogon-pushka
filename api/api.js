@@ -21,22 +21,22 @@ const products = [
               {
                 id: 0,
                 colorTitle: "D5C0A9",
-                url: "./images/catalog/item1.jpg"
+                url: "/images/catalog/item1.jpg"
               },
               {
                 id: 1,
                 colorTitle: "A9D5C8",
-                url: "./images/catalog/item2.jpg"
+                url: "/images/catalog/item2.jpg"
               },
               {
                 id: 2,
                 colorTitle: "CCCCCC",
-                url: "./images/catalog/item3.jpg"
+                url: "/images/catalog/item3.jpg"
               },
               {
                 id: 3,
                 colorTitle: "979797",
-                url: "./images/catalog/item4.jpg"
+                url: "/images/catalog/item4.jpg"
               }
             ],
           },
@@ -53,17 +53,17 @@ const products = [
               {
                 id: 0,
                 colorTitle: "D5C0A9",
-                url: "./images/catalog/item1.jpg"
+                url: "/images/catalog/item1.jpg"
               },
               {
                 id: 1,
                 colorTitle: "A9D5C8",
-                url: "./images/catalog/item2.jpg"
+                url: "/images/catalog/item2.jpg"
               },
               {
                 id: 2,
                 colorTitle: "CCCCCC",
-                url: "./images/catalog/item3.jpg"
+                url: "/images/catalog/item3.jpg"
               },
             ],
           },
@@ -88,17 +88,17 @@ const products = [
               {
                 id: 0,
                 colorTitle: 'D5C0A9',
-                url: "./images/catalog/item1.jpg"
+                url: "/images/catalog/item1.jpg"
               },
               {
               id: 1,
               colorTitle: 'A9D5C8',
-              url: "./images/catalog/item2.jpg"
+              url: "/images/catalog/item2.jpg"
               },
               {
                 id: 2,
                 colorTitle: '979797',
-                url: "./images/catalog/item3.jpg"
+                url: "/images/catalog/item3.jpg"
               }
             ]
           },
@@ -115,17 +115,17 @@ const products = [
               {
                 id: 0,
                 colorTitle: 'D5C0A9',
-                url: "./images/catalog/item1.jpg"
+                url: "/images/catalog/item1.jpg"
               },
               {
               id: 1,
               colorTitle: 'A9D5C8',
-              url: "./images/catalog/item2.jpg"
+              url: "/images/catalog/item2.jpg"
               },
               {
                 id: 2,
                 colorTitle: '979797',
-                url: "./images/catalog/item3.jpg"
+                url: "/images/catalog/item3.jpg"
               }
             ]
           },
@@ -142,17 +142,17 @@ const products = [
               {
                 id: 0,
                 colorTitle: 'D5C0A9',
-                url: "./images/catalog/item1.jpg"
+                url: "/images/catalog/item1.jpg"
               },
               {
               id: 1,
               colorTitle: 'A9D5C8',
-              url: "./images/catalog/item5.jpg"
+              url: "/images/catalog/item5.jpg"
               },
               {
                 id: 2,
                 colorTitle: '979797',
-                url: "./images/catalog/item3.jpg"
+                url: "/images/catalog/item3.jpg"
               }
             ]
           }
@@ -176,12 +176,12 @@ const products = [
               {
                 id: 0,
                 colorTitle: 'FFFFFF',
-                url:  "./images/catalog/item1.jpg"
+                url:  "/images/catalog/item1.jpg"
               },
               {
                 id: 1,
                 colorTitle: 'ffd800',
-                url:  "./images/catalog/item2.jpg"
+                url:  "/images/catalog/item2.jpg"
               }
             ]
           },
@@ -198,22 +198,22 @@ const products = [
               {
                 id: 0,
                 colorTitle: 'FFFFFF',
-                url:  "./images/catalog/item7.jpg"
+                url:  "/images/catalog/item7.jpg"
               },
               {
                 id: 1,
                 colorTitle: 'ffd800',
-                url:  "./images/catalog/item2.jpg"
+                url:  "/images/catalog/item2.jpg"
               },
               {
                 id: 2,
                 colorTitle: '000000',
-                url:  "./images/catalog/item3.jpg"
+                url:  "/images/catalog/item3.jpg"
               },
               {
                 id: 3,
                 colorTitle: '00b699',
-                url:  "./images/catalog/item4.jpg"
+                url:  "/images/catalog/item4.jpg"
               }
             ]
           }
@@ -237,7 +237,7 @@ const products = [
               {
                 id: 0,
                 colorTitle: '000000',
-                url:  "./images/catalog/item1.jpg"
+                url:  "/images/catalog/item1.jpg"
               }
             ]
           },
@@ -254,12 +254,12 @@ const products = [
               {
                 id: 0,
                 colorTitle: '99ff0b',
-                url:  "./images/catalog/item1.jpg"
+                url:  "/images/catalog/item1.jpg"
               },
               {
                 id: 1,
                 colorTitle: '000000',
-                url:  "./images/catalog/item2.jpg"
+                url:  "/images/catalog/item2.jpg"
               }
             ]
           },
@@ -276,12 +276,12 @@ const products = [
               {
                 id: 0,
                 colorTitle: '99ff0b',
-                url:  "./images/catalog/item1.jpg"
+                url:  "/images/catalog/item1.jpg"
               },
               {
                 id: 1,
                 colorTitle: '000000',
-                url:  "./images/catalog/item2.jpg"
+                url:  "/images/catalog/item2.jpg"
               }
             ]
           }
@@ -305,12 +305,12 @@ const products = [
               {
                 id: 0,
                 colorTitle: '99ff0b',
-                url:  "./images/catalog/item1.jpg"
+                url:  "/images/catalog/item1.jpg"
               },
               {
                 id: 1,
                 colorTitle: '000000',
-                url:  "./images/catalog/item2.jpg"
+                url:  "/images/catalog/item2.jpg"
               }
             ]
           },
@@ -327,7 +327,7 @@ const products = [
               {
                 id: 0,
                 colorTitle: '000000',
-                url:  "./images/catalog/item1.jpg"
+                url:  "/images/catalog/item1.jpg"
               }
             ]
           },
@@ -344,12 +344,12 @@ const products = [
               {
                 id: 0,
                 colorTitle: 'FFFFFF',
-                url:  "./images/catalog/item1.jpg"
+                url:  "/images/catalog/item1.jpg"
               },
               {
                 id: 1,
                 colorTitle: 'EEEEEE',
-                url:  "./images/catalog/item2.jpg"
+                url:  "/images/catalog/item2.jpg"
               }
             ]
           }
@@ -379,17 +379,17 @@ const products = [
               {
                 id: 0,
                 colorTitle: 'ffdcae',
-                url:  "./images/catalog/item1.jpg"
+                url:  "/images/catalog/item1.jpg"
               },
               {
                 id: 1,
                 colorTitle: 'e90300',
-                url:  "./images/catalog/item2.jpg",
+                url:  "/images/catalog/item2.jpg",
               },
               {
                 id: 2,
                 colorTitle: '00bc71',
-                url:  "./images/catalog/item3.jpg",
+                url:  "/images/catalog/item3.jpg",
               }
             ]
           },
@@ -406,7 +406,7 @@ const products = [
               {
                 id: 0,
                 colorTitle: '000000',
-                url:  "./images/catalog/item1.jpg"
+                url:  "/images/catalog/item1.jpg"
               }
             ]
           },
@@ -423,7 +423,7 @@ const products = [
               {
                 id: 0,
                 colorTitle: '000000',
-                url:  "./images/catalog/item1.jpg"
+                url:  "/images/catalog/item1.jpg"
               }
             ]
           }
@@ -447,7 +447,7 @@ const products = [
               {
                 id: 0,
                 colorTitle: '000000',
-                url:  "./images/catalog/item1.jpg"
+                url:  "/images/catalog/item1.jpg"
               }
             ]
           },
@@ -464,7 +464,7 @@ const products = [
               {
                 id: 0,
                 colorTitle: 'fc0000',
-                url:  "./images/catalog/item1.jpg"
+                url:  "/images/catalog/item1.jpg"
               }
             ]
           },
@@ -481,17 +481,17 @@ const products = [
               {
                 id: 0,
                 colorTitle: 'fc0000',
-                url:  "./images/catalog/item1.jpg"
+                url:  "/images/catalog/item1.jpg"
               },
               {
                 id: 0,
                 colorTitle: 'FFFFFF',
-                url:  "./images/catalog/item2.jpg"
+                url:  "/images/catalog/item2.jpg"
               },
               {
                 id: 0,
                 colorTitle: '000000',
-                url:  "./images/catalog/item3.jpg"
+                url:  "/images/catalog/item3.jpg"
               }
             ]
           }
@@ -515,7 +515,7 @@ const products = [
               {
                 id: 0,
                 colorTitle: '000000',
-                url:  "./images/catalog/item1.jpg"
+                url:  "/images/catalog/item1.jpg"
               }
             ]
           },
@@ -532,17 +532,17 @@ const products = [
               {
                 id: 0,
                 colorTitle: '000000',
-                url:  "./images/catalog/item1.jpg"
+                url:  "/images/catalog/item1.jpg"
               },
               {
                 id: 1,
                 colorTitle: 'EEEEEE',
-                url:  "./images/catalog/item2.jpg"
+                url:  "/images/catalog/item2.jpg"
               },
               {
                 id: 2,
                 colorTitle: '01005c',
-                url:  "./images/catalog/item3.jpg"
+                url:  "/images/catalog/item3.jpg"
               }
             ]
           },
@@ -559,7 +559,7 @@ const products = [
               {
                 id: 0,
                 colorTitle: '000000',
-                url:  "./images/catalog/item1.jpg"
+                url:  "/images/catalog/item1.jpg"
               }
             ]
           }
@@ -589,7 +589,7 @@ const products = [
               {
                 id: 0,
                 colorTitle: '000000',
-                url:  "./images/catalog/item1.jpg"
+                url:  "/images/catalog/item1.jpg"
               }
             ]
           },
@@ -606,27 +606,27 @@ const products = [
               {
                 id: 0,
                 colorTitle: 'fc0000',
-                url:  "./images/catalog/item1.jpg"
+                url:  "/images/catalog/item1.jpg"
               },
               {
                 id: 1,
                 colorTitle: 'e9e200',
-                url:  "./images/catalog/item2.jpg"
+                url:  "/images/catalog/item2.jpg"
               },
               {
                 id: 2,
                 colorTitle: '00a039',
-                url:  "./images/catalog/item3.jpg"
+                url:  "/images/catalog/item3.jpg"
               },
               {
                 id: 3,
                 colorTitle: '0054ab',
-                url:  "./images/catalog/item4.jpg"
+                url:  "/images/catalog/item4.jpg"
               },
               {
                 id: 4,
                 colorTitle: '000000',
-                url:  "./images/catalog/item5.jpg"
+                url:  "/images/catalog/item5.jpg"
               }
             ]
           },
@@ -643,17 +643,17 @@ const products = [
               {
                 id: 2,
                 colorTitle: '00a039',
-                url:  "./images/catalog/item3.jpg"
+                url:  "/images/catalog/item3.jpg"
               },
               {
                 id: 3,
                 colorTitle: '0054ab',
-                url:  "./images/catalog/item4.jpg"
+                url:  "/images/catalog/item4.jpg"
               },
               {
                 id: 4,
                 colorTitle: '000000',
-                url:  "./images/catalog/item5.jpg"
+                url:  "/images/catalog/item5.jpg"
               }
             ]
           }
@@ -677,17 +677,17 @@ const products = [
               {
                 id: 0,
                 colorTitle: '8c5cff',
-                url:  "./images/catalog/item1.jpg"
+                url:  "/images/catalog/item1.jpg"
               },
               {
                 id: 1,
                 colorTitle: 'ff701c',
-                url:  "./images/catalog/item2.jpg"
+                url:  "/images/catalog/item2.jpg"
               },
               {
                 id: 2,
                 colorTitle: '000000',
-                url:  "./images/catalog/item3.jpg"
+                url:  "/images/catalog/item3.jpg"
               },
             ]
           },
@@ -704,17 +704,17 @@ const products = [
               {
                 id: 0,
                 colorTitle: 'f200f7',
-                url:  "./images/catalog/item1.jpg"
+                url:  "/images/catalog/item1.jpg"
               },
               {
                 id: 1,
                 colorTitle: 'FFFFFF',
-                url:  "./images/catalog/item2.jpg"
+                url:  "/images/catalog/item2.jpg"
               },
               {
                 id: 2,
                 colorTitle: 'e6cdff',
-                url:  "./images/catalog/item3.jpg"
+                url:  "/images/catalog/item3.jpg"
               },
             ]
           },
@@ -731,7 +731,7 @@ const products = [
               {
                 id: 0,
                 colorTitle: 'FFFFFF',
-                url:  "./images/catalog/item1.jpg"
+                url:  "/images/catalog/item1.jpg"
               }
             ]
           }

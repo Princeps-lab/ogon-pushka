@@ -47,8 +47,6 @@ const Select = ({sizes, changeSize}) => {
 };
 
 const ProductContent = ({product}) => {
-
-  console.log(product);
   const store = useContext(ProductsContext);
   const [ buyed, setBuyed ] = useState(false);
   const [ color, setColor ] = useState(product.colors[0]);
@@ -62,7 +60,6 @@ const ProductContent = ({product}) => {
     size,
   };
   
-
   console.log(store);
 
   return (
