@@ -59,8 +59,6 @@ const ProductContent = ({product}) => {
     color,
     size,
   };
-  
-  console.log(store);
 
   return (
     <div className={style.product}>
@@ -94,9 +92,12 @@ const ProductContent = ({product}) => {
         </div>
 
         <div className={style.groupBtn}>
-          <div className={style.buy}>
-            Купить в один клик
-          </div>
+          {
+            !buyed ?
+            <div className={style.buy}>
+              Купить в один клик
+            </div> : null
+          }
 
           {
             !buyed ? 
@@ -106,9 +107,11 @@ const ProductContent = ({product}) => {
             }} className={style.basket}>
               В корзину
             </div> : 
-          <div style={{"opacity" : ".9"}} className={style.basket}>
-            В корзину
-          </div>
+            <div
+              onClick={() => store.setShow(true)}
+              style={{'width' : "100%"}} className={style.basket}>
+              Добавлено корзину
+            </div>
           }
 
           <div  className={style.heart}>

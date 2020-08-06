@@ -3,7 +3,7 @@ import React, {useState, useContext} from 'react';
 
 import style from "./header.module.css";
 
-const ProductItem = ({product}) => {
+const ProductItem = ({product, deleteProduct}) => {
   const {url} = product.color;
   
   return (
@@ -17,7 +17,7 @@ const ProductItem = ({product}) => {
         <span>Цвет: <span className={style.color} style={{"background" : `#${product.color.colorTitle}`}}/></span>
         <span>Количество: <span>1</span></span>
 
-        <div className={style.iconsProduct}>
+        <div onClick={() => deleteProduct(product.id)} className={style.iconsProduct}>
           <div>
             <svg viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fillRule="evenodd" clipRule="evenodd" d="M0 5C0 4.44772 0.447715 4 1 4H19C19.5523 4 20 4.44772 20 5C20 5.55228 19.5523 6 19 6H1C0.447715 6 0 5.55228 0 5Z" fill="black"/>
@@ -39,34 +39,46 @@ const ProductItem = ({product}) => {
 };
 
 const Basket = () => {
-  const store = useContext(ProductsContext);
-  const [basketShow, setShow] = useState(false);
-  // const [ products, setProducts ] = useState();
 
-  console.log("Basket", store.products);
-  const products = store.products.map(product => <ProductItem key={product.id} product={product}/>);
+  const store = useContext(ProductsContext);
+  const products = store.products.map(product => <ProductItem deleteProduct={store.deleteProduct} key={product.id} product={product}/>);
+
 
   return (
     <div className={style.icons}>
       <div className={style.iconsItem}>
         <div>
           <img src="/icons/heart.svg"></img></div>
-        <div onClick={() => setShow(true)}>
+        <div onClick={() => store.setShow(true)}>
           <img src="/icons/basket.svg"></img>
         </div>
       </div>
 
-      <div className={basketShow ? style.basket : style.basketOff}>
+      <div className={store.basketShow ? style.basket : style.basketOff}>
         <div className={style.basketHeader}>
           <h2>Корзина</h2>
-          <div onClick={() => setShow(false)}>
+          <div onClick={() => store.setShow(false)}>
             <img src="/icons/close.svg" alt="close" />
           </div>
         </div>
 
-        <div className={style.deleteAll}>Удалить все товары</div>
+        <div onClick={() => store.deleteAll()} className={style.deleteAll}>Удалить все товары</div>
 
         {products}
+
+        {
+          products.length ?
+          <div className={style.basketBtn}>
+            Оформить
+          </div> : null
+        }
+
+        <div className={style.delivery} >
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 0.5C3.86 0.5 0.5 3.86 0.5 8C0.5 12.14 3.86 15.5 8 15.5C12.14 15.5 15.5 12.14 15.5 8C15.5 3.86 12.14 0.5 8 0.5ZM11.15 11.15L7.25 8.75V4.25H8.375V8.15L11.75 10.175L11.15 11.15Z" fill="black"/>
+          </svg>
+          <span style={{"marginLeft": ".5rem"}}>Доставка и возврат</span>
+        </div>
 
       </div>
     </div>
