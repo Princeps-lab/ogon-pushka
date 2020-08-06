@@ -1,5 +1,6 @@
 import { ProductsContext } from '../../context/context.js';
-import React, {useState, useContext} from 'react';
+import React, {useContext} from 'react';
+import Link from 'next/link';
 
 import style from "./header.module.css";
 
@@ -48,7 +49,10 @@ const Basket = () => {
     <div className={style.icons}>
       <div className={style.iconsItem}>
         <div>
-          <img src="/icons/heart.svg"></img></div>
+          <Link href="/favorites">
+            <a><img src="/icons/heart.svg"></img></a>
+          </Link>
+        </div>
         <div onClick={() => store.setShow(true)}>
           <img src="/icons/basket.svg"></img>
         </div>
@@ -62,7 +66,17 @@ const Basket = () => {
           </div>
         </div>
 
-        <div onClick={() => store.deleteAll()} className={style.deleteAll}>Удалить все товары</div>
+        {
+          products.length ?
+          <div onClick={() => store.deleteAll()} className={style.deleteAll}>Удалить все товары</div> : null
+        }
+
+
+        {
+          !products.length ?
+          <div className={style.logo}><img src='/images/logo.svg' /></div>
+          : null
+        }
 
         {products}
 

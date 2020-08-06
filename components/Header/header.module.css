@@ -169,3 +169,11 @@ div.img {
   font-size: .9rem;
   margin-top: auto;
 }
+
+.logo {
+  margin: auto;
+}
+
+.logo img {
+  width: 250px;
+}
