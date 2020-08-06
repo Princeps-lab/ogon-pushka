@@ -1,14 +1,16 @@
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/Layout';
+import FaqContent from '../components/FaqContent';
 
-const Faq = () => {
+const Contacts = () => {
   return (
     <Layout>
-      <div>FAQ</div>
       <Head>
         <title>{siteTitle}</title>
       </Head>
+      <FaqContent/>
     </Layout>
   );
 };
-export default Faq;
+
+export default Contacts;

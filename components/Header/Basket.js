@@ -42,6 +42,7 @@ const ProductItem = ({product, deleteProduct}) => {
 const Basket = () => {
 
   const store = useContext(ProductsContext);
+
   const products = store.products.map(product => <ProductItem deleteProduct={store.deleteProduct} key={product.id} product={product}/>);
 
 

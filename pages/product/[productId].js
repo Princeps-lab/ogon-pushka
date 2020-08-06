@@ -17,11 +17,8 @@ const Product = () => {
     
     if(productItem.length) {
       setProduct(productItem[0]);
-      console.log(productItem[0]);
     }
   }, [router]);
-
-  console.log(product);
 
   return (
     <Layout>

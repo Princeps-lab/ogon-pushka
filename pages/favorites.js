@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/Layout';
-import SocialBlock from '../components/SocialBlock';
+import Extra from '../components/Extra';
+import FavoritesContent from '../components/FavoritesContent';
 
 const Favorites = () => {
   return (
@@ -9,7 +10,8 @@ const Favorites = () => {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <SocialBlock />
+      <FavoritesContent/>
+      <Extra />
     </Layout>
   );
 };
