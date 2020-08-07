@@ -3,6 +3,11 @@
   padding: 0 3rem;
 }
 
+.favorites span {
+  font-size: 1rem;
+  display: block;
+  color: #141414;
+}
 
 .favorites h2 {
   text-transform: uppercase;
@@ -12,13 +17,19 @@
   margin-bottom: 2rem;
 }
 
+.favList {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
 .product {
   display: flex;
   margin-top: 3rem;
-  width: 100%;
+  flex-grow: 1;
   padding-bottom: 3rem;
-  border-bottom: 1px solid #CCCCCC;
+  margin-right: 4rem;
+  max-width: 30%;
 }
 
 div.img {
@@ -85,4 +96,13 @@ div.img {
   color: #151515;
   font-size: .9rem;
   margin-top: auto;
+}
+
+.product svg {
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.product svg:hover {
+  opacity: .7;
 }

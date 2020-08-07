@@ -10,6 +10,7 @@ const Context = ({children}) => {
   const deleteProduct = (id) => setProducts(products.filter(item => item.id !== id));
 
   const addFavor = (product) => setFvorites([...favorites, product]);
+  const deleteFavor = (id) => setFvorites(favorites.filter(item => item.id !== id));
 
   const deleteAll = () => setProducts([]);
 
@@ -22,7 +23,8 @@ const Context = ({children}) => {
       basketShow,
       setShow,
       addFavor,
-      favorites
+      favorites,
+      deleteFavor,
     }}>
       {children}
     </ProductsContext.Provider>
