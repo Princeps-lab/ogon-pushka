@@ -45,7 +45,6 @@ const Basket = () => {
 
   const products = store.products.map(product => <ProductItem deleteProduct={store.deleteProduct} key={product.id} product={product}/>);
 
-
   return (
     <div className={style.icons}>
       <div className={style.iconsItem}>
@@ -75,7 +74,10 @@ const Basket = () => {
 
         {
           !products.length ?
-          <div className={style.logo}><img src='/images/logo.svg' /></div>
+          <div className={style.logo}>
+            <span>Корзина пуста</span>
+            <img src='/images/logo.svg' />
+          </div>
           : null
         }
 

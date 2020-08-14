@@ -172,8 +172,19 @@ div.img {
 
 .logo {
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .logo img {
   width: 250px;
+}
+
+.logo span {
+  margin-bottom: 2rem;
+  color: #151515;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.2rem;
 }
