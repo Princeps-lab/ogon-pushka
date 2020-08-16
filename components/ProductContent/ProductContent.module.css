@@ -123,8 +123,21 @@
   margin: 0 1px;
 }
 
-.heart {
+div.heart {
   padding: .5rem;
+  background-color: #141414;
+}
+
+div.heart svg {
+  fill: #fff;
+}
+
+.heartInAction {
+  padding: .5rem;
+}
+
+.div.heartInAction svg  {
+  fill: #141414;
 }
 
 .nav {

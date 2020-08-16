@@ -16,8 +16,8 @@ const FavItem = ({product, deleteFavor}) => {
         <span>Цвет: <span className={style.color} style={{"background" : `#${product.color.colorTitle}`}}/></span>
         <span>Количество: <span>1</span></span>
 
-        <div onClick={() => deleteFavor(product.id)} className={style.iconsProduct}>
-          <div>
+        <div className={style.iconsProduct}>
+          <div onClick={() => deleteFavor(product.id)} >
 
             <svg viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fillRule="evenodd" clipRule="evenodd" d="M0 5C0 4.44772 0.447715 4 1 4H19C19.5523 4 20 4.44772 20 5C20 5.55228 19.5523 6 19 6H1C0.447715 6 0 5.55228 0 5Z" fill="black"/>
@@ -28,7 +28,8 @@ const FavItem = ({product, deleteFavor}) => {
           </div>
 
           <div>
-              <svg style={{"marginLeft": ".5rem"}} width="19" height="15" viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                style={{"marginLeft": ".5rem", "transform" : "rotate(-90deg)"}} width="19" height="15" viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M15.2019 6.66667L12.5086 3.92259L13.6653 2.74408L18.3333 7.5L13.6653 12.2559L12.5086 11.0774L15.2019 8.33333H4.9076V6.66667H15.2019ZM0 13.3333V1.66667V0H8.17933V1.66667H1.63587V13.3333H8.17933V15H0V13.3333Z" fill="black"/>
             </svg>
           </div>

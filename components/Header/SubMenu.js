@@ -1,55 +1,7 @@
 
 import styles from './submenu.module.css';
 import Link from 'next/link';
-
-const up = [
-  {
-    id: 0,
-    title: "футболки"
-  },
-  {
-    id: 1,
-    title: "худи"
-  },
-  {
-    id: 2,
-    title: "Свитшоты"
-  },
-  {
-    id: 3,
-    title: "ветровки"
-  },
-  {
-    id: 4,
-    title: "куртки"
-  }
-];
-
-const down = [
-  {
-    id: 0,
-    title: "шорты"
-  },
-  {
-    id: 1,
-    title: "спортивные штаны"
-  },
-  {
-    id: 2,
-    title: "брюки"
-  }
-];
-
-const access = [
-  {
-    id: 0,
-    title: "сумки"
-  },
-  {
-    id: 1,
-    title: "носки"
-  }
-];
+import products from '../../api/api';
 
 const ItemSub = ({list, title}) => {
   return (
@@ -60,7 +12,8 @@ const ItemSub = ({list, title}) => {
       <div className={styles.links}>
         {
           list.map((item) => {
-            return <Link href='/categories' key={item.id}><a>{item.title}</a></Link>
+            return <Link as={`/catalog/${item.id}`}
+            href={`/catalog/[categorieID]`} key={item.id}><a>{item.title}</a></Link>
           })
         }
       </div>
@@ -69,21 +22,18 @@ const ItemSub = ({list, title}) => {
 };
 
 const SubMenu = ({isShown}) => {
+
+  const listMenu = products.map(list => {
+    return (
+      <div key={list.id} className={styles.subItem}>
+        <ItemSub title={list.title} list={list.categories} />
+      </div>
+    )
+  })
+
   return (
     <div className={isShown ? styles.subMenu : styles.off}>
-
-      <div className={styles.subItem}>
-        <ItemSub title='Верх' list={up} />
-      </div>
-
-      <div className={styles.subItem}>
-        <ItemSub title='Низ' list={down} />
-      </div>
-
-      <div className={styles.subItem}>
-        <ItemSub title='аксессуары' list={access} />
-      </div>
-
+      {listMenu}
       <div className={styles.subBg}  style={{"background" : `url('/images/background.jpg') center / cover`}} >
       </div>
     </div>
