@@ -188,3 +188,10 @@ div.img {
   text-align: center;
   font-size: 1.2rem;
 }
+
+.red svg path{
+  fill: red;
+}
+.black svg path{
+  fill: black;
+}

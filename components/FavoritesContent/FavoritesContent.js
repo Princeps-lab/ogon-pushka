@@ -5,6 +5,7 @@ import style from './FavoritesContent.module.css';
 
 const FavItem = ({product, deleteFavor}) => {
   const {url} = product.color;
+
   return (
     <div className={style.product}>
       <div className={style.img}  style={{"background" : `url(${url}) center / cover`}} />

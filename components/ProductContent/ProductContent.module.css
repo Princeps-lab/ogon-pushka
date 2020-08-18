@@ -55,6 +55,8 @@
   width: 1.5rem;
   height: 1.5rem;
   margin-right: 1rem;
+  cursor: pointer;
+  transition:  all .3s;
 }
 
 .select {
@@ -165,4 +167,9 @@ div.heart svg {
 
 .nav div:last-child {
   justify-content: flex-end;
+}
+
+.activeColor {
+  transform: translate(0px, -2px);
+  border: 1px solid black;
 }

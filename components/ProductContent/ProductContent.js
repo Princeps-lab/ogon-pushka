@@ -80,8 +80,12 @@ const ProductContent = ({product}) => {
 
         <div className={style.colors}>
           {
-            product.colors ? product.colors.map(color => {
-              return <div onClick={() => setColor(color)} style={{"background" : `#${color.colorTitle}`}} key={color.id} />
+            product.colors ? product.colors.map(colorItem => {
+              return <div
+                onClick={() => setColor(colorItem)}
+                style={{"background" : `#${colorItem.colorTitle}`}}
+                className={ color.id === colorItem.id ? style.activeColor : null }
+                key={colorItem.id} />
             }) : null
           }
         </div>
