@@ -12,19 +12,19 @@ import SocialBlock from '../components/SocialBlock';
 
 const App = () => {
 
-  const products = useContext(ProductsContext);
-  console.log(products);
+  const context = useContext(ProductsContext);
+  console.log(context.desktop);
   return (
     <Layout>
       <Head>
         <title>{siteTitle}</title>
       </Head>
       <Main/>
-      <Extra/>
-      <Description />
-      <MainCatalog />
-      <Description />
-      <SocialBlock />
+      { context.desktop ? <Extra /> : null }
+      { context.desktop ? <Description /> : null }
+      { context.desktop ? <MainCatalog /> : null }
+      { context.desktop ? <Description /> : null }
+      { context.desktop ? <SocialBlock /> : null }
     </Layout>
   )
 };

@@ -1,9 +1,12 @@
 .header {
-  height: 4rem;
+  height: 4.5rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 0 1rem;
+  width: 100%;
+  position: fixed;
+  background-color: #fff;
 }
 
 .burger {
@@ -14,4 +17,30 @@
 .heart {
   width: 2rem;
   height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 .5rem;
+}
+
+.logo {
+  margin: auto;
+}
+
+
+.basket {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 .5rem;
 }

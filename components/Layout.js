@@ -17,11 +17,9 @@ const Layout = ({children}) => {
         <Head>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        {
-          store.desktop ? <Header /> : <MobHeader /> 
-        }
+        { store.desktop ? <Header /> : <MobHeader /> }
         <main>{children}</main>
-        <Footer/>
+        { store.desktop ? <Footer /> : null }
     </div>
   )
 };

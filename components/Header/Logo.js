@@ -1,6 +1,6 @@
-const Logo = () => {
+const Logo = ({width = '20px'}) => {
   return (
-    <div style={{"width" : "20px"}}>
+    <div style={{"width" : width}}>
       <img src="/images/logo.svg" alt="logo"></img>
     </div>
   );
