@@ -14,7 +14,6 @@ const App = () => {
 
   const products = useContext(ProductsContext);
   console.log(products);
-
   return (
     <Layout>
       <Head>

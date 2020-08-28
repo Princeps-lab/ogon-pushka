@@ -2,6 +2,7 @@ import Link from 'next/link';
 import style from "./header.module.css"
 import SubMenu from './SubMenu';
 
+
 const pagesLink = [
   {
     link: "/categories",
@@ -29,6 +30,8 @@ const pagesLink = [
   },
 ];
 
+
+
 const NavHeader = ({setShow, isShown}) => {
 
   const links = pagesLink.map(item => {
@@ -36,15 +39,13 @@ const NavHeader = ({setShow, isShown}) => {
       item.id === 0 ?
       <Link key={item.id}
         href={item.link}>
-        <a
-          onMouseEnter={() => setShow(true)}>{item.name}</a></Link> :
+        <a onMouseEnter={() => setShow(true)}>{item.name}</a></Link> :
       <Link key={item.id} href={item.link}><a onMouseEnter={() => setShow(false)}>{item.name}</a></Link>
      );
   });
 
   return (
-    <div
-      className={style.headerNav}>
+    <div className={style.headerNav}>
       {links}
       <SubMenu isShown={isShown} />
     </div>

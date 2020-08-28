@@ -45,8 +45,8 @@ textarea{
 	}
 }
 
-/* @media ( max-width:1440px ) {
+@media ( max-width:460px ) {
 	html {
-		font-size: 14px;
+		font-size: 18px;
 	}
-} */
+}

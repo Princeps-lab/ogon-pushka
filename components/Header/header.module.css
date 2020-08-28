@@ -195,3 +195,9 @@ div.img {
 .black svg path{
   fill: black;
 }
+
+@media ( max-width:500px ) {
+  /* .headerNav {
+    display: none;
+  } */
+}
