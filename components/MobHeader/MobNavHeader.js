@@ -1,7 +1,8 @@
-import Link from 'next/link';
-import style from "./header.module.css"
-import SubMenu from './SubMenu';
+import React from 'react';
 
+import Link from 'next/link';
+import style from "./mobHeader.module.css"
+import SubMenu from './SubMenu';
 
 const pagesLink = [
   {
@@ -30,8 +31,8 @@ const pagesLink = [
   },
 ];
 
-const NavHeader = ({setShow, isShown}) => {
-
+const MobNavHeader = ({setShow, isShown}) => {
+  
   const links = pagesLink.map(item => {
     return (
       item.id === 0 ?
@@ -50,4 +51,4 @@ const NavHeader = ({setShow, isShown}) => {
   )
 };
 
-export default NavHeader;
+export default MobNavHeader;

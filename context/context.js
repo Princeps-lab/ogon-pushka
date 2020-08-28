@@ -29,7 +29,7 @@ const Context = ({children}) => {
   const deleteAll = () => setProducts([]);
 
   useEffect(() => {
-    width > 460 ? setDesctop(true) : setDesctop(false);
+    width > 599 ? setDesctop(true) : setDesctop(false);
   }, [width]);
 
   return (

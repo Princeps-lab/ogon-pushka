@@ -1,0 +1,17 @@
+.header {
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.burger {
+  width: 2rem;
+  height: 2rem;
+}
+
+.heart {
+  width: 2rem;
+  height: 2rem;
+}

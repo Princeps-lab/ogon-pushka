@@ -16,7 +16,7 @@ export default function useWindowDimensions() {
     function handleResize() {
       setWindowDimensions(getWindowDimensions());
     }
-    window.addEventListener("resize", () => console.log(window.innerWidth, window.outerWidth))
+
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
