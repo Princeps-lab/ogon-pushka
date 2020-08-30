@@ -46,6 +46,7 @@
   color: #fff;
   font-size: .8rem;
 }
+
 div.number {
   font-weight: bold;
   font-size: 1.2rem;
@@ -86,6 +87,36 @@ div.number {
   opacity: .8;
 }
 
-@media ( max-width:1440px ) {
+@media ( max-width:599px ) {
+  .footerTop {
+    flex-direction: column;
+  }
 
-}
+  .footerTop > div {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    padding-left: 2rem;
+  }
+
+  div.logo {
+    justify-content: center;
+    margin: 2rem 0;
+  }
+
+  .footerBotoom {
+    flex-direction: column;
+    justify-content: start;
+    padding: 1.8rem 1.5rem;
+  }
+  .footerBotoom  div {
+    width: 100%;
+    margin: .5rem 0;
+    justify-content: start;
+    font-size: .7rem;
+  }
+  div.number {
+    font-weight: bold;
+    font-size: 2rem;
+  }
+} 

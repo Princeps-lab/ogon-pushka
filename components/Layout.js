@@ -19,7 +19,7 @@ const Layout = ({children}) => {
         </Head>
         { store.desktop ? <Header /> : <MobHeader /> }
         <main>{children}</main>
-        { store.desktop ? <Footer /> : null }
+        <Footer /> 
     </div>
   )
 };
