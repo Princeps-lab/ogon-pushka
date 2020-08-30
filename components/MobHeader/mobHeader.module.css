@@ -47,7 +47,7 @@
 
 .headerNav {
   transform: translate(0%, 0);
-  padding: 1.4rem;
+  padding: 1.8rem 1.4rem;
   transition: all .3s;
   width: 100%;
   position: fixed;
@@ -94,6 +94,7 @@
 
 .linksMain {
   margin-top: auto;
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
 }
@@ -102,15 +103,14 @@
   color: #141414;
   text-transform: uppercase;
   font-weight: 300;
-  font-size: .9rem;
+  font-size: .8rem;
   margin: .2rem 0;
 }
 
 .number {
   font-weight: bold;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: #141414;
-  /* margin-top: auto; */
   margin-left: auto;
 }
 
@@ -118,6 +118,7 @@
   text-transform: uppercase;
   color: #141414;
   font-weight: 500;
+  font-size: .7rem;
   margin-bottom: .8rem;
 }
 
