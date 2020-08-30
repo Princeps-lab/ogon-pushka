@@ -23,9 +23,9 @@ const App = () => {
       </Head>
       <Main/>
       { context.desktop ? <Extra /> : <MobExtra/> }
-      { context.desktop ? <Description /> : null }
-      { context.desktop ? <MainCatalog /> : null }
-      { context.desktop ? <Description /> : null }
+      <Description />
+      { context.desktop ? <MainCatalog /> : <MobExtra /> }
+      { context.desktop ? <Description /> : <Description /> }
       { context.desktop ? <SocialBlock /> : null }
     </Layout>
   )
