@@ -85,7 +85,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: .5rem;
 }
 
 .logoNav a:first-child {
@@ -94,7 +94,7 @@
 
 .linksMain {
   margin-top: auto;
-  margin-bottom: .8rem;
+  margin-bottom: .6rem;
   display: flex;
   flex-direction: column;
 }
@@ -103,13 +103,13 @@
   color: #141414;
   text-transform: uppercase;
   font-weight: 300;
-  font-size: .8rem;
+  font-size: .7rem;
   margin: .1rem 0;
 }
 
 .number {
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #141414;
   margin-left: auto;
 }

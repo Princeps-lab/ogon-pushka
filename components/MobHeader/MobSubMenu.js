@@ -1,4 +1,4 @@
-
+import React, { } from 'react';
 import styles from './mobHeader.module.css';
 import Link from 'next/link';
 import products from '../../api/api';
@@ -34,7 +34,9 @@ const MobSubMenu = () => {
   return (
     <div>
       {listMenu}
-      <div className={styles.subBg}  style={{"background" : `url('/images/background.jpg') center / cover`}} >
+      <div
+        className={styles.subBg} 
+        style={{"background" : `url('/images/background.jpg') center / cover`}} >
       </div>
     </div>
   )
