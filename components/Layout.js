@@ -9,19 +9,17 @@ import { ProductsContext } from '../context/context.js';
 export const siteTitle = 'Ogon Pushka';
 
 const Layout = ({children}) => {
-
   const store = useContext(ProductsContext);
-
   return (
     <div>
-        <Head>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        { store.desktop ? <Header /> : <MobHeader /> }
-        <main>{children}</main>
-        <Footer /> 
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      { store.desktop ? <Header /> : <MobHeader /> }
+      <main>{children}</main>
+      <Footer /> 
     </div>
-  )
+  );
 };
 
 export default Layout;

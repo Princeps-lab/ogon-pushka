@@ -109,12 +109,14 @@ div.number {
     justify-content: start;
     padding: 1.8rem 1.5rem;
   }
+  
   .footerBotoom  div {
     width: 100%;
     margin: .5rem 0;
     justify-content: start;
     font-size: .7rem;
   }
+
   div.number {
     font-weight: bold;
     font-size: 2rem;

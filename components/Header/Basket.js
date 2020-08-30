@@ -14,7 +14,6 @@ const ProductItem = ({product, deleteProduct, addFavor, deleteFavor}) => {
     if(arr.length) {
       setItFavor(true)
     }
-
   }, [store])
 
   
@@ -63,7 +62,7 @@ const ProductItem = ({product, deleteProduct, addFavor, deleteFavor}) => {
   );
 };
 
-const Basket = () => {
+const Basket = ({}) => {
 
   const store = useContext(ProductsContext);
   const products = store.products.map(product => <ProductItem

@@ -196,6 +196,18 @@ div.img {
   fill: black;
 }
 
-@media ( max-width:500px ) {
+@media ( max-width:599px ) {
+  .iconsItem {
+    display: none;
+  }
+
+  .basket {
+    width: 100%;
+    padding: 1.2rem;
+  }
+
+  .logo img {
+    width: 10rem;
+  }
 
 }
