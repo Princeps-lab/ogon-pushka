@@ -21,10 +21,10 @@ const ItemSlider = ({url, title}) => {
   );
 };
 
-const SimpleSlider = () => {
+const SimpleSlider = ({slidesPerView = 4}) => {
   return (
     <Swiper
-      slidesPerView={4}
+      slidesPerView={slidesPerView}
       navigation
     >
       <SwiperSlide>

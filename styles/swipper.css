@@ -30,3 +30,21 @@
   height: 100%;
   width: 100%;
 }
+
+@media ( max-width:599px ) {
+  .swiper-button-next {
+    right: auto;
+    top: 17rem;
+    left: 7rem;
+    height: 14px;
+    width: 82px;
+  }
+  
+  .swiper-button-prev {
+    left: 1.8rem ;
+    top: 17rem;
+    height: 14px;
+    width: 82px;
+    transform: rotate(180deg);
+  }
+}

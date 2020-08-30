@@ -7,6 +7,8 @@ import Extra from '../components/Extra';
 import Description from '../components/Description';
 import MainCatalog from '../components/MainCatalog';
 import SocialBlock from '../components/SocialBlock';
+import SimpleSlider from '../components/SimpleSlider/index.js';
+import MobExtra from '../components/MobExtra/index.js';
 
 
 
@@ -20,7 +22,7 @@ const App = () => {
         <title>{siteTitle}</title>
       </Head>
       <Main/>
-      { context.desktop ? <Extra /> : null }
+      { context.desktop ? <Extra /> : <MobExtra/> }
       { context.desktop ? <Description /> : null }
       { context.desktop ? <MainCatalog /> : null }
       { context.desktop ? <Description /> : null }
