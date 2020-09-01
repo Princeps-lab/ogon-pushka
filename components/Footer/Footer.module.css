@@ -95,7 +95,7 @@ div.number {
   .footerTop > div {
     width: 100%;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     padding-left: 2rem;
   }
 
@@ -106,14 +106,14 @@ div.number {
 
   .footerBotoom {
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     padding: 1.8rem 1.5rem;
   }
   
   .footerBotoom  div {
     width: 100%;
     margin: .5rem 0;
-    justify-content: start;
+    justify-content: flex-start;
     font-size: .7rem;
   }
 

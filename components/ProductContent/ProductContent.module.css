@@ -173,3 +173,20 @@ div.heart svg {
   transform: translate(0px, -2px);
   border: 1px solid black;
 }
+
+@media (max-width: 599px) {
+  .galery {
+    display: none;
+  }
+  .product {
+    margin-top: 0rem;
+    padding-top: 4rem;
+  }
+  .description {
+    width: 100%;
+    padding: 1rem;
+  }
+  .nav {
+    font-size: .6rem;
+  }
+}

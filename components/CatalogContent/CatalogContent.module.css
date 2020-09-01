@@ -53,3 +53,13 @@
 .items > a > div {
   width: 100%;
 }
+
+@media ( max-width:599px ) {
+  .nav {
+    display: none;
+  }
+
+  .items > a {
+    width: 100%;
+  }
+}
