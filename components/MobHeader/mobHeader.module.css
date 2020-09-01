@@ -15,7 +15,7 @@
   height: 2rem;
 }
 
-.heart {
+.heart a {
   width: 2rem;
   height: 2rem;
   display: flex;

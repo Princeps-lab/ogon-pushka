@@ -33,7 +33,7 @@ const ProductItem = ({product, deleteProduct, addFavor, deleteFavor}) => {
       <div className={style.description}>
         <h3>{product.title}</h3>
 
-        <span>Цена: <span>{product.price}</span></span>
+        <span className={style.price}>Цена: <span>{product.price} грн</span></span>
         <span>Размер: <span>{product.size}</span></span>
         <span>Цвет: <span className={style.color} style={{"background" : `#${product.color.colorTitle}`}}/></span>
         <span>Количество: <span>1</span></span>
