@@ -245,11 +245,11 @@ div.img {
     margin-right: 0;
   }
 
-  div.img, .description {
+  .basketBtn, .delivery, div.img, .description {
     flex-shrink: 0;
   }
 
-  .basketBtn, .delivery, .description span:first-child {
+  .description span:first-child {
     color: #141414;
   }
   
