@@ -249,7 +249,7 @@ div.img {
     flex-shrink: 0;
   }
 
-  .description span:first-child {
+  .basketBtn, .delivery, .description span:first-child {
     color: #141414;
   }
   
