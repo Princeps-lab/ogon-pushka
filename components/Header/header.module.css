@@ -246,9 +246,9 @@ div.img {
     margin-right: 0;
   }
 
-  .basketBtn, .delivery, div.img, .description, .product {
+  /* .basketBtn, .delivery, div.img, .description, .product {
     flex-shrink: 0;
-  }
+  } */
 
   .description span:first-child {
     color: #141414;
