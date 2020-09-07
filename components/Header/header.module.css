@@ -246,7 +246,7 @@ div.img {
     margin-right: 0;
   }
 
-  .basketBtn, .delivery, div.img, .description, .product, .product > * {
+  .basketBtn, .delivery, div.img, .description, .product, .product > div {
     flex-shrink: 0;
   }
 
