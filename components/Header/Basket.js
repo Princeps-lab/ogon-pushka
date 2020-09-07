@@ -62,7 +62,7 @@ const ProductItem = ({product, deleteProduct, addFavor, deleteFavor}) => {
   );
 };
 
-const Basket = ({}) => {
+const Basket = () => {
 
   const store = useContext(ProductsContext);
   const products = store.products.map(product => <ProductItem
@@ -72,6 +72,27 @@ const Basket = ({}) => {
       key={product.id}
       product={product}/>);
 
+
+  const showOff = () => {
+    store.setShow(false);
+
+    if(!store.desktop) {
+      const body = document.body;
+      body.style.overflow = 'visible';
+      body.style.position = 'relative';
+    } 
+  };
+
+  const showOn = () => {
+    store.setShow(true);
+
+    if(!store.desktop) {
+      const body = document.body;
+      body.style.overflow = 'hidden';
+      body.style.position = 'fixed';
+    } 
+  };
+
   return (
     <div className={style.icons}>
       <div className={style.iconsItem}>
@@ -80,7 +101,7 @@ const Basket = ({}) => {
             <a><img src="/icons/heart.svg"></img></a>
           </Link>
         </div>
-        <div onClick={() => store.setShow(true)}>
+        <div onClick={() => showOn()}>
           <img src="/icons/basket.svg"></img>
         </div>
       </div>
@@ -88,7 +109,7 @@ const Basket = ({}) => {
       <div className={store.basketShow ? style.basket : style.basketOff}>
         <div className={style.basketHeader}>
           <h2>Корзина</h2>
-          <div onClick={() => store.setShow(false)}>
+          <div onClick={() => showOff()}>
             <img src="/icons/close.svg" alt="close" />
           </div>
         </div>
