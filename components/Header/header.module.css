@@ -211,6 +211,7 @@ div.img {
     padding: 1.2rem;
     overflow-y: scroll;
     height: auto;
+    flex-shrink: 0;
   }
 
   .logo {
@@ -245,7 +246,7 @@ div.img {
     margin-right: 0;
   }
 
-  .basketBtn, .delivery, div.img, .description {
+  .basketBtn, .delivery, div.img, .description, .product {
     flex-shrink: 0;
   }
 

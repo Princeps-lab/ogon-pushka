@@ -75,7 +75,6 @@ const Basket = () => {
 
   const showOff = () => {
     store.setShow(false);
-
     if(!store.desktop) {
       const body = document.body;
       body.style.overflow = 'visible';
