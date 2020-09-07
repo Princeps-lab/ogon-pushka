@@ -21,11 +21,13 @@ const ItemSub = ({list, title}) => {
   )
 };
 
-const MobSubMenu = () => {
+const MobSubMenu = ({setShow}) => {
 
   const listMenu = products.map(list => {
     return (
-      <div key={list.id} className={styles.subItem}>
+      <div
+        onClick={() => setShow()}
+        key={list.id} className={styles.subItem}>
         <ItemSub title={list.title} list={list.categories} />
       </div>
     )

@@ -37,13 +37,13 @@ const MobNavHeader = ({isShown, setShow}) => {
 
   return (
     <div className={ isShown ? style.headerNav : style.headerNavOff }>
-      <div className={style.logoNav} onClick={() => setShow(false)}>
+      <div className={style.logoNav} onClick={() => setShow()}>
         <Link href="/">
           <a><Logo/></a>
         </Link>
         <div><img src="/icons/close.svg" alt="close" /></div>
       </div>
-      <MobSubMenu />
+      <MobSubMenu setShow={setShow} />
       <div className={style.linksMain}>{links}</div>
       <div className={style.number}>068 482 72 75</div>
     </div>
