@@ -45,3 +45,24 @@
 .socialLinksList svg {
   fill: #141414;
 }
+
+@media ( max-width:599px ) {
+  .contact {
+
+    padding: 4.5rem 2rem;
+    height: auto;
+    margin-bottom: 4rem;
+  }
+
+  .contact h2 {
+    font-size: 2rem;
+  }
+
+  .contact p {
+    font-size: .7rem;
+  }
+
+  .number {
+    font-size: 1.4rem;
+  }
+}

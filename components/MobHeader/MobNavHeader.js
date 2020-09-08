@@ -30,8 +30,10 @@ const MobNavHeader = ({isShown, setShow}) => {
 
   const links = pagesLink.map(item => {
     return (
-      <Link key={item.id} href={item.link}>
-        <a className={style.linkMain}>{item.name}</a></Link>
+      <div key={item.id} onClick={() => setShow()}>
+        <Link href={item.link}>
+          <a className={style.linkMain}>{item.name}</a></Link>
+      </div>
      );
   });
 
