@@ -106,3 +106,22 @@ div.img {
 .product svg:hover {
   opacity: .7;
 }
+
+@media ( max-width:599px ) {
+  .favorites {
+    margin-top: 0;
+    padding: 4.5rem 1.2rem 2rem;
+    height: auto;
+    margin-bottom: 4rem;
+  }
+
+  .favorites h2 {
+    font-size: 1.6rem;
+  }
+
+  .favorites span {
+    font-size: .7rem;
+    margin-bottom: .4rem;
+  }
+
+}

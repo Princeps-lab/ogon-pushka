@@ -55,6 +55,9 @@
 }
 
 @media ( max-width:599px ) {
+  .catalog {
+    padding-top: 3.5rem;
+  }
   .nav {
     display: none;
   }

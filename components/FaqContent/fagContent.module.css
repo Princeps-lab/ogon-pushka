@@ -1,4 +1,3 @@
-
 .faq {
   width: 75%;
   margin: 8rem auto auto;
@@ -45,4 +44,26 @@
   width: 50%;
   margin-top: 2rem;
   padding-right: 2.5rem;
+}
+
+@media ( max-width:599px ) {
+  .faq {
+    padding: 4.5rem 1.2rem;
+    margin: 0;
+    width: 100%;
+  }
+
+  .faq h2 {
+    font-size: 1.6rem;
+  }
+
+  .section h3 {
+    margin-bottom: 0;
+  }
+
+  .blocks div {
+    width: 100%;
+    padding-right: 0rem;
+    margin-top: 1.2rem;
+  }
 }

@@ -48,14 +48,13 @@
 
 @media ( max-width:599px ) {
   .contact {
-
-    padding: 4.5rem 2rem;
+    padding: 4.5rem 1.2rem;
     height: auto;
     margin-bottom: 4rem;
   }
 
   .contact h2 {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 
   .contact p {
