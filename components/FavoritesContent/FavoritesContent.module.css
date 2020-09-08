@@ -124,4 +124,31 @@ div.img {
     margin-bottom: .4rem;
   }
 
+  div.img {
+    width: 100%;
+    height: 26rem;
+    margin-bottom: 2rem;
+    margin-right: 0;
+  }
+
+  .favList {
+    align-items: start;
+    flex-direction: column;
+
+  }
+
+  .product {
+    flex-direction: column;
+    margin-top: 3rem;
+    flex-grow: 1;
+    padding-bottom: 3rem;
+    margin-right: 0rem;
+    max-width: 100%;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .iconsProduct {
+    margin-top: 1.2rem;
+  }
 }
