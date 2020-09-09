@@ -1,9 +1,8 @@
-
 .about {
   margin-top: 4rem;
-  height: 75vh;
+  height: 100%;
   width: 100%;
-  padding: 10% 0 0 20%;
+  padding: 10% 40px 6rem 20%;
 }
 
 .about h2 {

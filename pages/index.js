@@ -9,6 +9,7 @@ import MainCatalog from '../components/MainCatalog';
 import SocialBlock from '../components/SocialBlock';
 import MobSocial from '../components/MobSocial';
 import MobExtra from '../components/MobExtra/index.js';
+import VideoPlayer from '../components/VideoPlayer/index.js';
 
 
 
@@ -23,7 +24,7 @@ const App = () => {
       </Head>
       <Main/>
       { context.desktop ? <Extra /> : <MobExtra/> }
-      <Description />
+      <VideoPlayer />
       { context.desktop ? <MainCatalog /> : <MobExtra /> }
       { context.desktop ? <Description /> : <Description /> }
       { context.desktop ? <SocialBlock /> : <MobSocial /> }
