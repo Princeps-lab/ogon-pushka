@@ -174,6 +174,18 @@ div.heart svg {
   border: 1px solid black;
 }
 
+.slides {
+  margin-bottom: 1rem;
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+
+.imgProductSlide {
+  height: 100%;
+  width: 100%;
+}
+
 @media (max-width: 599px) {
   .galery {
     display: none;

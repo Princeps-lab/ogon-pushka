@@ -4,10 +4,7 @@ import SwiperCore, { Navigation } from 'swiper';
 
 import Button from '../Button';
 
-import './SimpleSlider.module.css';
-
 SwiperCore.use([Navigation]);
-
 import style from './SimpleSlider.module.css';
 
 const ItemSlider = ({url, title}) => {
@@ -20,7 +17,6 @@ const ItemSlider = ({url, title}) => {
     </div>
   );
 };
-
 const SimpleSlider = ({slidesPerView = 4}) => {
   return (
     <Swiper
@@ -51,7 +47,7 @@ const SimpleSlider = ({slidesPerView = 4}) => {
         <ItemSlider url="/images/extraLeft.jpg" title="Paragraphs" />
       </SwiperSlide>
     </Swiper>
-  )
-}
+  );
+};
 
 export default SimpleSlider;

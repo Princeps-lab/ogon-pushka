@@ -3,6 +3,7 @@ import style from './ProductContent.module.css';
 
 import { ProductsContext } from '../../context/context.js';
 import React, { useContext } from 'react';
+import SliderProduct from './SliderProduct';
 
 import MobExtra from '../MobExtra';
 
@@ -73,9 +74,7 @@ const ProductContent = ({product}) => {
         <ItemGalery url='/images/product/Pro4.jpg' />
       </div>
 
-      {
-        store.desktop ? null : <MobExtra />
-      }
+      {store.desktop ? null : <SliderProduct product={product} />}
 
       <div className={style.description}>
         <div className={style.title}>
