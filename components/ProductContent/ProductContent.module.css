@@ -181,6 +181,8 @@ div.heart svg {
   .product {
     margin-top: 0rem;
     padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
   }
   .description {
     width: 100%;

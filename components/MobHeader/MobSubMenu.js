@@ -3,13 +3,15 @@ import styles from './mobHeader.module.css';
 import Link from 'next/link';
 import products from '../../api/api';
 
-const ItemSub = ({list, title}) => {
+const ItemSub = ({list, title, setShow}) => {
   return (
     <>
       <div className={styles.titleSubItem}>
         {title}
       </div>
-      <div className={styles.links}>
+      <div 
+        onClick={() => setShow()}
+        className={styles.links}>
         {
           list.map((item) => {
             return <Link as={`/catalog/${item.id}`}
@@ -26,9 +28,8 @@ const MobSubMenu = ({setShow}) => {
   const listMenu = products.map(list => {
     return (
       <div
-        onClick={() => setShow()}
         key={list.id} className={styles.subItem}>
-        <ItemSub title={list.title} list={list.categories} />
+        <ItemSub setShow={setShow} title={list.title} list={list.categories} />
       </div>
     )
   })

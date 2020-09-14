@@ -4,6 +4,8 @@ import style from './ProductContent.module.css';
 import { ProductsContext } from '../../context/context.js';
 import React, { useContext } from 'react';
 
+import MobExtra from '../MobExtra';
+
 const ItemGalery = ({url}) => {
   return (
     <div  style={{"background" : `url(${url}) center / cover`}}></div>
@@ -70,6 +72,10 @@ const ProductContent = ({product}) => {
         <ItemGalery url='/images/product/Pro3.jpg' />
         <ItemGalery url='/images/product/Pro4.jpg' />
       </div>
+
+      {
+        store.desktop ? null : <MobExtra />
+      }
 
       <div className={style.description}>
         <div className={style.title}>
