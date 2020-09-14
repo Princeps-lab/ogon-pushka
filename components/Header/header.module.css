@@ -17,6 +17,10 @@
   margin-left: 40px;
 }
 
+.basketBtn, .delivery, div.img, .description, .product, .basket > div {
+  flex-shrink: 0;
+}
+
 .headerNav a {
   color: #361515;
   text-transform: uppercase;
@@ -160,6 +164,7 @@ div.img {
   align-items: center;
   font-size: .8rem;
   margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 
 .delivery {
