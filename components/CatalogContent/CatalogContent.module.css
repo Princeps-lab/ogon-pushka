@@ -46,7 +46,7 @@
 
 .items > a {
   width: 50%;
-  height: 500px;
+  height: 90vh;
   border: 1px solid #fff;
 }
 
@@ -55,6 +55,9 @@
 }
 
 @media ( max-width:599px ) {
+  .items > a {
+    height: 500px;
+  }
   .catalog {
     padding-top: 3.5rem;
   }

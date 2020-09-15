@@ -206,6 +206,16 @@ div.img {
   color: #141414;
 }
 
+.sum {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  color: #141414;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
 @media ( max-width:599px ) {
   .iconsItem {
     display: none;

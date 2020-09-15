@@ -186,6 +186,13 @@ div.heart svg {
   width: 100%;
 }
 
+.descriptionProduct {
+  font-size: 1rem;
+  padding: 0;
+  margin-top: 1.6rem;
+  color: #141414;
+}
+
 @media (max-width: 599px) {
   .galery {
     display: none;
@@ -202,5 +209,8 @@ div.heart svg {
   }
   .nav {
     font-size: .6rem;
+  }
+  .descriptionProduct {
+    font-size: .7rem;
   }
 }

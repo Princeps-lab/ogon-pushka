@@ -3,6 +3,7 @@ import React, {useContext, useState, useEffect} from 'react';
 import Link from 'next/link';
 
 import style from "./header.module.css";
+import BuyForm from '../BuyForm/index.js';
 
 const ProductItem = ({product, deleteProduct, addFavor, deleteFavor}) => {
   const {url} = product.color;
@@ -63,7 +64,6 @@ const ProductItem = ({product, deleteProduct, addFavor, deleteFavor}) => {
 };
 
 const Basket = () => {
-
   const store = useContext(ProductsContext);
   const products = store.products.map(product => <ProductItem
       deleteProduct={store.deleteProduct}
@@ -92,8 +92,12 @@ const Basket = () => {
     } 
   };
 
+
   return (
     <div className={style.icons}>
+      {
+        store.showForm ? <BuyForm/> : null
+      }
       <div className={style.iconsItem}>
         <div>
           <Link href="/favorites">
@@ -128,10 +132,18 @@ const Basket = () => {
         }
 
         {products}
+        
+        {
+          products.length ?
+          <div className={style.sum}>
+            <div>Всего :</div>
+            <div>{store.sum} грн</div>
+          </div> : null
+        }
 
         {
           products.length ?
-          <div className={style.basketBtn}>
+          <div onClick={() => store.setShowForm(true)} className={style.basketBtn}>
             Оформить
           </div> : null
         }

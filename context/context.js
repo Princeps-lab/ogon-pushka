@@ -5,6 +5,8 @@ const ProductsContext = createContext();
 
 const Context = ({children}) => {
 
+  const [showForm, setShowForm] = useState(false);
+  const [ sum, setSum ] = useState(0);
   const { width } = useWindowDimensions();
   const [ products, setProducts ] = useState([]);
   const [ favorites, setFvorites ] = useState([]);
@@ -32,6 +34,14 @@ const Context = ({children}) => {
     width > 599 ? setDesctop(true) : setDesctop(false);
   }, [width]);
 
+  useEffect(() => {
+    let count = 0;
+    products.forEach(item => {
+      count = count + item.price;
+    })
+    setSum(count)
+  }, [products]);
+
   return (
     <ProductsContext.Provider value={{
       products: products,
@@ -44,6 +54,9 @@ const Context = ({children}) => {
       favorites,
       deleteFavor,
       desktop,
+      sum,
+      showForm,
+      setShowForm
     }}>
       {children}
     </ProductsContext.Provider>
