@@ -5,7 +5,7 @@ import { ProductsContext } from '../../context/context.js';
 import React, { useContext } from 'react';
 import SliderProduct from './SliderProduct';
 
-import MobExtra from '../MobExtra';
+import Link from 'next/link';
 
 const ItemGalery = ({url}) => {
   return (
@@ -78,6 +78,7 @@ const ProductContent = ({product}) => {
       {store.desktop ? null : <SliderProduct product={product} />}
 
       <div className={style.description}>
+        
         <div className={style.title}>
           <h3>{product.title}</h3>
           <span>{product.price}₴</span>
@@ -99,16 +100,23 @@ const ProductContent = ({product}) => {
         <div>
           <Select changeSize = {(size) => {
               setSize(size);
-              console.log(size);
               }} sizes={product.size} />
         </div>
 
         <div className={style.groupBtn}>
+
           {
             !buyed ?
-            <div className={style.buy}>
-              Купить в один клик
-            </div> : null
+            <div onClick={() => {
+              store.addProduct(productBuyed);
+            }} className={style.buy}>
+              <Link href="/buy">
+                <a>
+                    Купить в один клик
+                </a>
+              </Link>
+            </div>
+            : null
           }
 
           {
@@ -116,11 +124,14 @@ const ProductContent = ({product}) => {
             <div onClick={() => {
               store.addProduct(productBuyed);
               setBuyed(true);
-            }} className={style.basket}>
+              }} className={style.basket}>
               В корзину
-            </div> : 
+            </div> :
             <div
-              onClick={() => store.setShow(true)}
+              onClick={() => {
+                store.setShow(true);
+                setBuyed(false);
+              }}
               style={{'width' : "100%"}} className={style.basket}>
               Добавлено корзину
             </div>

@@ -35,11 +35,9 @@ const Context = ({children}) => {
   }, [width]);
 
   useEffect(() => {
-    let count = 0;
-    products.forEach(item => {
-      count = count + item.price;
-    })
-    setSum(count)
+    const count = products.reduce((sum, item) => sum + item.price, 0)
+    console.log(count);
+    setSum(count);
   }, [products]);
 
   return (
@@ -55,6 +53,7 @@ const Context = ({children}) => {
       deleteFavor,
       desktop,
       sum,
+      setSum,
       showForm,
       setShowForm
     }}>

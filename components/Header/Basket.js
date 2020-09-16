@@ -143,8 +143,12 @@ const Basket = () => {
 
         {
           products.length ?
-          <div onClick={() => store.setShowForm(true)} className={style.basketBtn}>
-            Оформить
+          <div className={style.basketBtn}>
+            <Link href="/form">
+              <a onClick={() => store.setShow(false)}>
+                Оформить
+              </a>
+            </Link>
           </div> : null
         }
 
