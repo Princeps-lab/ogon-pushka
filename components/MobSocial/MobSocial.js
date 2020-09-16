@@ -4,11 +4,11 @@ import SwiperCore, { Navigation } from 'swiper';
 SwiperCore.use([Navigation]);
 import style from './mobSocial.module.css';
 
-const SocialItem = ({url, title}) => {
+const SocialItem = ({url, title, href}) => {
   return (
-    <div className={style.socialItem} style={{"background" : `url(${url}) no-repeat center / cover` }}>
+    <a  href={href} className={style.socialItem} style={{"background" : `url(${url}) no-repeat center / cover` }}>
       {title}
-    </div>
+    </a>
   )
 };
 
@@ -19,15 +19,15 @@ const MobSocial = () => {
       slidesPerView={1}
       >
         <SwiperSlide>
-          <SocialItem url="/images/item1.jpg" title="FACEBOOK" />
+          <SocialItem href="https://fb.me/ogonpushka" url="/images/item1.jpg" title="FACEBOOK" />
         </SwiperSlide>
 
         <SwiperSlide>
-          <SocialItem url="/images/item2.jpg" title="INSTAGRAM" />
+          <SocialItem  href="https://www.instagram.com/ogonpushka" url="/images/item2.jpg" title="INSTAGRAM" />
         </SwiperSlide>
 
         <SwiperSlide>
-          <SocialItem url="/images/item3.jpg" title="TIK TOK" />
+          <SocialItem href="https://www.tiktok.com/@ogonpushka" url="/images/item3.jpg" title="TIK TOK" />
         </SwiperSlide>
       </Swiper>
     </div>

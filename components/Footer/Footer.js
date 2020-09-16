@@ -53,13 +53,13 @@ const Footer = () => {
           <div>
             <div className={styles.socialLinksTitle}>Социальные сети:</div>
             <div className={styles.socialLinksList}>
-              <a href="@pushka_ogon">
+              <a href="https://teleg.run/pushka_ogon">
                 <img src="/icons/Telegram/white.svg" alt="telegram"/>
               </a>
-              <a href="tiktok.com/@ogonpushka">
+              <a href="https://www.tiktok.com/@ogonpushka">
                 <img src="/icons/TikTok/white.svg" alt="tik-tok"/>
               </a>
-              <a href="https://www.instagram.com/ogonpushka/">
+              <a href="https://www.instagram.com/ogonpushka">
                 <img  src="/icons/Instagram/white.svg" alt="instagram"/>
               </a>
               <a href="https://fb.me/ogonpushka">
