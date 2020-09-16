@@ -83,6 +83,10 @@ label {
 	color: #151515;
 }
 
+input, textarea{
+	-webkit-appearance: none;
+} 
+
 /* RESET END */
 
 @media ( max-width:1440px ) {
