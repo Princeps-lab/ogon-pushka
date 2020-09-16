@@ -22,10 +22,12 @@ const validate = values => {
   if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email) && values.email.length !== 0) {
     errors.email = 'Введите правильный e-mail (например, imya@gmail.com)';
   }
-
+  
+  const num = values.phone.replace(/[^0-9]/g, '');
+  const arr = num.split('');
   if (!values.phone) {
     errors.phone = 'Это обязательное поле.';
-  } else if (values.phone.length != 14) {
+  } else if (arr.length != 10) {
     errors.phone = 'Проверьте формат номера мобильного телефона';
   }
 
