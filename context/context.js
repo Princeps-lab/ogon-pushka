@@ -1,6 +1,8 @@
 import React, {createContext,useState, useEffect} from 'react';
 import useWindowDimensions from './useWindowDimensions';
+import apiProducts from '../api/apiProducts';
 
+const api = new apiProducts();
 const ProductsContext = createContext();
 
 const Context = ({children}) => {
@@ -11,6 +13,10 @@ const Context = ({children}) => {
   const [ products, setProducts ] = useState([]);
   const [ favorites, setFvorites ] = useState([]);
   const [ desktop, setDesctop ] = useState(false);
+  const [ funcCategories, setFuncCategories ] = useState([]);
+  const [ allProducts, setAllProducts ] = useState([]);
+  const [ categories, setCategories] = useState([]);
+
 
   const addProduct = (product) => {
     const arr = products.filter(item => product.id !== item.id);
@@ -36,9 +42,28 @@ const Context = ({children}) => {
 
   useEffect(() => {
     const count = products.reduce((sum, item) => sum + item.price, 0)
-    console.log(count);
     setSum(count);
   }, [products]);
+
+  useEffect(() => {
+    api.getFunctionCategories().then(funcCategories => {
+      setFuncCategories(funcCategories);
+    });
+  }, []);
+
+  useEffect(() => {
+    api.getProducts().then(products => {
+      setAllProducts(products);
+      console.log(products);
+    });
+  }, []);
+
+  useEffect(() => {
+    api.getCategories().then(categories => {
+      setCategories(categories);
+      console.log(categories)
+    });
+  }, []);
 
   return (
     <ProductsContext.Provider value={{
@@ -55,7 +80,10 @@ const Context = ({children}) => {
       sum,
       setSum,
       showForm,
-      setShowForm
+      setShowForm,
+      funcCategories,
+      allProducts,
+      categories
     }}>
       {children}
     </ProductsContext.Provider>

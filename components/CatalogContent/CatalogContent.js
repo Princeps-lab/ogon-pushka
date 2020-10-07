@@ -1,10 +1,12 @@
-import {useEffect, useState} from 'react';
+import {useContext, useEffect, useState} from 'react';
 import Link from 'next/link';
-
 import CatalogItem from '../CatalogItem';
 import style from './CatalogContent.module.css';
+import { ProductsContext } from '../../context/context.js';
+import apiProducts from '../../api/apiProducts';
 
 
+const apiCategorie = new apiProducts();
 const NavItem = ({arr, title}) => {
   return (
     <div>
@@ -18,7 +20,7 @@ const NavItem = ({arr, title}) => {
             <a>
               <span
               className={style.link}>
-              {item.title}</span>
+              {item.name}</span>
             </a>
           </Link>
         )
@@ -27,42 +29,46 @@ const NavItem = ({arr, title}) => {
   )
 };
 
-const CatalogContent = ({idCategorie, api}) => {
-
+const CatalogContent = ({idCategorie}) => {
+  const store = useContext(ProductsContext);
+  const categories = store.funcCategories;
   const [ products, setProducts ] = useState([]);
-  const arrProduct = [...api[0].categories, ...api[1].categories, ...api[2].categories];
 
   useEffect(() => {
-    console.log(idCategorie)
-    if (idCategorie) {
-      const arr = arrProduct[idCategorie].products.map((product) => {
-        return (
-          <Link
-            as={`/product/${product.id}`}
-            key={product.id}
-            href={'/product/[productId]'}>
-            <a onClick={() => localStorage.setItem('parentId', `${product.parentId}`)}>
-              <CatalogItem
-              textBtn="Купить"
-              title={product.title}
-              url={product.url} />
-            </a>
-          </Link>
-        )
-      });
-
-      setProducts(arr);
+    console.log(store.categories)
+    
+    if(store.categories.length) {
+      apiCategorie.getCategorie(idCategorie).then(categorie => {
+        const arr = categorie.products.map((product) => {
+          return (
+            <Link
+              as={`/product/${product.id}`}
+              key={product.id}
+              href={'/product/[productId]'}>
+              <a onClick={() => localStorage.setItem('parentId', `${product.parentId}`)}>
+                <CatalogItem
+                textBtn="Купить"
+                title={product.title}
+                url={product.url} />
+              </a>
+            </Link>
+          )
+        });
+        setProducts(arr);
+      })
     }
-  }, [idCategorie]);
+
+
+  }, [idCategorie, store.categories]);
 
   return (
     <div className={style.catalog}>
       <div className={style.nav} >
         {
-          api.map(item => {
+          categories.map(item => {
             return <NavItem
                     arr={item.categories}
-                    title={item.title}
+                    title={item.name}
                     key={item.id}/>
           })
         }

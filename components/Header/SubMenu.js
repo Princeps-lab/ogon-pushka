@@ -1,7 +1,7 @@
-
+import React, {useContext} from 'react';
 import styles from './submenu.module.css';
 import Link from 'next/link';
-import products from '../../api/api';
+import { ProductsContext } from '../../context/context.js';
 
 const ItemSub = ({list, title}) => {
   return (
@@ -13,7 +13,7 @@ const ItemSub = ({list, title}) => {
         {
           list.map((item) => {
             return <Link as={`/catalog/${item.id}`}
-            href={`/catalog/[categorieID]`} key={item.id}><a>{item.title}</a></Link>
+            href={`/catalog/[categorieID]`} key={item.id}><a>{item.name}</a></Link>
           })
         }
       </div>
@@ -23,10 +23,12 @@ const ItemSub = ({list, title}) => {
 
 const SubMenu = ({isShown}) => {
 
-  const listMenu = products.map(list => {
+  const store = useContext(ProductsContext);
+
+  const listMenu = store.funcCategories.map(list => {
     return (
       <div key={list.id} className={styles.subItem}>
-        <ItemSub title={list.title} list={list.categories} />
+        <ItemSub title={list.name} list={list.categories} />
       </div>
     )
   })
