@@ -14,8 +14,6 @@ const ItemGalery = ({url}) => {
 };
 
 const Select = ({sizes, changeSize}) => {
-
-  let maxId = 0;
   const [ select, setSelect] = useState(sizes[0]);
   const [ show, setShow ] = useState(false);
 
@@ -23,7 +21,7 @@ const Select = ({sizes, changeSize}) => {
     <div className={style.select}
       onMouseLeave={() => setShow(false)}>
       <div onClick={() => setShow(!show)} className={style.selecTtitle}>
-        <span>{select}</span>
+        <span>{select.name}</span>
         <div>
           <svg width="12" height="6" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fillRule="evenodd" clipRule="evenodd" d="M6.81475 0.1875C6.55375 -0.0625 6.13075 -0.0625 5.86875 0.1875L3.50475 2.4475L1.14075 0.1875C0.87975 -0.0625 0.45675 -0.0625 0.19575 0.1875C-0.06525 0.4375 -0.06525 0.8415 0.19575 1.0915L3.03275 3.8035C3.29375 4.0515 3.71675 4.0515 3.97775 3.8035L6.81475 1.0915C7.07575 0.8415 7.07575 0.4375 6.81475 0.1875Z" fill="#999"/>
@@ -35,12 +33,11 @@ const Select = ({sizes, changeSize}) => {
         <div className={style.list}>
           {
             sizes.map(item => {
-              maxId++
               return <div onClick={() => {
                 setShow(false);
                 setSelect(item);
                 changeSize(item);
-              }} key={maxId}>{item}</div>
+              }} key={item.id}>{item.name}</div>
             })
           }
         </div> : null
@@ -54,7 +51,7 @@ const ProductContent = ({product}) => {
   const [descriptionShow, setDescriptionShow] = useState(false);
   const [ buyed, setBuyed ] = useState(false);
   const [ color, setColor ] = useState(product.colors[0]);
-  const [ size, setSize ] = useState(product.size[0]);
+  const [ size, setSize ] = useState(product.sizes[0].name);
   const [favoriteAction, setFavoriteAction] = useState(false);
 
   const productBuyed = {
@@ -69,10 +66,9 @@ const ProductContent = ({product}) => {
   return (
     <div className={style.product}>
       <div className={style.galery}>
-        <ItemGalery url='/images/product/Pro1.jpg' />
-        <ItemGalery url='/images/product/Pro2.jpg' />
-        <ItemGalery url='/images/product/Pro3.jpg' />
-        <ItemGalery url='/images/product/Pro4.jpg' />
+        {product.images.map(item => {
+          return <ItemGalery key={item.id} url={item.formats.medium.url} />
+        })}
       </div>
 
       {store.desktop ? null : <SliderProduct product={product} />}
@@ -98,9 +94,7 @@ const ProductContent = ({product}) => {
         </div>
 
         <div>
-          <Select changeSize = {(size) => {
-              setSize(size);
-              }} sizes={product.size} />
+          <Select changeSize = {(size) => { setSize(size) }} sizes={product.sizes} />
         </div>
 
         <div className={style.groupBtn}>

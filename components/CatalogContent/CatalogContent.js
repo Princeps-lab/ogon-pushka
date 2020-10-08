@@ -7,6 +7,7 @@ import apiProducts from '../../api/apiProducts';
 
 
 const apiCategorie = new apiProducts();
+
 const NavItem = ({arr, title}) => {
   return (
     <div>
@@ -34,10 +35,8 @@ const CatalogContent = ({idCategorie}) => {
   const categories = store.funcCategories;
   const [ products, setProducts ] = useState([]);
 
-  useEffect(() => {
-    console.log(store.categories)
-    
-    if(store.categories.length) {
+  useEffect(() => {    
+    if (store.categories.length) {
       apiCategorie.getCategorie(idCategorie).then(categorie => {
         const arr = categorie.products.map((product) => {
           return (
@@ -45,11 +44,11 @@ const CatalogContent = ({idCategorie}) => {
               as={`/product/${product.id}`}
               key={product.id}
               href={'/product/[productId]'}>
-              <a onClick={() => localStorage.setItem('parentId', `${product.parentId}`)}>
+              <a onClick={() => localStorage.setItem('parentId', `${idCategorie}`)}>
                 <CatalogItem
-                textBtn="Купить"
-                title={product.title}
-                url={product.url} />
+                  textBtn="Купить"
+                  title={product.title}
+                  url={product.images[0].formats.medium.url} />
               </a>
             </Link>
           )
@@ -57,8 +56,6 @@ const CatalogContent = ({idCategorie}) => {
         setProducts(arr);
       })
     }
-
-
   }, [idCategorie, store.categories]);
 
   return (
