@@ -1,12 +1,18 @@
 import style from './CatalogItem.module.css';
-import Button from '../Button';
 
-const CatalogItem = ({url, title, textBtn = "Подробнее"}) => {
+
+const CatalogItem = ({url, title, price}) => {
   return(
-    <div className={style.catalogItem} style={{"background" : `url(${url}) center / cover`}}>
-      <div className={style.button}>
-        <div className={style.itemTitle}>{title}</div>
-        <Button text={textBtn} />
+    <div className={style.catalogItem}>
+      <div style={{"background" : `url(${url}) center / cover`,
+      "height" :"100%", "position": "relative"}}>
+      </div>
+      <div className={style.title}>
+        <div className={style.name}>
+          <div className={style.itemTitle}>{title}</div>
+          <img src="/icons/basket.svg"></img>
+        </div>
+        <div className={style.itemTitle}>{price}.грн</div>
       </div>
     </div>
   )

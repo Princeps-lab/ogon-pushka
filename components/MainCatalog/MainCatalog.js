@@ -1,6 +1,6 @@
 import SimpleSlider from '../SimpleSlider';
-import CatalogItem from '../CatalogItem';
 import style from './mainCatalog.module.css';
+import Button from '../Button';
 
 const Left = () => {
   return (
@@ -14,11 +14,22 @@ const Left = () => {
   )
 };
 
+const ItemSlider = ({url, title}) => {
+  return (
+    <div className={style.catalogItem} style={{"background" : `url(${url}) center / cover`}}>
+      <div className={style.button}>
+        <div className={style.itemTitle}>{title}</div>
+        <Button text="Подробнее" />
+      </div>
+    </div>
+  );
+};
+
 const Right = () => {
   return(
     <div className={style.right}>
-      <CatalogItem url="/images/extraLeft.jpg" title="Paragraphs" />
-      <CatalogItem url="/images/extraRight.jpg" title="Paragraphs"/>
+      <ItemSlider url="/images/extraLeft.jpg" title="Paragraphs" />
+      <ItemSlider url="/images/extraRight.jpg" title="Paragraphs"/>
     </div>
   )
 };

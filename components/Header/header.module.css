@@ -46,6 +46,12 @@
   margin-right: 16px;
 }
 
+.icons .iconsItem a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .basketOff {
   transform: translate(100%, 0);
 }
@@ -90,7 +96,7 @@
 }
 
 .iconsItem div {
-  width: 26px;
+  width: 20px;
   display: flex;
   align-items: center;
 }

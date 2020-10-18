@@ -48,10 +48,11 @@ const Select = ({sizes, changeSize}) => {
 
 const ProductContent = ({product}) => {
   const store = useContext(ProductsContext);
+  const defofltSize = product.sizes.length ? product.sizes[0].name : null
   const [descriptionShow, setDescriptionShow] = useState(false);
   const [ buyed, setBuyed ] = useState(false);
   const [ color, setColor ] = useState(product.colors[0]);
-  const [ size, setSize ] = useState(product.sizes[0].name);
+  const [ size, setSize ] = useState(defofltSize);
   const [favoriteAction, setFavoriteAction] = useState(false);
 
   const productBuyed = {
@@ -94,7 +95,10 @@ const ProductContent = ({product}) => {
         </div>
 
         <div>
-          <Select changeSize = {(size) => { setSize(size) }} sizes={product.sizes} />
+          {
+            product.sizes.length ? 
+            <Select changeSize = {(size) => { setSize(size) }} sizes={product.sizes} /> : null
+          }
         </div>
 
         <div className={style.groupBtn}>
@@ -105,9 +109,7 @@ const ProductContent = ({product}) => {
               store.addProduct(productBuyed);
             }} className={style.buy}>
               <Link href="/buy">
-                <a>
-                    Купить в один клик
-                </a>
+                <a>Купить в один клик</a>
               </Link>
             </div>
             : null

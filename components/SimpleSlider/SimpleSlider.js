@@ -17,6 +17,7 @@ const ItemSlider = ({url, title}) => {
     </div>
   );
 };
+
 const SimpleSlider = ({slidesPerView = 4}) => {
   return (
     <Swiper
