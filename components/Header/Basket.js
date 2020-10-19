@@ -6,10 +6,10 @@ import style from "./header.module.css";
 import BuyForm from '../BuyForm/index.js';
 
 const ProductItem = ({product, deleteProduct, addFavor, deleteFavor}) => {
-  const {url} = product.color;
+  const {url} = product.img
   const [itFavor, setItFavor] = useState(null);
   const store = useContext(ProductsContext);
-
+  console.log(product)
   useEffect(() => {
     const arr = store.favorites.filter(favor => favor.id === product.id);
     if(arr.length) {
@@ -36,7 +36,9 @@ const ProductItem = ({product, deleteProduct, addFavor, deleteFavor}) => {
 
         <span className={style.price}>Цена: <span>{product.price} грн</span></span>
         <span>Размер: <span>{product.size}</span></span>
-        <span>Цвет: <span className={style.color} style={{"background" : `#${product.color.colorTitle}`}}/></span>
+        { product.color ?
+          <span>Цвет: <span className={style.color} style={{"background" : `#${product.color.colorTitle}`}}/></span> : null
+        }
         <span>Количество: <span>1</span></span>
 
         <div className={style.iconsProduct}>
@@ -72,7 +74,7 @@ const Basket = () => {
       key={product.id}
       product={product}/>);
 
-
+  console.log(store.products);
   const showOff = () => {
     store.setShow(false);
     if(!store.desktop) {
@@ -91,7 +93,6 @@ const Basket = () => {
       body.style.position = 'fixed';
     } 
   };
-
 
   return (
     <div className={style.icons}>

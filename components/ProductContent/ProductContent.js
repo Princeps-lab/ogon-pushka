@@ -61,7 +61,8 @@ const ProductContent = ({product}) => {
     id: product.id,
     color,
     size,
-    favoriteAction
+    favoriteAction,
+    img: product.images[0].formats.medium
   };
 
   return (
