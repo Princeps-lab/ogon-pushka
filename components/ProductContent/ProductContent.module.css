@@ -20,13 +20,16 @@
 .description {
   width: 25%;
   background-color: #fff;
-  padding: 5rem 2.5rem;
+  padding: 3rem 2.5rem;
   display: flex;
   flex-direction: column;
 }
 
 .title {
   width: 100%;
+}
+
+.title div {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,6 +39,11 @@
   font-size: 1rem;
   font-weight: bold;
   color: #141414;
+}
+
+.title span {
+  font-size: .8rem;
+  margin-top: 1rem;
 }
 
 .article {
@@ -49,14 +57,20 @@
 
 .colors {
   display: flex;
+  margin-bottom: 1rem;
 }
 
-.colors div {
+.colors > div {
+  margin-right: 1rem;
+  transition: all .3s;
+}
+
+.colorBlock {
   width: 1.5rem;
   height: 1.5rem;
-  margin-right: 1rem;
   cursor: pointer;
   transition:  all .3s;
+  border: 1px solid #fff;
 }
 
 .select {
@@ -170,8 +184,8 @@ div.heart svg {
 }
 
 .activeColor {
-  transform: translate(0px, -2px);
-  border: 1px solid black;
+  display: flex;
+  border: 1px solid #151515;
 }
 
 .slides {
@@ -187,7 +201,7 @@ div.heart svg {
 }
 
 .descriptionProduct {
-  font-size: 1rem;
+  font-size: .8rem;
   padding: 0;
   margin-top: 1.6rem;
   color: #141414;

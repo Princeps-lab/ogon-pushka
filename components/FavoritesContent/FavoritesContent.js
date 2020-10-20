@@ -43,7 +43,6 @@ const FavItem = ({product, deleteFavor}) => {
 const FavoritesContent = () => {
 
   const store = useContext(ProductsContext);
-  console.log('favorites', store.favorites);
 
   const products = store.favorites.map(product => <FavItem deleteFavor={store.deleteFavor} key={product.id} product={product}/>);
 

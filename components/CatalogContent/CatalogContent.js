@@ -35,7 +35,7 @@ const CatalogContent = ({idCategorie}) => {
   const categories = store.funcCategories;
   const [ products, setProducts ] = useState([]);
 
-  useEffect(() => {    
+  useEffect(() => {
     if (store.categories.length) {
       apiCategorie.getCategorie(idCategorie).then(categorie => {
         const arr = categorie.products.map((product) => {
@@ -49,7 +49,7 @@ const CatalogContent = ({idCategorie}) => {
                   price={product.price}
                   textBtn="Купить"
                   title={product.title}
-                  url={product.images[0].formats.medium.url} />
+                  url={ product.featured_image ? product.featured_image.formats.medium.url : product.images[0].formats.medium.url} />
               </a>
             </Link>
           )

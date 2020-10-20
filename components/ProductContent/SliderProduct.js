@@ -15,8 +15,6 @@ const SliderProduct = ({product}) => {
       </SwiperSlide>
     )
   });
-  
-  console.log(product)
   return (
     <div className={style.slides}>
       <Swiper

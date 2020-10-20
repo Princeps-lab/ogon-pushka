@@ -48,7 +48,7 @@ const Select = ({sizes, changeSize}) => {
 
 const ProductContent = ({product}) => {
   const store = useContext(ProductsContext);
-  const defofltSize = product.sizes.length ? product.sizes[0].name : null
+  const defofltSize = product.sizes.length ? product.sizes[0] : null
   const [descriptionShow, setDescriptionShow] = useState(false);
   const [ buyed, setBuyed ] = useState(false);
   const [ color, setColor ] = useState(product.colors[0]);
@@ -59,11 +59,13 @@ const ProductContent = ({product}) => {
     title: product.title,
     price: product.price,
     id: product.id,
-    color,
+    color: color ? color.name : null,
     size,
     favoriteAction,
-    img: product.images[0].formats.medium
+    img: product.featured_image ? product.featured_image.formats.medium : product.images[0].formats.medium
   };
+
+  console.log(product);
 
   return (
     <div className={style.product}>
@@ -79,21 +81,32 @@ const ProductContent = ({product}) => {
         
         <div className={style.title}>
           <h3>{product.title}</h3>
-          <span>{product.price}₴</span>
+          <div>
+            <span>Цена</span>
+            <span>{product.price}₴</span>
+          </div>
         </div>
         <div className={style.article}>APT. 67037683-NINETIE2-LM</div>
 
-        <div className={style.colors}>
-          {
-            product.colors ? product.colors.map(colorItem => {
-              return <div
-                onClick={() => setColor(colorItem)}
-                style={{"background" : `#${colorItem.colorTitle}`}}
-                className={ color.id === colorItem.id ? style.activeColor : null }
-                key={colorItem.id} />
-            }) : null
-          }
-        </div>
+        {
+          product.colors ? 
+          <div className={style.colors}>
+            {
+              product.colors ? product.colors.map(colorItem => {
+                const item = colorItem.name ? colorItem.name.toLowerCase() : null;
+                return item ?
+                    <div 
+                      key={colorItem.id}
+                      className={ colorItem.id === color.id ? style.activeColor : null }>
+                      <div
+                        className={style.colorBlock}
+                        onClick={() => setColor(colorItem)}
+                        style={{"background" : `${item === "white" ? "#f3f0f0" : item}`}} />
+                    </div> : null
+              }) : null
+            }
+          </div> : null
+        }
 
         <div>
           {
@@ -180,7 +193,7 @@ const ProductContent = ({product}) => {
         {
           descriptionShow ?
           <div className={style.descriptionProduct}>
-            {product.description ? product.description : 'Lorem Ipsum является текст-заполнитель обычно используется в графических, печать и издательской индустрии для предварительного просмотра макета и визуальных макетах.'}
+            {product.description ? product.description : null}
           </div> : null
         }
 

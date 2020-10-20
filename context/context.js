@@ -54,14 +54,12 @@ const Context = ({children}) => {
   useEffect(() => {
     api.getProducts().then(products => {
       setAllProducts(products);
-      console.log(products);
     });
   }, []);
 
   useEffect(() => {
     api.getCategories().then(categories => {
       setCategories(categories);
-      console.log(categories)
     });
   }, []);
 

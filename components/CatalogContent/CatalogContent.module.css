@@ -48,6 +48,7 @@
   width: 50%;
   height: 90vh;
   border: 1px solid #fff;
+  padding: 1rem;
 }
 
 .items > a > div {

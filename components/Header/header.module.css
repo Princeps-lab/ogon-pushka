@@ -108,7 +108,7 @@
 
 .product {
   display: flex;
-  margin-top: 3rem;
+  margin-top: 2rem;
   width: 100%;
   padding-bottom: 3rem;
   border-bottom: 1px solid #CCCCCC;
@@ -120,11 +120,11 @@ div.img {
   margin-right: 2rem;
 }
 
-.color {
+/* .color {
   width: 1rem;
   height: 1rem;
   border: 1px solid #141414;
-}
+} */
 
 .description {
   display: flex;
@@ -132,12 +132,12 @@ div.img {
   flex-grow: 1;
 }
 
-.description h3 {
+.BasketTitleProduct {
   font-weight: 500;
   color: #151515;
   text-transform: capitalize;
-  margin-bottom: 2rem;
   font-size: 1rem;
+  margin-top: 2rem;
 }
 
 .description span {

@@ -1,17 +1,31 @@
 import Link from 'next/link';
 import style from './CategorisMenu.module.css';
-import CatalogItem from '../CatalogItem';
 import Button from '../Button';
+
+const ItemSlider = ({url, title}) => {
+  return (
+    <div className={style.catalogItem} style={{"background" : `url(${url}) center / cover`}}>
+      <div className={style.button}>
+        <div className={style.itemTitle}>{title}</div>
+        <Button text="Подробнее" />
+      </div>
+    </div>
+  );
+};
 
 const ButtonCategories = ({item}) => {
   return (
       <Link
-      as={`/catalog/${item.id}`}
-      href={`/catalog/[categorieID]`}><a className={style.btnCategories}>{item.title}</a></Link>
+        as={`/catalog/${item.id}`}
+        href={`/catalog/[categorieID]`}>
+        <a className={style.btnCategories}>{item.name}</a>
+      </Link>
   );
 };
 
 const CategoriesMenu = ({arr}) => {
+
+  console.log(arr)
 
   return (
     <div className={style.main}>
@@ -26,8 +40,8 @@ const CategoriesMenu = ({arr}) => {
           }
         </div>
         <div className={style.others}>
-          <CatalogItem url="/images/categories1.jpg" title="Paragraphs" />
-          <CatalogItem url="/images/categories2.jpg" title="Paragraphs" />
+          <ItemSlider url="/images/categories1.jpg" title="Paragraphs" />
+          <ItemSlider url="/images/categories2.jpg" title="Paragraphs" />
         </div>
       </div>
 

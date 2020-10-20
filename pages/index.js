@@ -11,12 +11,8 @@ import MobSocial from '../components/MobSocial';
 import MobExtra from '../components/MobExtra/index.js';
 import VideoPlayer from '../components/VideoPlayer/index.js';
 
-import api from '../api/apiProducts';
-
 const App = () => {
-
   const context = useContext(ProductsContext);
-  console.log(context.desktop);
   return (
     <Layout>
       <Head>
