@@ -11,11 +11,8 @@ const MobHeader = () => {
 
   const store = useContext(ProductsContext);
   const [ showNav, setShowNav ] = useState(false);
-
-
   const showOff = (value) => {
     setShowNav(value);
-
     const body = document.body;
     body.style.overflow = 'visible';
     body.style.position = 'relative';
@@ -30,7 +27,6 @@ const MobHeader = () => {
 
   const showOnBasket = () => {
     store.setShow(true);
-
     if(!store.desktop) {
       const body = document.body;
       body.style.overflow = 'hidden';

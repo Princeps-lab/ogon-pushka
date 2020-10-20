@@ -1,7 +1,9 @@
-import React, { } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './mobHeader.module.css';
 import Link from 'next/link';
-import products from '../../api/api';
+import apiProducts from '../../api/apiProducts';
+
+const api = new apiProducts();
 
 const ItemSub = ({list, title, setShow}) => {
   return (
@@ -15,7 +17,7 @@ const ItemSub = ({list, title, setShow}) => {
         {
           list.map((item) => {
             return <Link as={`/catalog/${item.id}`}
-            href={`/catalog/[categorieID]`} key={item.id}><a>{item.title}</a></Link>
+            href={`/catalog/[categorieID]`} key={item.id}><a>{item.name}</a></Link>
           })
         }
       </div>
@@ -25,11 +27,17 @@ const ItemSub = ({list, title, setShow}) => {
 
 const MobSubMenu = ({setShow}) => {
 
-  const listMenu = products.map(list => {
+  const [ arr, setArr ] = useState([]);
+
+  useEffect(() => {
+    api.getFunctionCategories().then(functions => setArr(functions));
+  }, []);
+
+  const listMenu = arr.map(list => {
     return (
       <div
         key={list.id} className={styles.subItem}>
-        <ItemSub setShow={setShow} title={list.title} list={list.categories} />
+        <ItemSub setShow={setShow} title={list.name} list={list.categories} />
       </div>
     )
   })

@@ -57,7 +57,7 @@
 
 @media ( max-width:599px ) {
   .items > a {
-    height: 500px;
+    height: 700px;
   }
   .catalog {
     padding-top: 3.5rem;

@@ -64,10 +64,7 @@ const CatalogContent = ({idCategorie}) => {
       <div className={style.nav} >
         {
           categories.map(item => {
-            return <NavItem
-                    arr={item.categories}
-                    title={item.name}
-                    key={item.id}/>
+            return <NavItem arr={item.categories} title={item.name} key={item.id}/>
           })
         }
       </div>
