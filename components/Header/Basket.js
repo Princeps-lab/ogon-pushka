@@ -5,7 +5,7 @@ import Link from 'next/link';
 import style from "./header.module.css";
 import BuyForm from '../BuyForm/index.js';
 
-const ProductItem = ({product, deleteProduct, addFavor, deleteFavor}) => {
+const ProductItem = ({product, deleteProduct, addFavor, deleteFavor, favorites}) => {
   const {url} = product.img;
   const [itFavor, setItFavor] = useState(null);
   const store = useContext(ProductsContext);
@@ -25,8 +25,11 @@ const ProductItem = ({product, deleteProduct, addFavor, deleteFavor}) => {
       deleteFavor(product.id);
     }
   }, [itFavor]);
-  
-  console.log(product)
+
+  useEffect(() => {
+    const isFavor = favorites.some((element) => element.id === product.id);
+    isFavor ? setItFavor(true) : setItFavor(false); 
+  }, [favorites]);
 
   return (
     <div>
@@ -79,7 +82,8 @@ const Basket = () => {
       addFavor={store.addFavor}
       deleteFavor={store.deleteFavor}
       key={product.id}
-      product={product}/>);
+      product={product}
+      favorites={store.favorites}/>);
 
   const showOff = () => {
     store.setShow(false);

@@ -1,4 +1,4 @@
-import React, {useContext, useState, useEffect} from 'react'
+import React, {useContext, useState} from 'react'
 import { ProductsContext } from '../../context/context.js';
 import Link from 'next/link';
 
@@ -11,6 +11,7 @@ const MobHeader = () => {
 
   const store = useContext(ProductsContext);
   const [ showNav, setShowNav ] = useState(false);
+
   const showOff = (value) => {
     setShowNav(value);
     const body = document.body;

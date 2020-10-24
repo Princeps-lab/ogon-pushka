@@ -4,7 +4,8 @@ import React, {useContext} from 'react';
 import style from './FavoritesContent.module.css';
 
 const FavItem = ({product, deleteFavor}) => {
-  const {url} = product.color;
+  console.log(product)
+  const {url} = product.img;
 
   return (
     <div className={style.product}>
@@ -13,8 +14,13 @@ const FavItem = ({product, deleteFavor}) => {
         <h3>{product.title}</h3>
 
         <span>Цена: <span>{product.price}</span></span>
-        <span>Размер: <span>{product.size}</span></span>
-        <span>Цвет: <span className={style.color} style={{"background" : `#${product.color.colorTitle}`}}/></span>
+        {
+          product.size ? <span>Размер: <span>{product.size.name}</span></span> : null
+        }
+        {
+          product.color ?
+          <span>Цвет: <span className={style.color} style={{"background" : `#${product.color.colorTitle}`}}/></span> : null
+        }
         <span>Количество: <span>1</span></span>
 
         <div className={style.iconsProduct}>

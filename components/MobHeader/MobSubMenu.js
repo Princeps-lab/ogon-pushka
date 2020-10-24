@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import styles from './mobHeader.module.css';
 import Link from 'next/link';
 import apiProducts from '../../api/apiProducts';
 
 const api = new apiProducts();
 
-const ItemSub = ({list, title, setShow}) => {
+const ItemSub = ({list, title, setShow, store}) => {
   return (
     <>
       <div className={styles.titleSubItem}>

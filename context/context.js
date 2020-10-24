@@ -7,7 +7,7 @@ const ProductsContext = createContext();
 
 const Context = ({children}) => {
 
-  const [showForm, setShowForm] = useState(false);
+  const [ showForm, setShowForm] = useState(false);
   const [ sum, setSum ] = useState(0);
   const { width } = useWindowDimensions();
   const [ products, setProducts ] = useState([]);
@@ -16,25 +16,38 @@ const Context = ({children}) => {
   const [ funcCategories, setFuncCategories ] = useState([]);
   const [ allProducts, setAllProducts ] = useState([]);
   const [ categories, setCategories] = useState([]);
-
+  const [basketShow, setShow] = useState(false);
 
   const addProduct = (product) => {
     const arr = products.filter(item => product.id !== item.id);
+    const arrLocals = JSON.stringify([...arr, product]);
+    localStorage.products = arrLocals;
     setProducts([...arr, product]);
   };
 
-  const [basketShow, setShow] = useState(false);
-
-  const deleteProduct = (id) => setProducts(products.filter(item => item.id !== id));
+  const deleteProduct = (id) => {
+    const newArr = products.filter(item => item.id !== id);
+    setProducts([...newArr]);
+    localStorage.products = JSON.stringify(newArr);
+  }
 
   const addFavor = (product) => {
-    const arr = products.filter(item => product.id !== item.id);
+    const arr = favorites.filter(item => product.id !== item.id);
+    const arrLocals = JSON.stringify([...arr, product]);
+    localStorage.favorites = arrLocals;
     setFvorites([...arr, product]);
   };
 
-  const deleteFavor = (id) => setFvorites(favorites.filter(item => item.id !== id));
+  const deleteFavor = (id) => {
+    const newArr = favorites.filter(item => item.id !== id);
+    setFvorites([...newArr]);
+    localStorage.favorites = JSON.stringify(newArr);
+  };
 
-  const deleteAll = () => setProducts([]);
+  const deleteAll = () => {
+    setProducts([]);
+    localStorage.products = '';
+  };
 
   useEffect(() => {
     width > 599 ? setDesctop(true) : setDesctop(false);
@@ -62,6 +75,15 @@ const Context = ({children}) => {
       setCategories(categories);
     });
   }, []);
+
+  useEffect(() => {
+    setProducts(localStorage.products ? JSON.parse(localStorage.products) : []);
+  }, []);
+
+  useEffect(() => {
+    setFvorites(localStorage.favorites ? JSON.parse(localStorage.favorites) : []);
+  }, []);
+
 
   return (
     <ProductsContext.Provider value={{

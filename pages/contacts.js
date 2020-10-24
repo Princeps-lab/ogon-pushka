@@ -10,6 +10,7 @@ import MobSocial from '../components/MobSocial';
 const Contacts = () => {
 
   const context = useContext(ProductsContext);
+  
   return (
     <Layout>
       <Head>

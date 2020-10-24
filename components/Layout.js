@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 
 import Head from 'next/head'
 import Header from './Header';
@@ -10,12 +10,13 @@ export const siteTitle = 'Ogon Pushka';
 
 const Layout = ({children}) => {
   const store = useContext(ProductsContext);
+
   return (
     <div>
       <Head> 
       <meta
         name="viewport"
-        content="width='device-width', initial-scale=1 maximum-scale=1"/>
+        content=" width=device-width, initial-scale=1 maximum-scale=1"/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       { store.desktop ? <Header /> : <MobHeader /> }
