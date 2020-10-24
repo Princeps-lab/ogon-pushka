@@ -52,7 +52,7 @@ const ProductContent = ({product}) => {
   const [ buyed, setBuyed ] = useState(false);
   const [ color, setColor ] = useState(product.colors[0]);
   const [ size, setSize ] = useState(defofltSize);
-  const [ favoriteAction, setFavoriteAction ] = useState(false);
+  const [ favoriteAction, setFavoriteAction ] = useState(null);
 
   const productBuyed = {
     title: product.title,
@@ -60,7 +60,6 @@ const ProductContent = ({product}) => {
     id: product.id,
     color: color ? color.name : null,
     size,
-    favoriteAction,
     img: product.featured_image ? product.featured_image.formats.medium : product.images[0].formats.medium
   };
 
@@ -72,10 +71,10 @@ const ProductContent = ({product}) => {
 
   useEffect(() => {
     if(favoriteAction) {
-      store.addFavor(product);
+      store.addFavor(productBuyed);
     }
     if (favoriteAction === false){
-      store.deleteFavor(product.id);
+      store.deleteFavor(productBuyed.id);
     }
   }, [favoriteAction]);
 

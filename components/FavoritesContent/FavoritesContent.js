@@ -4,11 +4,11 @@ import React, {useContext} from 'react';
 import style from './FavoritesContent.module.css';
 
 const FavItem = ({product, deleteFavor}) => {
-  console.log(product)
   const {url} = product.img;
 
   return (
     <div className={style.product}>
+      
       <div className={style.img}  style={{"background" : `url(${url}) center / cover`}} />
       <div className={style.description}>
         <h3>{product.title}</h3>

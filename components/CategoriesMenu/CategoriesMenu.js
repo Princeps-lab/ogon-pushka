@@ -25,8 +25,6 @@ const ButtonCategories = ({item}) => {
 
 const CategoriesMenu = ({arr}) => {
 
-  console.log(arr)
-
   return (
     <div className={style.main}>
       <div className={style.leftBlock}>
