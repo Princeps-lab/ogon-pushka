@@ -1,4 +1,3 @@
-
 import style from './ProductContent.module.css';
 import { ProductsContext } from '../../context/context.js';
 import React, { useContext, useEffect, useState } from 'react';
@@ -53,6 +52,8 @@ const ProductContent = ({product}) => {
   const [ color, setColor ] = useState(product.colors[0]);
   const [ size, setSize ] = useState(defofltSize);
   const [ favoriteAction, setFavoriteAction ] = useState(null);
+
+  console.log(product);
 
   const productBuyed = {
     title: product.title,

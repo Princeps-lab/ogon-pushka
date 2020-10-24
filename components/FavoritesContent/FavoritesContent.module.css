@@ -26,16 +26,21 @@
 .product {
   display: flex;
   margin-top: 3rem;
-  flex-grow: 1;
   padding-bottom: 3rem;
-  margin-right: 4rem;
-  max-width: 30%;
+  padding-right: 4rem;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
 }
 
-div.img {
-  width: 240px;
-  height: 340px;
+.img {
+  width: 375px;
+  height: 468px;
   margin-right: 2rem;
+}
+
+.img img {
+  width: 100%;
+  height: 100%;
 }
 
 .color {
@@ -47,6 +52,7 @@ div.img {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  width: 375px;
 }
 
 .description h3 {
@@ -69,6 +75,10 @@ div.img {
   margin-top: auto;
   display: flex;
   justify-content: space-between;
+}
+
+.iconsProduct div:first-child {
+  margin-top: auto;
 }
 
 .iconsProduct svg {
@@ -134,15 +144,13 @@ div.img {
   .favList {
     align-items: start;
     flex-direction: column;
-
   }
 
   .product {
     flex-direction: column;
     margin-top: 3rem;
-    flex-grow: 1;
     padding-bottom: 3rem;
-    margin-right: 0rem;
+    padding-right: 0px;
     max-width: 100%;
     width: 100%;
     border-bottom: 1px solid #ccc;
@@ -150,5 +158,9 @@ div.img {
 
   .iconsProduct {
     margin-top: 1.2rem;
+  }
+
+  .description {
+    width: 100%;
   }
 }

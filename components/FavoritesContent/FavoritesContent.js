@@ -1,7 +1,8 @@
 import { ProductsContext } from '../../context/context.js';
 import React, {useContext} from 'react';
-
+import Link from 'next/link';
 import style from './FavoritesContent.module.css';
+import Button from '../Button';
 
 const FavItem = ({product, deleteFavor}) => {
   const {url} = product.img;
@@ -9,10 +10,9 @@ const FavItem = ({product, deleteFavor}) => {
   return (
     <div className={style.product}>
       
-      <div className={style.img}  style={{"background" : `url(${url}) center / cover`}} />
+      <div className={style.img}><img src={url} alt="Photo"/></div>
       <div className={style.description}>
         <h3>{product.title}</h3>
-
         <span>Цена: <span>{product.price}</span></span>
         {
           product.size ? <span>Размер: <span>{product.size.name}</span></span> : null
@@ -35,10 +35,15 @@ const FavItem = ({product, deleteFavor}) => {
           </div>
 
           <div>
-              <svg
+              {/* <svg
                 style={{"marginLeft": ".5rem", "transform" : "rotate(-90deg)"}} width="19" height="15" viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M15.2019 6.66667L12.5086 3.92259L13.6653 2.74408L18.3333 7.5L13.6653 12.2559L12.5086 11.0774L15.2019 8.33333H4.9076V6.66667H15.2019ZM0 13.3333V1.66667V0H8.17933V1.66667H1.63587V13.3333H8.17933V15H0V13.3333Z" fill="black"/>
-            </svg>
+            </svg> */}
+            <Link 
+              as={`/product/${product.id}`}
+              href={'/product/[productId]'}>
+              <a><Button text="Купить" /></a>
+            </Link>
           </div>
         </div>
       </div>

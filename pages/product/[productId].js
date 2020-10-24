@@ -14,13 +14,15 @@ const Product = () => {
   const [ product, setProduct ] = useState(false);
   const router = useRouter();
   const context = useContext(ProductsContext);
+  const productId = router.query.productId;
 
   useEffect(() => {
-    api.getCategorie(localStorage.parentId).then(categorie => {
-      const productItem = categorie.products.filter(item => item.id == router.query.productId);
-      setProduct(productItem[0]);
-    });
-  }, [router]);
+    if(productId) {
+      api.getProduct(productId).then(product => {
+        setProduct(product);
+      });
+    }
+  }, [productId]);
 
   return (
     <Layout>
