@@ -13,8 +13,10 @@ export default class apiProducts {
   getCategories = () => this.getResourse('categories');
   getFunctionCategories = () => this.getResourse('function-categories');
   getCategorie = (id) => this.getResourse(`categories/${id}`);
-  getProduct = (id) => this.getResourse(`products/${id}`)
+  getProduct = (id) => this.getResourse(`products/${id}`);
+  getFaqs = () => this.getResourse('faqs');
 };
 
 const api = new apiProducts();
 api.getFunctionCategories().then(products => console.log(products));
+api.getFaqs().then(products => console.log(products));
