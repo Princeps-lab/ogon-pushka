@@ -19,13 +19,11 @@ const App = () => {
   const context = useContext(ProductsContext);
   const [ hero, setHero ] = useState();
   const [ extra, setExtra ] = useState();
-  const [ recommended , setRecommended ] = useState();
 
   useEffect(() => {
     api.getHome().then( home => {
       setHero(home.hero);
       setExtra(home.extra);
-      setRecommended(home.recommended);
     });
   }, []);
 
@@ -43,12 +41,7 @@ const App = () => {
         : null
       }
       {extra ? <VideoPlayer url={extra.video_url} /> : null}
-      {
-        recommended ? 
-        <>
-          { context.desktop ? <MainCatalog recomm={recommended} /> : <MobExtra /> }
-        </> : null
-      }
+      { context.desktop ? <MainCatalog /> : <MobExtra /> }
       { context.desktop ? <Description /> : <Description /> }
       { context.desktop ? <SocialBlock /> : <MobSocial /> }
     </Layout>

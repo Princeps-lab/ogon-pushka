@@ -2,6 +2,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation } from 'swiper';
 
+import Link from 'next/link';
 import Button from '../Button';
 
 SwiperCore.use([Navigation]);
@@ -18,35 +19,30 @@ const ItemSlider = ({url, title}) => {
   );
 };
 
-const SimpleSlider = ({slidesPerView = 4}) => {
+const SimpleSlider = ({slidesPerView = 4, products}) => {
+
   return (
     <Swiper
       slidesPerView={slidesPerView}
       navigation
     >
-      <SwiperSlide>
-        <ItemSlider url="/images/catalog/item1.jpg" title="Paragraphs" />
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <ItemSlider url="/images/catalog/item2.jpg" title="Paragraphs"/>
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <ItemSlider url="/images/catalog/item3.jpg" title="Paragraphs" />
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <ItemSlider url="/images/catalog/item4.jpg" title="Paragraphs" />
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <ItemSlider url="/images/catalog/item1.jpg" title="Paragraphs" />
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <ItemSlider url="/images/extraLeft.jpg" title="Paragraphs" />
-      </SwiperSlide>
+      {
+        products ?
+        products.map(product => {
+          return (
+            <SwiperSlide 
+              key={product.id}>
+              <Link
+              as={`/product/${product.id}`}
+              href={'/product/[productId]'}>
+              <a>
+                <ItemSlider url={product.images[0].formats.large.url} title="Paragraphs" />
+              </a>
+            </Link>
+            </SwiperSlide>
+          )
+        }) : null
+      }
     </Swiper>
   );
 };

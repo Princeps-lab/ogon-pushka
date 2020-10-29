@@ -1,7 +1,12 @@
+import { useEffect, useState } from 'react';
 import SimpleSlider from '../SimpleSlider';
 import style from './mainCatalog.module.css';
 import Button from '../Button';
 import Link from 'next/link';
+import apiProduct from '../../api/apiProducts';
+
+const api = new apiProduct();
+
 
 const Left = ({title, description}) => {
   return (
@@ -25,17 +30,19 @@ const ItemSlider = ({url, title}) => {
 
 const Right = ({products}) => {
   const mains = products.map(product => {
-      return (
-        <Link
-          key={product.id}
-          as={`/product/${product.id}`}
-          href={'/product/[productId]'}>
-          <a>
-            <ItemSlider url={product.images[0].formats.large.url} title="Paragraphs" />
-          </a>
-        </Link>
-      )
-    });
+    return (
+      <Link
+        key={product.id}
+        as={`/product/${product.id}`}
+        href={'/product/[productId]'}>
+        <a>
+          <ItemSlider url={product.images[0].formats.large.url} title="Paragraphs" />
+        </a>
+      </Link>
+    )
+  });
+
+
 
   return(
     <div className={style.right}>
@@ -44,17 +51,27 @@ const Right = ({products}) => {
   )
 };
 
-const MainCatalog = ({recomm}) => {
+const MainCatalog = () => {
+
+  const [ recommended ,setRecommended] = useState();
+
+  useEffect(() => {
+    api.getHome().then( home => {
+      setRecommended(home.recommended);
+    });
+  }, []);
+
   return(
-    <div className={style.catalog}>
+    recommended ?
+      <div className={style.catalog}>
       <div className={style.top}>
-        <Left title={recomm.title} description={recomm.description} />
-        <Right products={[recomm.products[0],recomm.products[1]]} />
+        <Left title={recommended.title} description={recommended.description} />
+        <Right products={[recommended.products[0],recommended.products[1]]} />
       </div>
       <div className={style.bottom}>
-        <SimpleSlider />
+        <SimpleSlider products={recommended.products} />
       </div>
-    </div>
+    </div> : null
   );
 };
 
