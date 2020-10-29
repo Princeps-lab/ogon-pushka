@@ -2,14 +2,14 @@ import ReactPlayer from 'react-player'
 
 import style from './VideoPlayer.module.css';
 
-const VideoPlayer = () => {
+const VideoPlayer = ({url}) => {
   return (
     <div className={style.palyerConteiner}>
       <ReactPlayer 
         width='100%'
         height='100%'
         className={style.player}
-        url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
+        url={url} />
     </div>
   )
 };

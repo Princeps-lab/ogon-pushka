@@ -25,7 +25,6 @@ const FaqContent = () => {
   return (
     <div className={style.faq}>
        <h2>Частые вопросы</h2> 
-       
         {
           faqs.map( item => {
             return (
@@ -40,7 +39,6 @@ const FaqContent = () => {
             )
           })
         }
-
     </div>
   );
 };

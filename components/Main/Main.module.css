@@ -1,7 +1,6 @@
 .main {
   width: 100%;
   height: 100vh;
-  background: url("../../public/images/main-2.jpg") center / cover;
   z-index: 1;
   display: flex;
   justify-content: center;

@@ -1,15 +1,13 @@
 import SimpleSlider from '../SimpleSlider';
 import style from './mainCatalog.module.css';
 import Button from '../Button';
+import Link from 'next/link';
 
-const Left = () => {
+const Left = ({title, description}) => {
   return (
     <div className={style.left}>
-      <div className={style.topTitle}>OGON PUSHKA</div>
-      <p>
-        Это то, в чем ты точно будешь сворачивать головы этим летом.<br/>
-        Сочная подборка максимально востребованных цветов и стилей.
-      </p>
+      <div className={style.topTitle}>{title}</div>
+      <p>{description}</p>
     </div>
   )
 };
@@ -25,21 +23,33 @@ const ItemSlider = ({url, title}) => {
   );
 };
 
-const Right = () => {
+const Right = ({products}) => {
+  const mains = products.map(product => {
+      return (
+        <Link
+          key={product.id}
+          as={`/product/${product.id}`}
+          href={'/product/[productId]'}>
+          <a>
+            <ItemSlider url={product.images[0].formats.large.url} title="Paragraphs" />
+          </a>
+        </Link>
+      )
+    });
+
   return(
     <div className={style.right}>
-      <ItemSlider url="/images/extraLeft.jpg" title="Paragraphs" />
-      <ItemSlider url="/images/extraRight.jpg" title="Paragraphs"/>
+      {mains}
     </div>
   )
 };
 
-const MainCatalog = () => {
+const MainCatalog = ({recomm}) => {
   return(
     <div className={style.catalog}>
       <div className={style.top}>
-        <Left />
-        <Right />
+        <Left title={recomm.title} description={recomm.description} />
+        <Right products={[recomm.products[0],recomm.products[1]]} />
       </div>
       <div className={style.bottom}>
         <SimpleSlider />
