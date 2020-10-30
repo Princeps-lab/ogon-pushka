@@ -18,7 +18,7 @@ export default class apiProducts {
   getHome = () => this.getResourse('home');
 };
 
-const api = new apiProducts();
-api.getFunctionCategories().then(products => console.log(products));
-api.getFaqs().then(products => console.log(products));
-api.getHome().then(products => console.log(products));
+// const api = new apiProducts();
+// api.getFunctionCategories().then(products => console.log(products));
+// api.getFaqs().then(products => console.log(products));
+// api.getHome().then(products => console.log(products));

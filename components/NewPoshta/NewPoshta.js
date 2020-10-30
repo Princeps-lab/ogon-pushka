@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Autosuggest from "react-autosuggest";
+
+import style from './newPoshta.module.css';
 
 const getCities = async () => {
   const response = await fetch("/api/cities");
@@ -16,73 +17,87 @@ const getWarehouses = async (city) => {
   return await response.json();
 };
 
-const CustomAutosuggest = ({
-  placeholder = "",
-  initialSuggestions = [],
-  ...props
-}) => {
-  const [value, setValue] = useState("");
-  const [suggestions, setSuggestions] = useState(initialSuggestions);
+const Search = ({items, placeholder, id, name, change, setCity}) => {
 
-  const escapeRegexCharacters = (str) => {
-    return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  };
-
-  const getSuggestions = (value) => {
-    const escapedValue = escapeRegexCharacters(value.trim());
-
-    if (escapedValue === "") {
-      return [];
-    }
-
-    const regex = new RegExp("^" + escapedValue, "i");
-
-    return suggestions?.filter(
-      (suggestion) =>
-        regex.test(suggestion["Description"]) ||
-        regex.test(suggestion["DescriptionRu"])
-    );
-  };
-
-  const getSuggestionValue = (suggestion) => {
-    return suggestion["DescriptionRu"];
-  };
-
-  const renderSuggestion = (suggestion) => {
-    return <span>{suggestion["DescriptionRu"]}</span>;
-  };
-
-  const onChange = (_, { newValue }) => setValue(newValue);
-
-  const onSuggestionsFetchRequested = ({ value }) =>
-    setSuggestions(getSuggestions(value));
-
-  const onSuggestionsClearRequested = () => {
-    setSuggestions(initialSuggestions);
-    props?.onSuggestionsClearRequested?.();
-  };
-
-  const inputProps = {
-    placeholder,
-    value,
-    onChange,
-  };
-
+  const [ value, setValue ] = useState('');
+  const [ arr, setArr ]     = useState(items);
+  const [ show, setShow ]   = useState(false);
+ 
   useEffect(() => {
-    setSuggestions(initialSuggestions);
-  }, [initialSuggestions]);
+    if ( value.length === 0) {
+      return setArr(items);
+    }
+    const newArr = items.filter((item) => item.DescriptionRu.indexOf(value) > -1);
+    setArr(newArr);
+  }, [value]);
 
   return (
-    <Autosuggest
-      suggestions={suggestions}
-      onSuggestionsFetchRequested={onSuggestionsFetchRequested}
-      onSuggestionsClearRequested={onSuggestionsClearRequested}
-      getSuggestionValue={getSuggestionValue}
-      renderSuggestion={renderSuggestion}
-      inputProps={inputProps}
-      {...props}
-    />
-  );
+    <div>
+      <input
+        placeholder={placeholder}
+        id={id}
+        name={name}
+        type="text"
+        onChange={e => setValue(e.target.value)}
+        value={value}
+        onFocus={() => {
+          setShow(true);
+          setCity()
+        }}
+        />
+
+        {
+          show && arr.length > 2 ? 
+          <div className={style.select}>
+            {arr.map(item => <div onClick={() => {
+                setValue(item.DescriptionRu);
+                change(item.DescriptionRu);
+                setShow(false);
+              }}>{item.DescriptionRu}</div>)}
+          </div> : null
+        }
+    </div>
+  )
+};
+
+const SearchWr = ({items, placeholder, id, name, change}) => {
+
+  const [ value, setValue ] = useState('');
+  const [ arr, setArr ]     = useState(items);
+  const [ show, setShow ]   = useState(true);
+ 
+  useEffect(() => {
+    if ( value.length === 0) {
+      return setArr(items);
+    }
+    const newArr = items.filter((item) => item.DescriptionRu.indexOf(value) > -1);
+    setArr(newArr);
+  }, [value]);
+
+  return (
+    <div>
+      <input
+        placeholder={placeholder}
+        id={id}
+        name={name}
+        type="text"
+        onChange={e => setValue(e.target.value)}
+        value={value}
+        onFocus={() => setShow(true)}
+        />
+
+        {
+          show ? 
+          <div className={style.select}>
+            {arr.map(item => <div onClick={() => {
+                setValue(item.DescriptionRu);
+                change(item.DescriptionRu);
+                setShow(false);
+              }}>{item.DescriptionRu}</div>)}
+          </div> : null
+        }
+    </div>
+  )
 };
 
 export default function NewPoshta() {
@@ -99,7 +114,7 @@ export default function NewPoshta() {
 
   useEffect(() => {
     if (city) {
-      getWarehouses(city["Description"]).then(({ data }) => {
+      getWarehouses(city).then(({ data }) => {
         setWarehouses(data);
       });
     } else {
@@ -107,27 +122,18 @@ export default function NewPoshta() {
     }
   }, [city]);
 
+  const changeCity = (city) => {
+    setCity(city);
+    console.log(city);
+    console.log(warehouse)
+  };
+  const changeWarehouse = (warehouse) => setWarehouse(warehouse);
   return (
     <div>
-      <CustomAutosuggest
-        placeholder="Введите город"
-        initialSuggestions={cities}
-        onSuggestionSelected={(_, { suggestion }) => setCity(suggestion)}
-      />
-
-      <br />
-      <br />
-
-      {warehouses.length > 0 && (
-        <CustomAutosuggest
-          alwaysRenderSuggestions={true}
-          placeholder="Введите отделение"
-          initialSuggestions={warehouses}
-          onSuggestionSelected={(_, { suggestion }) =>
-            setWarehouse(suggestion)
-          }
-        />
-      )}
+      <Search setCity={() => setWarehouses([])} placeholder='Выберите город' items={cities} name="city" id="city" change={changeCity} />
+      {
+        warehouses.length ? <SearchWr  items={warehouses} placeholder='Выберите отделение' name="warehouses" id="warehouses" change={changeWarehouse}  /> : null
+      }
     </div>
   );
 }
