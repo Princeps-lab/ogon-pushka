@@ -1,5 +1,10 @@
+import {useEffect,useState} from 'react';
 import Button from '../Button';
 import style from "./extra.module.css";
+
+import apiProduct from '../../api/apiProducts';
+
+const api = new apiProduct();
 
 const Top = ({title,description}) => {
   return (
@@ -19,20 +24,30 @@ const ExtraItem = ({url}) => {
 
 const FullItem = ({url}) => <div style={{"background" : `url(${url}) center / cover`}} />;
 
-const Extra = ({extra}) => {
+const Extra = () => {
+
+  const [ extra, setExtra ] = useState();
+
+  useEffect(() => {
+    api.getHome().then( home => {
+      setExtra(home.extra);
+    });
+  }, []);
+
   return(
-    <div className={style.extra}>
-      <div className={style.left}>
-        <Top description={extra.description} title={extra.title} />
-        <div className={style.bottom}>
-          <ExtraItem url={extra.images[0].formats.large.url}/>
-          <ExtraItem url={extra.images[1].formats.large.url}/>
+      extra ?
+      <div className={style.extra}>
+        <div className={style.left}>
+          <Top description={extra.description} title={extra.title} />
+          <div className={style.bottom}>
+            <ExtraItem url={extra.images[0].formats.large.url}/>
+            <ExtraItem url={extra.images[1].formats.large.url}/>
+          </div>
         </div>
-      </div>
-      <div  className={style.right}>
-        <FullItem url={extra.featured_image.formats.large.url} />
-      </div>
-    </div>
+        <div  className={style.right}>
+          <FullItem url={extra.featured_image.formats.large.url} />
+        </div>
+      </div> : null
   );
 };
 

@@ -18,7 +18,6 @@ const api = new apiProduct();
 const App = () => {
   const context = useContext(ProductsContext);
   const [ hero, setHero ] = useState();
-  const [ extra, setExtra ] = useState();
 
   useEffect(() => {
     api.getHome().then( home => {
@@ -40,7 +39,7 @@ const App = () => {
         </>
         : null
       }
-      {extra ? <VideoPlayer url={extra.video_url} /> : null}
+      <VideoPlayer url={extra.video_url} />
       { context.desktop ? <MainCatalog /> : <MobExtra /> }
       { context.desktop ? <Description /> : <Description /> }
       { context.desktop ? <SocialBlock /> : <MobSocial /> }

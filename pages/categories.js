@@ -27,7 +27,6 @@ const Categories = () => {
 
       <CategoriesMenu arr={functions} />
       <Extra />
-
     </Layout>
   );
 };
