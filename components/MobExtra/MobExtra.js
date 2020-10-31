@@ -1,8 +1,20 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import SimpleSlider from '../SimpleSlider';
 import style from './mobExtra.module.css';
 
+import apiProduct from '../../api/apiProducts';
+const api = new apiProduct();
+
 const MobExtra = () => {
+
+  const [ extra, setExtra ] = useState();
+
+  useEffect(() => {
+    api.getHome().then( home => {
+      setExtra(home.extra);
+    });
+  }, []);
+
   return (
     <div className={style.extra}>
       <div className={style.content}>

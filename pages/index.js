@@ -22,7 +22,6 @@ const App = () => {
   useEffect(() => {
     api.getHome().then( home => {
       setHero(home.hero);
-      setExtra(home.extra);
     });
   }, []);
 
@@ -32,14 +31,8 @@ const App = () => {
         <title>{siteTitle}</title>
       </Head>
       {hero ? <Main hero={hero} /> : null}
-      {
-        extra ? 
-        <>
-          { context.desktop ? <Extra extra={extra} /> : <MobExtra extra={extra} /> }
-        </>
-        : null
-      }
-      <VideoPlayer url={extra.video_url} />
+      { context.desktop ? <Extra /> : <MobExtra /> }
+      <VideoPlayer />
       { context.desktop ? <MainCatalog /> : <MobExtra /> }
       { context.desktop ? <Description /> : <Description /> }
       { context.desktop ? <SocialBlock /> : <MobSocial /> }
