@@ -160,6 +160,8 @@ const FormContent = () => {
           
         </div>
 
+        <h3>Доставка:</h3>
+
         <Select items={deliverys} changeItem={changeDelivery} />
 
         {delivery.id === 0 ? <NewPoshta /> : null}

@@ -1,10 +1,7 @@
-import {useEffect,useState} from 'react';
+import {useContext} from 'react';
 import Button from '../Button';
 import style from "./extra.module.css";
-
-import apiProduct from '../../api/apiProducts';
-
-const api = new apiProduct();
+import {ProductsContext} from '../../context/context.js';
 
 const Top = ({title,description}) => {
   return (
@@ -15,27 +12,18 @@ const Top = ({title,description}) => {
     </div>
   )
 };
-
 const ExtraItem = ({url}) => {
   return(
     <div style={{"background" : `url(${url}) center / cover`}} />
   )
 };
-
 const FullItem = ({url}) => <div style={{"background" : `url(${url}) center / cover`}} />;
 
 const Extra = () => {
-
-  const [ extra, setExtra ] = useState();
-
-  useEffect(() => {
-    api.getHome().then( home => {
-      setExtra(home.extra);
-    });
-  }, []);
-
+  const context = useContext(ProductsContext);
+  const extra = context.home ? context.home.extra : null;
   return(
-      extra ?
+    extra ?
       <div className={style.extra}>
         <div className={style.left}>
           <Top description={extra.description} title={extra.title} />

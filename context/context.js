@@ -17,6 +17,7 @@ const Context = ({children}) => {
   const [ allProducts, setAllProducts ] = useState([]);
   const [ categories, setCategories] = useState([]);
   const [basketShow, setShow] = useState(false);
+  const [ home, setHome ] = useState(null);
 
   const addProduct = (product) => {
     const arr = products.filter(item => product.id !== item.id);
@@ -84,6 +85,7 @@ const Context = ({children}) => {
     setFvorites(localStorage.favorites ? JSON.parse(localStorage.favorites) : []);
   }, []);
 
+  useEffect(() => { api.getHome().then( home => setHome(home))}, []);
 
   return (
     <ProductsContext.Provider value={{
@@ -103,7 +105,8 @@ const Context = ({children}) => {
       setShowForm,
       funcCategories,
       allProducts,
-      categories
+      categories,
+      home
     }}>
       {children}
     </ProductsContext.Provider>

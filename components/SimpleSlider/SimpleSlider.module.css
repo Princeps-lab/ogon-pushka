@@ -9,10 +9,12 @@
   left: 40px;
 }
 .itemTitle {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: .8rem;
+  font-weight: 700;
   position: absolute;
   left: 0px;
   bottom: 69px;
-  color: #fff;
+  color: #151515;
+  background: rgba(255,255,255, .7);
+  padding: .5rem;
 }

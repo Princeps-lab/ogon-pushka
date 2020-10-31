@@ -1,12 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
+import {ProductsContext} from '../../context/context.js';
 import SimpleSlider from '../SimpleSlider';
 import style from './mainCatalog.module.css';
 import Button from '../Button';
 import Link from 'next/link';
-import apiProduct from '../../api/apiProducts';
-
-const api = new apiProduct();
-
 
 const Left = ({title, description}) => {
   return (
@@ -36,31 +33,22 @@ const Right = ({products}) => {
         as={`/product/${product.id}`}
         href={'/product/[productId]'}>
         <a>
-          <ItemSlider url={product.images[0].formats.large.url} title="Paragraphs" />
+          <ItemSlider title={product.title} url={product.images[0].formats.large.url} />
         </a>
       </Link>
     )
   });
 
-
-
   return(
     <div className={style.right}>
       {mains}
     </div>
-  )
+  );
 };
 
 const MainCatalog = () => {
-
-  const [ recommended ,setRecommended] = useState();
-
-  useEffect(() => {
-    api.getHome().then( home => {
-      setRecommended(home.recommended);
-    });
-  }, []);
-
+  const context = useContext(ProductsContext);
+  const recommended = context.home ? context.home.recommended : null;
   return(
     recommended ?
       <div className={style.catalog}>

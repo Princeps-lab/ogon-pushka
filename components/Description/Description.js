@@ -1,21 +1,19 @@
-
+import {useContext} from 'react';
 import style from './description.module.css';
+import {ProductsContext} from '../../context/context.js';
 
 const Description = () => {
+  const context = useContext(ProductsContext);
+  const featured = context.home ? context.home.featured : null;
   return (
-    <div className={style.description}>
-      <div className={style.window}>
-        <div className={style.blackBg}></div>
-        <div>
-          OGON PUSHKA
-        </div>
-        <p>
-          Это то, в чем ты точно будешь сворачивать головы этим летом.
-          <br/>
-          Сочная подборка максимально востребованных цветов и стилей.
-        </p>
-      </div>
-    </div>
+      featured ?
+      <div className={style.description}>
+        <div className={style.window}>
+          <div className={style.blackBg}></div>
+          <div>{featured.title}</div>
+          <p>{featured.description}</p>
+          </div>
+      </div> : null
   )
 };
 

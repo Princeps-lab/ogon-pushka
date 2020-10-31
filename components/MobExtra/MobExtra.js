@@ -1,32 +1,33 @@
-import React, {useState, useEffect} from 'react';
+import {useContext} from 'react';
+import {ProductsContext} from '../../context/context.js';
 import SimpleSlider from '../SimpleSlider';
 import style from './mobExtra.module.css';
 
-import apiProduct from '../../api/apiProducts';
-const api = new apiProduct();
 
-const MobExtra = () => {
-
-  const [ extra, setExtra ] = useState();
-
-  useEffect(() => {
-    api.getHome().then( home => {
-      setExtra(home.extra);
-    });
-  }, []);
-
+const MobExtra = ({mobExtra}) => {
+  const context = useContext(ProductsContext);
+  const extra = context.home ? context.home.extra : null;
   return (
-    <div className={style.extra}>
-      <div className={style.content}>
-        <h2>ogon pushka</h2>
-          <p>
-            Это то, в чем ты точно будешь сворачивать головы этим летом. Сочная подборка максимально востребованных цветов и стилей.
-          </p>
+      context.home  ?
+      <div className={style.extra}>
+        {
+          mobExtra ?
+          <div className={style.content}>
+            <h2>{extra.title}</h2>
+            <p>{extra.description}</p>
+          </div> :
+          <div className={style.content}>
+            <h2>{context.home.recommended.title}</h2>
+            <p>{context.home.recommended.description}</p>
+          </div>
+        }
+        <div className={style.slider}>
+          { mobExtra ?
+            <SimpleSlider mobExtra products={[...extra.images, extra.featured_image ]} slidesPerView={1} /> :
+            <SimpleSlider products={context.home.recommended.products} slidesPerView={1} />
+          }
         </div>
-      <div className={style.slider}>
-        <SimpleSlider slidesPerView={1} />
-      </div>
-    </div>
+      </div> : null
   )
 };
 
