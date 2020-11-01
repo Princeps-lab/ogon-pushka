@@ -5,6 +5,9 @@ import ButtonForm from '../ButtonForm';
 import style from '../FormContent/FormContent.module.css';
 import MaskedInput from "react-text-mask";
 
+import apiOrder from '../../api/apiOrder';
+const api = new apiOrder();
+
 const validate = values => {
   const errors = {};
   if (!values.firstName) {
@@ -53,7 +56,13 @@ const FastBuy = () => {
     validate,
     
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
+      const {firstName,phone,} = values;
+      const data = {
+        user_firstname: firstName,
+        user_phone: phone,
+        products: store.products
+      }
+      api.sendFastBuy(data).then(data => console.log(data));
     },
   });
 

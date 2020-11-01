@@ -30,7 +30,6 @@ const Search = ({items, placeholder, id, name, change, setCity}) => {
     const newArr = items.filter((item) => item.DescriptionRu.indexOf(value) > -1);
     setArr(newArr);
   }, [value]);
-
   return (
     <div>
       <input
@@ -49,7 +48,9 @@ const Search = ({items, placeholder, id, name, change, setCity}) => {
         {
           show && arr.length > 2 ? 
           <div className={style.select}>
-            {arr.map(item => <div onClick={() => {
+            {arr.map(item => <div
+                key={item.CityID}
+                onClick={() => {
                 setValue(item.DescriptionRu);
                 change(item.DescriptionRu);
                 setShow(false);
@@ -65,7 +66,6 @@ const SearchWr = ({items, placeholder, id, name, change}) => {
   const [ value, setValue ] = useState('');
   const [ arr, setArr ]     = useState(items);
   const [ show, setShow ]   = useState(true);
- 
   useEffect(() => {
     if ( value.length === 0) {
       return setArr(items);
@@ -89,10 +89,12 @@ const SearchWr = ({items, placeholder, id, name, change}) => {
         {
           show ? 
           <div className={style.select}>
-            {arr.map(item => <div onClick={() => {
-                setValue(item.DescriptionRu);
-                change(item.DescriptionRu);
-                setShow(false);
+            {arr.map(item => <div
+              key={item.SiteKey}
+              onClick={() => {
+              setValue(item.DescriptionRu);
+              change(item.DescriptionRu);
+              setShow(false);
               }}>{item.DescriptionRu}</div>)}
           </div> : null
         }
@@ -100,7 +102,7 @@ const SearchWr = ({items, placeholder, id, name, change}) => {
   )
 };
 
-export default function NewPoshta() {
+export default function NewPoshta({changeDeliveryUserCity,changeDeliveryUserWarehouse}) {
   const [city, setCity] = useState(null);
   const [cities, setCities] = useState([]);
   const [warehouse, setWarehouse] = useState(null);
@@ -111,6 +113,14 @@ export default function NewPoshta() {
       setCities(data);
     });
   }, []);
+
+  useEffect(() => {
+    changeDeliveryUserCity(city);
+  }, [city]);
+
+  useEffect(() => {
+    changeDeliveryUserWarehouse(warehouse);
+  }, [warehouse]);
 
   useEffect(() => {
     if (city) {

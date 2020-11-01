@@ -6,8 +6,11 @@ import style from './FormContent.module.css';
 import MaskedInput from "react-text-mask";
 import NewPoshta from '../NewPoshta';
 
+import apiOrder from '../../api/apiOrder';
+const api = new apiOrder();
 
 const Select = ({items, changeItem}) => {
+
   const [ select, setSelect] = useState(items[0]);
   const [ show, setShow ] = useState(false);
 
@@ -91,6 +94,10 @@ const FormContent = () => {
     {name : "Новая Почта", id: 0},
     {name : "Укр Почта", id: 1}
   ];
+
+  const [ city, setCity ]           = useState('');
+  const [ warehouse, setWarehouse ] = useState('');
+
   const store = useContext(ProductsContext);
   const formik = useFormik({
     initialValues: {
@@ -98,19 +105,37 @@ const FormContent = () => {
       lastName: '',
       email: '',
       phone: '',
-      comment: ''
+      comment: '',
+      delivery: {
+        city,
+        warehouse
+      },
     },
     "validateOnChange": false,
     "validateOnBlur": true,
     validate,
     
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
-    },
+      const {firstName,lastName,email,phone,comment} = values;
+      const data = {
+        user_firstname: firstName,
+        user_lastname: lastName,
+        user_email: email,
+        user_phone: phone,
+        user_comment: comment,
+        products: store.products,
+        delivery: {
+          city,
+          warehouse
+        },
+      }
+      api.sendBuy(data).then(data => console.log(data));
+    }
   });
   const [ delivery, setDelivery ] = useState(deliverys[0]);
-
   const changeDelivery = (item) => setDelivery(item);
+  const changeDeliveryUserCity = (city) => setCity(city);
+  const changeDeliveryUserWarehouse = (warehouse) => setWarehouse(warehouse);
 
   return (
     <div className={style.form}>
@@ -164,7 +189,10 @@ const FormContent = () => {
 
         <Select items={deliverys} changeItem={changeDelivery} />
 
-        {delivery.id === 0 ? <NewPoshta /> : null}
+        {delivery.id === 0 ? <NewPoshta
+          changeDeliveryUserCity={changeDeliveryUserCity}
+          changeDeliveryUserWarehouse={changeDeliveryUserWarehouse}
+         /> : null}
 
         {formik.errors.phone ? <div className={style.errors}>{formik.errors.phone}</div> : null}
         
