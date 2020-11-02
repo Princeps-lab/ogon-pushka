@@ -61,7 +61,7 @@ const ProductContent = ({product}) => {
     id: product.id,
     color: color ? color.name : null,
     size,
-    img: product.featured_image ? product.featured_image.formats.medium : product.images[0].formats.medium
+    img: product.featured_image ? product.featured_image.formats.large : product.images[0].formats.large
   };
 
   useEffect(() => {
@@ -83,7 +83,7 @@ const ProductContent = ({product}) => {
     <div className={style.product}>
       <div className={style.galery}>
         {product.images.map(item => {
-          return <ItemGalery key={item.id} url={item.formats.medium.url} />
+          return <ItemGalery key={item.id} url={item.formats.large.url} />
         })}
       </div>
 
