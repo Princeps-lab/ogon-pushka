@@ -1,5 +1,4 @@
-import React, {useContext, useEffect} from 'react';
-
+import React, {useContext} from 'react';
 import Head from 'next/head'
 import Header from './Header';
 import MobHeader from './MobHeader';
@@ -10,7 +9,6 @@ export const siteTitle = 'Ogon Pushka';
 
 const Layout = ({children}) => {
   const store = useContext(ProductsContext);
-
   return (
     <div>
       <Head> 

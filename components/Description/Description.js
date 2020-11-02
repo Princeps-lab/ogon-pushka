@@ -7,7 +7,7 @@ const Description = () => {
   const featured = context.home ? context.home.featured : null;
   return (
       featured ?
-      <div className={style.description}>
+      <div style={{"background": `url(${featured.featured_image.formats.large.url}) center / cover`}} className={style.description}>
         <div className={style.window}>
           <div className={style.blackBg}></div>
           <div>{featured.title}</div>
