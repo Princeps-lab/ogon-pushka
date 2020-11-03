@@ -57,7 +57,7 @@
 
 .colors {
   display: flex;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
 
 .colors > div {
@@ -205,6 +205,29 @@ div.heart svg {
   padding: 0;
   margin-top: 1.6rem;
   color: #141414;
+}
+
+.count {
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.countPannel {
+  display: flex;
+  width: 100px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.countPannel span {
+  cursor: pointer;
+}
+
+.countPannel span:last-child, .countPannel span:first-child {
+  font-size: 1.2rem;
 }
 
 @media (max-width: 599px) {

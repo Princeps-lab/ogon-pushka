@@ -48,7 +48,7 @@ const ProductItem = ({product, deleteProduct, addFavor, deleteFavor, favorites})
               <span className={style.color}>{product.color}</span>
             </span> : null
           }
-          <span>Количество: <span>1</span></span>
+          <span>Количество: <span>{product.count}</span></span>
 
           <div className={style.iconsProduct}>
             <div onClick={() => deleteProduct(product.id)} >
@@ -76,6 +76,7 @@ const ProductItem = ({product, deleteProduct, addFavor, deleteFavor, favorites})
 };
 
 const Basket = () => {
+
   const store = useContext(ProductsContext);
   const products = store.products.map(product => <ProductItem
       deleteProduct={store.deleteProduct}
@@ -83,7 +84,9 @@ const Basket = () => {
       deleteFavor={store.deleteFavor}
       key={product.id}
       product={product}
-      favorites={store.favorites}/>);
+      favorites={store.favorites}
+      
+      />);
 
   const showOff = () => {
     store.setShow(false);
@@ -96,8 +99,7 @@ const Basket = () => {
 
   const showOn = () => {
     store.setShow(true);
-
-    if(!store.desktop) {
+    if (!store.desktop) {
       const body = document.body;
       body.style.overflow = 'hidden';
       body.style.position = 'fixed';

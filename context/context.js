@@ -12,11 +12,11 @@ const Context = ({children}) => {
   const { width } = useWindowDimensions();
   const [ products, setProducts ] = useState([]);
   const [ favorites, setFvorites ] = useState([]);
-  const [ desktop, setDesctop ] = useState(false);
+  const [ desktop, setDesctop ] = useState(true);
   const [ funcCategories, setFuncCategories ] = useState([]);
   const [ allProducts, setAllProducts ] = useState([]);
   const [ categories, setCategories] = useState([]);
-  const [basketShow, setShow] = useState(false);
+  const [ basketShow, setShow] = useState(false);
   const [ home, setHome ] = useState(null);
 
   const addProduct = (product) => {
@@ -55,7 +55,7 @@ const Context = ({children}) => {
   }, [width]);
 
   useEffect(() => {
-    const count = products.reduce((sum, item) => sum + item.price, 0)
+    const count = products.reduce((sum, item) => sum + item.price * item.count , 0)
     setSum(count);
   }, [products]);
 

@@ -34,17 +34,19 @@
 @media ( max-width:599px ) {
   .swiper-button-next {
     right: auto;
-    top: 14rem;
+    top: auto;
     left: 7rem;
     height: 14px;
     width: 82px;
+    bottom: 532px;
   }
   
   .swiper-button-prev {
     left: 1.8rem ;
-    top: 14rem;
+    top: auto;
     height: 14px;
     width: 82px;
+    bottom: 532px;
     transform: rotate(180deg);
   }
 }

@@ -52,16 +52,15 @@ const ProductContent = ({product}) => {
   const [ color, setColor ] = useState(product.colors[0]);
   const [ size, setSize ] = useState(defofltSize);
   const [ favoriteAction, setFavoriteAction ] = useState(null);
-
-  console.log(product);
-
+  const [ count, setCount ] = useState(1);
   const productBuyed = {
     title: product.title,
     price: product.price,
     id: product.id,
     color: color ? color.name : null,
     size,
-    img: product.featured_image ? product.featured_image.formats.large : product.images[0].formats.large
+    img: product.featured_image ? product.featured_image.formats.large : product.images[0].formats.large,
+    count
   };
 
   useEffect(() => {
@@ -98,7 +97,6 @@ const ProductContent = ({product}) => {
             <span>{product.price}₴</span>
           </div>
         </div>
-        <div className={style.article}>APT. 67037683-NINETIE2-LM</div>
 
         {
           product.colors ? 
@@ -125,6 +123,19 @@ const ProductContent = ({product}) => {
             product.sizes.length ? 
             <Select changeSize = {(size) => { setSize(size) }} sizes={product.sizes} /> : null
           }
+        </div>
+
+        <div className={style.count}>
+          <span>Количество</span>
+          <div className={style.countPannel}>
+            <span onClick={() => {
+              if (count > 1) {
+                setCount(count - 1)
+              } else { setCount(1) }
+            }}>-</span>
+            <span>{count}</span>
+            <span onClick={() => setCount(count + 1)}>+</span>
+          </div>
         </div>
 
         <div className={style.groupBtn}>
@@ -169,10 +180,14 @@ const ProductContent = ({product}) => {
 
         <div className={style.nav}>
           <div>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 0.5C3.86 0.5 0.5 3.86 0.5 8C0.5 12.14 3.86 15.5 8 15.5C12.14 15.5 15.5 12.14 15.5 8C15.5 3.86 12.14 0.5 8 0.5ZM11.15 11.15L7.25 8.75V4.25H8.375V8.15L11.75 10.175L11.15 11.15Z" fill="black"/>
-            </svg>
-            <span style={{"marginLeft": ".5rem"}}>Доставка и возврат</span>
+            <Link href="/faq">
+              <a>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 0.5C3.86 0.5 0.5 3.86 0.5 8C0.5 12.14 3.86 15.5 8 15.5C12.14 15.5 15.5 12.14 15.5 8C15.5 3.86 12.14 0.5 8 0.5ZM11.15 11.15L7.25 8.75V4.25H8.375V8.15L11.75 10.175L11.15 11.15Z" fill="black"/>
+              </svg>
+              <span style={{"marginLeft": ".5rem"}}>Доставка и возврат</span>
+              </a>
+            </Link>
           </div>
 
           <div>

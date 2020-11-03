@@ -27,3 +27,9 @@
   color: #141414;
   font-size: .8rem;
 }
+
+@media ( max-width:599px ) {
+  .content h2 {
+    font-size: 1rem;
+  }
+}

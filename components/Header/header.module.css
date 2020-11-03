@@ -222,6 +222,10 @@ div.img {
   font-weight: 300;
 }
 
+.colors {
+  margin: 12px 0;
+}
+
 @media ( max-width:599px ) {
   .iconsItem {
     display: none;
