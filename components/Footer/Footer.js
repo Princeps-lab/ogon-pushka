@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import {Link, Image} from 'next/link';
 import styles from './Footer.module.css';
 
 const pagesLink = [
@@ -45,7 +45,7 @@ const Footer = () => {
 
         <div className={styles.logo}>
           <Link href="/">
-            <a><img src="/images/logoFooter.svg" alt="logo"/></a>
+            <a><Image src="/images/logoFooter.svg" alt="logo"/></a>
           </Link>
         </div>
 
@@ -54,16 +54,16 @@ const Footer = () => {
             <div className={styles.socialLinksTitle}>Социальные сети:</div>
             <div className={styles.socialLinksList}>
               <a href="https://teleg.run/pushka_ogon">
-                <img src="/icons/Telegram/white.svg" alt="telegram"/>
+                <Image src="/icons/Telegram/white.svg" alt="telegram"/>
               </a>
               <a href="https://www.tiktok.com/@ogonpushka">
-                <img src="/icons/TikTok/white.svg" alt="tik-tok"/>
+                <Image src="/icons/TikTok/white.svg" alt="tik-tok"/>
               </a>
               <a href="https://www.instagram.com/ogonpushka">
-                <img  src="/icons/Instagram/white.svg" alt="instagram"/>
+                <Image  src="/icons/Instagram/white.svg" alt="instagram"/>
               </a>
               <a href="https://fb.me/ogonpushka">
-                <img src="/icons/Facebook/white.svg" alt="facebook"/>
+                <Image src="/icons/Facebook/white.svg" alt="facebook"/>
               </a>
             </div>
           </div>

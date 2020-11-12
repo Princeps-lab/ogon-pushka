@@ -2,7 +2,7 @@ import React from 'react';
 
 import Logo from '../Header/Logo';
 import MobSubMenu from './MobSubMenu';
-import Link from 'next/link';
+import {Link, Image} from 'next/link';
 import style from "./mobHeader.module.css"
 
 const pagesLink = [
@@ -43,7 +43,7 @@ const MobNavHeader = ({isShown, setShow}) => {
         <Link href="/">
           <a><Logo/></a>
         </Link>
-        <div><img src="/icons/close.svg" alt="close" /></div>
+        <div><Image src="/icons/close.svg" alt="close" /></div>
       </div>
       <MobSubMenu setShow={setShow} />
       <div className={style.linksMain}>{links}</div>
