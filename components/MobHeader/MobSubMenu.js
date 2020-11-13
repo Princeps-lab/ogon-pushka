@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import styles from './mobHeader.module.css';
 import Link from 'next/link';
+import { ProductsContext } from '../../context/context.js';
 
 const ItemSub = ({list, title, setShow}) => {
 
