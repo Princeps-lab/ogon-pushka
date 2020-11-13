@@ -14,7 +14,6 @@ const Context = ({children}) => {
   const [ favorites, setFvorites ] = useState([]);
   const [ desktop, setDesctop ] = useState(true);
   const [ funcCategories, setFuncCategories ] = useState([]);
-  const [ allProducts, setAllProducts ] = useState([]);
   const [ categories, setCategories] = useState([]);
   const [ basketShow, setShow] = useState(false);
   const [ home, setHome ] = useState(null);
@@ -67,12 +66,6 @@ const Context = ({children}) => {
   }, []);
 
   useEffect(() => {
-    api.getProducts().then(products => {
-      setAllProducts(products);
-    });
-  }, []);
-
-  useEffect(() => {
     api.getCategories().then(categories => {
       setCategories(categories);
     });
@@ -105,7 +98,6 @@ const Context = ({children}) => {
       showForm,
       setShowForm,
       funcCategories,
-      allProducts,
       categories,
       home
     }}>
