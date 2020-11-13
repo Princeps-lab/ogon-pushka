@@ -1,14 +1,14 @@
-import {useContext} from 'react';
-import { ProductsContext } from '../../context/context.js';
-
+import Image from 'next/image'
 import styles from './Main.module.css';
 const Main = ({hero}) => {
 
-  const store = useContext(ProductsContext);
-
   return (
-    <div className={styles.main}
-      style={{"background" : `url(${ store.desktop ? hero.featured_image.url : hero.featured_image.formats.large.url}) center / cover`}}>
+    <div className={styles.main}>
+      <Image
+        src={hero.featured_image.url}
+        layout="fill"
+        priority
+        alt="hero" />
       <div className={styles.title}>
         <h1>{hero.title}</h1>
         <h2>{hero.description}</h2>

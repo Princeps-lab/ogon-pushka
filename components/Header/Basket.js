@@ -1,6 +1,7 @@
 import { ProductsContext } from '../../context/context.js';
 import React, {useContext, useState, useEffect} from 'react';
-import {Link, Image} from 'next/link';
+import Link from 'next/link';
+import Image from 'next/image'
 
 import style from "./header.module.css";
 import BuyForm from '../BuyForm/index.js';
@@ -114,11 +115,11 @@ const Basket = () => {
       <div className={style.iconsItem}>
         <div>
           <Link href="/favorites">
-            <a><Image src="/icons/heart.svg" /></a>
+            <a><Image  width="100%" height="100%" src="/icons/heart.svg" /></a>
           </Link>
         </div>
         <div onClick={() => showOn()}>
-          <Image src="/icons/basket.svg" />
+          <Image  width="100%" height="100%" src="/icons/basket.svg" />
         </div>
       </div>
 
@@ -126,7 +127,7 @@ const Basket = () => {
         <div className={style.basketHeader}>
           <h2>Корзина</h2>
           <div onClick={() => showOff()}>
-            <Image src="/icons/close.svg" alt="close" />
+            <Image  width="100%" height="100%" src="/icons/close.svg" alt="close" />
           </div>
         </div>
 
@@ -139,7 +140,7 @@ const Basket = () => {
           !products.length ?
           <div className={style.logo}>
             <span>Корзина пуста</span>
-            <Image src='/images/logo.svg' />
+            <Image  width="100%" height="100%" src='/images/logo.svg' />
           </div>
           : null
         }

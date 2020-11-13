@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useContext } from 'react';
 import styles from './mobHeader.module.css';
 import Link from 'next/link';
-import apiProducts from '../../api/apiProducts';
 
-const api = new apiProducts();
+const ItemSub = ({list, title, setShow}) => {
 
-const ItemSub = ({list, title, setShow, store}) => {
+  console.log(list)
   return (
     <>
       <div className={styles.titleSubItem}>
@@ -27,20 +26,20 @@ const ItemSub = ({list, title, setShow, store}) => {
 
 const MobSubMenu = ({setShow}) => {
 
-  const [ arr, setArr ] = useState([]);
+  const store = useContext(ProductsContext);
+
+  let listMenu = [];
 
   useEffect(() => {
-    api.getFunctionCategories().then(functions => setArr(functions));
-  }, []);
-
-  const listMenu = arr.map(list => {
-    return (
-      <div
-        key={list.id} className={styles.subItem}>
-        <ItemSub setShow={setShow} title={list.name} list={list.categories} />
-      </div>
-    )
-  })
+    listMenu = store.funcCategories.map(list => {
+      return (
+        <div
+          key={list.id} className={styles.subItem}>
+          <ItemSub setShow={setShow} title={list.name} list={list.categories} />
+        </div>
+      )
+    });
+  }, [store.funcCategories]);
 
   return (
     <div>

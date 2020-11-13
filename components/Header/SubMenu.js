@@ -1,9 +1,9 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import styles from './submenu.module.css';
 import Link from 'next/link';
 import { ProductsContext } from '../../context/context.js';
 
-const ItemSub = ({list, title}) => {
+const ItemSub = ({list = [], title}) => {
   return (
     <>
       <div className={styles.titleSubItem}>
@@ -22,16 +22,19 @@ const ItemSub = ({list, title}) => {
 };
 
 const SubMenu = ({isShown}) => {
-
   const store = useContext(ProductsContext);
 
-  const listMenu = store.funcCategories.map(list => {
-    return (
-      <div key={list.id} className={styles.subItem}>
-        <ItemSub title={list.name} list={list.categories} />
-      </div>
-    )
-  })
+  let listMenu = [];
+
+  useEffect(() => {
+    listMenu = store.funcCategories.map(list => {
+      return (
+        <div key={list.id} className={styles.subItem}>
+          <ItemSub title={list.name} list={list.categories} />
+        </div>
+      )
+    });
+  }, [store.funcCategories]);
 
   return (
     <div className={isShown ? styles.subMenu : styles.off}>

@@ -1,4 +1,5 @@
-import {Link, Image} from 'next/link';
+import Link from 'next/link';
+import Image from 'next/image';
 import styles from './Footer.module.css';
 
 const pagesLink = [
@@ -45,7 +46,9 @@ const Footer = () => {
 
         <div className={styles.logo}>
           <Link href="/">
-            <a><Image src="/images/logoFooter.svg" alt="logo"/></a>
+            <a>
+              <Image width="100%" height="100%" src="/images/logoFooter.svg" alt="logo"/>
+            </a>
           </Link>
         </div>
 
@@ -54,16 +57,16 @@ const Footer = () => {
             <div className={styles.socialLinksTitle}>Социальные сети:</div>
             <div className={styles.socialLinksList}>
               <a href="https://teleg.run/pushka_ogon">
-                <Image src="/icons/Telegram/white.svg" alt="telegram"/>
+                <Image width="100%" height="100%" src="/icons/Telegram/white.svg" alt="telegram"/>
               </a>
               <a href="https://www.tiktok.com/@ogonpushka">
-                <Image src="/icons/TikTok/white.svg" alt="tik-tok"/>
+                <Image width="100%" height="100%" src="/icons/TikTok/white.svg" alt="tik-tok"/>
               </a>
               <a href="https://www.instagram.com/ogonpushka">
-                <Image  src="/icons/Instagram/white.svg" alt="instagram"/>
+                <Image width="100%" height="100%"  src="/icons/Instagram/white.svg" alt="instagram"/>
               </a>
               <a href="https://fb.me/ogonpushka">
-                <Image src="/icons/Facebook/white.svg" alt="facebook"/>
+                <Image width="100%" height="100%" src="/icons/Facebook/white.svg" alt="facebook"/>
               </a>
             </div>
           </div>

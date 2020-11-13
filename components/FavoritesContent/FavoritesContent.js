@@ -11,7 +11,7 @@ const FavItem = ({product, deleteFavor}) => {
   return (
     <div className={style.product}>
       
-      <div className={style.img}><Image src={url} alt="Photo"/></div>
+      <div className={style.img}><Image src={url} width="100%" height="100%" alt="Photo"/></div>
       <div className={style.description}>
         <h3>{product.title}</h3>
         <span>Цена: <span>{product.price}</span></span>
