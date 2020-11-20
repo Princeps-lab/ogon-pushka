@@ -115,11 +115,11 @@ const Basket = () => {
       <div className={style.iconsItem}>
         <div>
           <Link href="/favorites">
-            <a><Image  width="100%" height="100%" src="/icons/heart.svg" /></a>
+            <a><img  src="/icons/heart.svg" /></a>
           </Link>
         </div>
         <div onClick={() => showOn()}>
-          <Image  width="100%" height="100%" src="/icons/basket.svg" />
+          <img src="/icons/basket.svg" />
         </div>
       </div>
 
@@ -127,7 +127,7 @@ const Basket = () => {
         <div className={style.basketHeader}>
           <h2>Корзина</h2>
           <div onClick={() => showOff()}>
-            <Image  width="100%" height="100%" src="/icons/close.svg" alt="close" />
+            <img src="/icons/close.svg" alt="close" />
           </div>
         </div>
 

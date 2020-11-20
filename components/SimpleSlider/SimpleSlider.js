@@ -12,7 +12,7 @@ const ItemSlider = ({url, title}) => {
   return (
     <div className={style.catalogItem} style={{"background" : `url(${url}) center / cover`}}>
       <div className={style.button}>
-        <div className={style.itemTitle}>{title}</div>
+        {/* <div className={style.itemTitle}>{title}</div> */}
         <Button text="Купить" />
       </div>
     </div>

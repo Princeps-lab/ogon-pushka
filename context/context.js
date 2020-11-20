@@ -60,7 +60,6 @@ const Context = ({children}) => {
 
   useEffect(() => {
     api.getFunctionCategories().then(funcCategories => {
-      console.log(funcCategories)
       setFuncCategories(funcCategories);
     });
   }, []);

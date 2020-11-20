@@ -47,7 +47,7 @@ const MobSubMenu = ({setShow}) => {
       {listMenu}
       <div
         className={styles.subBg} 
-        style={{"background" : `url('/images/background.jpg') center / cover`}} >
+        style={{"background" : `url('/images/CatalogMenu.jpg') center / cover`}} >
       </div>
     </div>
   )
