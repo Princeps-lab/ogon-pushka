@@ -38,7 +38,8 @@ const CatalogContent = ({idCategorie}) => {
   useEffect(() => {
     if (store.categories.length) {
       apiCategorie.getCategorie(idCategorie).then(categorie => {
-        const arr = categorie.products.map((product) => {
+        console.log(categorie);
+        const arr = categorie.product ? categorie.product.map((product) => {
           return (
             <Link
               as={`/product/${product.id}`}
@@ -53,7 +54,7 @@ const CatalogContent = ({idCategorie}) => {
               </a>
             </Link>
           )
-        });
+        }) : [];
         setProducts(arr);
       })
     }
