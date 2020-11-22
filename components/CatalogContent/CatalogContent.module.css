@@ -4,7 +4,7 @@
 }
 
 .nav {
-  width: 25%;
+  width: 20%;
   padding-top: 4rem;
   padding-left: 2rem;
 }
@@ -42,6 +42,7 @@
   flex-grow: 1;
   display: flex;
   flex-wrap: wrap;
+  width: 80%;
 }
 
 .items > a {
