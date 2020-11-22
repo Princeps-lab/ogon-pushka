@@ -2,7 +2,6 @@ import React, {useContext} from 'react';
 import style from './CatalogItem.module.css';
 import Button from '../Button';
 import { ProductsContext } from '../../context/context';
-import Image from 'next/image'
 
 const CatalogItem = ({url, title, price}) => {
 
@@ -15,7 +14,7 @@ const CatalogItem = ({url, title, price}) => {
       <div className={style.title}>
         <div className={style.name}>
           <div className={style.itemTitle}>{title}</div>
-          { store.desktop ? <Image width="20px" height="auto" src="/icons/basket.svg"/> : null }
+          { store.desktop ? <img width="20px" height="auto" src="/icons/basket.svg"/> : null }
         </div>
         <div className={style.itemTitle}>{price}.грн</div>
       </div>

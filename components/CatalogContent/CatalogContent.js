@@ -39,7 +39,7 @@ const CatalogContent = ({idCategorie}) => {
     if (store.categories.length) {
       apiCategorie.getCategorie(idCategorie).then(categorie => {
         console.log(categorie);
-        const arr = categorie.product ? categorie.product.map((product) => {
+        const arr = categorie.products ? categorie.products.map((product) => {
           return (
             <Link
               as={`/product/${product.id}`}
@@ -50,7 +50,7 @@ const CatalogContent = ({idCategorie}) => {
                   price={product.price}
                   textBtn="Купить"
                   title={product.title}
-                  url={ product.featured_image ? product.featured_image.formats.medium.url : product.images[0].formats.medium.url} />
+                  url={ product.featured_image ?  product.featured_image.url :  product.images[0].formats.large.url } />
               </a>
             </Link>
           )
