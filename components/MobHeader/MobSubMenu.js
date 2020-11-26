@@ -4,8 +4,6 @@ import Link from 'next/link';
 import { ProductsContext } from '../../context/context.js';
 
 const ItemSub = ({list, title, setShow}) => {
-
-  console.log(list)
   return (
     <>
       <div className={styles.titleSubItem}>
@@ -29,26 +27,22 @@ const MobSubMenu = ({setShow}) => {
 
   const store = useContext(ProductsContext);
 
-  let listMenu = [];
-
-  useEffect(() => {
-    listMenu = store.funcCategories.map(list => {
-      return (
-        <div
-          key={list.id} className={styles.subItem}>
-          <ItemSub setShow={setShow} title={list.name} list={list.categories} />
-        </div>
-      )
-    });
-  }, [store.funcCategories]);
+  let listMenu = store.funcCategories.map(list => {
+    return (
+      <div
+        key={list.id}
+        className={styles.subItem}>
+        <ItemSub
+          setShow={setShow}
+          title={list.name}
+          list={list.categories} />
+      </div>
+    )
+  });
 
   return (
     <div>
       {listMenu}
-      <div
-        className={styles.subBg} 
-        style={{"background" : `url('/images/CatalogMenu.jpg') center / cover`}} >
-      </div>
     </div>
   )
 };

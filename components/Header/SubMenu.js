@@ -26,7 +26,6 @@ const ItemSub = ({list = [], title}) => {
 
 const SubMenu = ({isShown}) => {
   const store = useContext(ProductsContext);
-  console.log(store.funcCategories);
   let listMenu =  store.funcCategories.map(list => {
     return (
       <div key={list.id} className={styles.subItem}>
@@ -38,8 +37,16 @@ const SubMenu = ({isShown}) => {
   return (
     <div className={isShown ? styles.subMenu : styles.off}>
       {listMenu}
-      <div className={styles.subBg}  style={{"background" : `url('/images/CatalogMenu.jpg') center / cover`}} >
-      </div>
+      <Link
+        as={`/catalog/new`}
+        href={`/catalog/[categorieID]`}
+        >
+        <a
+          className={styles.subBg}
+          style={{"background" : `url('/images/CatalogMenu.jpg') center / cover`}} >
+        </a>
+      </Link>
+      
     </div>
   )
 };

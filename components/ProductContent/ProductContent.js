@@ -44,6 +44,14 @@ const Select = ({sizes, changeSize}) => {
   )
 };
 
+const ModalSize = ({url, setShow}) => {
+  return (
+    <div onClick={() => setShow()} className={style.modalSize}>
+      <img src={url} alt="Размер"/>
+    </div>
+  )
+};
+
 const ProductContent = ({product}) => {
   const store = useContext(ProductsContext);
   const defofltSize = product.sizes.length ? product.sizes[0] : null
@@ -53,6 +61,8 @@ const ProductContent = ({product}) => {
   const [ size, setSize ] = useState(defofltSize);
   const [ favoriteAction, setFavoriteAction ] = useState(null);
   const [ count, setCount ] = useState(1);
+  const [ showModalSize, setShowModalSize ] = useState(false);
+
   const productBuyed = {
     title: product.title,
     price: product.price,
@@ -78,8 +88,18 @@ const ProductContent = ({product}) => {
     }
   }, [favoriteAction]);
 
+
+  function createMarkup(str) {
+    return {__html: str};
+  }
+
   return (
     <div className={style.product}>
+
+      { showModalSize ?
+        <ModalSize setShow={() => setShowModalSize(false)} url={product.size_image.url} /> : null
+      }
+
       <div className={style.galery}>
         {product.images.map(item => {
           return <ItemGalery key={item.id} url={item.formats.large.url} />
@@ -178,6 +198,64 @@ const ProductContent = ({product}) => {
           </div>
         </div>
 
+        <div className={style.sized}>
+          <span 
+            onClick={() => setShowModalSize(true)}>
+              Как узнать свой размер
+          </span>
+          <svg width="25" version="1.1" id="Capa_1" x="0px" y="0px"
+              viewBox="0 0 394.4 394.4">
+            <g>
+              <g>
+                <path d="M125.2,51.2c-22.4,0-40,12.8-40,28.8s17.6,28.8,40,28.8c22.4,0,40-12.8,40-28.8S147.6,51.2,125.2,51.2z M125.2,92.8
+                  c-13.6,0-24-7.2-24-12.8c0-6.4,10.4-12.8,24-12.8c13.6,0,24,7.2,24,12.8C149.2,86.4,138.8,92.8,125.2,92.8z"/>
+              </g>
+            </g>
+            <g>
+              <g>
+                  <path d="M347.6,144h-104V80c0-44-52.8-80-118.4-80S6.8,36,6.8,80v163.2c0,36,36,68,87.2,77.6v65.6c0,4.8,3.2,8,8,8h245.6
+                    c22.4,0,40-17.6,40-40V184C387.6,161.6,370,144,347.6,144z M125.2,16c56.8,0,102.4,28.8,102.4,64c0,35.2-45.6,64-102.4,64
+                    S22.8,115.2,22.8,80C22.8,44.8,68.4,16,125.2,16z M227.6,120v24h-32C208.4,137.6,219.6,129.6,227.6,120z M94,216v88
+                    c-41.6-8.8-71.2-32.8-71.2-60.8V120c20.8,24,58.4,40,102.4,40h222.4c13.6,0,24,10.4,24,24c0,13.6-10.4,24-24,24H102
+                    C97.2,208,94,211.2,94,216z M373.2,353.6h-1.6c0,13.6-10.4,24-24,24H338v-36.8c0-4.8-3.2-8-8-8s-8,3.2-8,8v36.8h-29.6v-36.8
+                    c0-4.8-3.2-8-8-8s-8,3.2-8,8v36.8h-29.6v-36.8c0-4.8-3.2-8-8-8s-8,3.2-8,8v36.8h-29.6v-36.8c0-4.8-3.2-8-8-8s-8,3.2-8,8v36.8
+                    h-29.6v-36.8c0-4.8-3.2-8-8-8s-8,3.2-8,8v36.8h-28V316c0-0.8,0.8-1.6,0.8-1.6c0-1.6,0-2.4-0.8-4V224h237.6c8.8,0,17.6-3.2,24-8
+                    V353.6z"/>
+                </g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              </svg>
+        </div>
+
         <div className={style.nav}>
           <div>
             <Link href="/faq">
@@ -216,8 +294,8 @@ const ProductContent = ({product}) => {
         
         {
           descriptionShow ?
-          <div className={style.descriptionProduct}>
-            {product.description ? product.description : null}
+          <div className={style.descriptionProduct}
+            dangerouslySetInnerHTML={createMarkup(product.description)}>
           </div> : null
         }
 

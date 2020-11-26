@@ -37,9 +37,9 @@ const CatalogContent = ({idCategorie}) => {
 
   useEffect(() => {
     if (store.categories.length) {
+      
       apiCategorie.getCategorie(idCategorie).then(categorie => {
-        console.log(categorie);
-        const arr = categorie.products ? categorie.products.map((product) => {
+        const arr = categorie ? categorie.map((product) => {
           return (
             <Link
               as={`/product/${product.id}`}
@@ -68,6 +68,7 @@ const CatalogContent = ({idCategorie}) => {
             return <NavItem arr={item.categories} title={item.name} key={item.id}/>
           })
         }
+        <NavItem arr={[]} title="New"/>
       </div>
 
       <div className={style.items} >

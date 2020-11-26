@@ -230,6 +230,50 @@ div.heart svg {
   font-size: 1.2rem;
 }
 
+.sized {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+  color: #fff;
+  margin-top: 2rem;
+  background-color: #151515;
+  height: 3rem;
+  font-size: .8rem;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.sized span {
+  margin-right: 1rem;
+}
+
+.sized:hover {
+  opacity: .9;
+}
+
+.sized svg {
+  fill: #fff;
+}
+
+.descriptionProduct p {
+  margin-top: 1rem;
+}
+
+.modalSize {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color:rgba(000, 000, 000, .5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 11;
+  padding: .5rem;
+}
+
 @media (max-width: 599px) {
   .galery {
     display: none;
