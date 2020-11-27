@@ -1,5 +1,5 @@
 export default class apiProducts {
-  url = `https://dev-ogon.herokuapp.com`;
+  url = `https://ogon-pushka.herokuapp.com`;
   async getResourse(value) {
     const res = await fetch(`${this.url}/${value}`);
     if(!res.ok) {
@@ -18,6 +18,8 @@ export default class apiProducts {
   getHome = () => this.getResourse('home');
   getNew = () => this.getResourse('products?_where[new]=true')
 };
+
+// https://dev-ogon.herokuapp.com/products?_where[new]=true
 
 const api = new apiProducts();
 api.getNew().then(products => console.log(products));

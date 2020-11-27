@@ -1,6 +1,6 @@
 export default class apiOrder {
   async postResourseAdd(url,data) {
-    const baseUrl = `https://dev-ogon.herokuapp.com/`;
+    const baseUrl = `https://ogon-pushka.herokuapp.com`;
     const res = await fetch(`${baseUrl}${url}`, {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
       mode: 'cors', // no-cors, cors, *same-origin

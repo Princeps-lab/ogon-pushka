@@ -43,6 +43,14 @@ const MobSubMenu = ({setShow}) => {
   return (
     <div>
       {listMenu}
+      <Link as={`/catalog/new`}
+        href={`/catalog/[categorieID]`}>
+        <a onClick={() => setShow()}>
+          <ItemSub
+            
+            title="new"
+            list={[]} />
+        </a></Link>
     </div>
   )
 };

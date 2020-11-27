@@ -205,6 +205,7 @@ div.heart svg {
   padding: 0;
   margin-top: 1.6rem;
   color: #141414;
+  white-space: break-spaces;
 }
 
 .count {
@@ -272,6 +273,7 @@ div.heart svg {
   align-items: center;
   z-index: 11;
   padding: .5rem;
+  cursor: pointer;
 }
 
 @media (max-width: 599px) {

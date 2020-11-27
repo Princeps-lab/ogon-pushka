@@ -37,27 +37,47 @@ const CatalogContent = ({idCategorie}) => {
 
   useEffect(() => {
     if (store.categories.length) {
-      
-      apiCategorie.getCategorie(idCategorie).then(categorie => {
-        const arr = categorie ? categorie.map((product) => {
-          return (
-            <Link
-              as={`/product/${product.id}`}
-              key={product.id}
-              href={'/product/[productId]'}>
-              <a onClick={() => localStorage.setItem('parentId', `${idCategorie}`)}>
-                <CatalogItem
-                  price={product.price}
-                  textBtn="Купить"
-                  title={product.title}
-                  url={ product.featured_image ?  product.featured_image.url :  product.images[0].formats.large.url } />
+      if ( idCategorie !== "new" ) {
+        apiCategorie.getCategorie(idCategorie).then(categorie => {
+          const arr = categorie ? categorie.map((product) => {
+            return (
+              <Link
+                as={`/product/${product.id}`}
+                key={product.id}
+                href={'/product/[productId]'}>
+                <a onClick={() => localStorage.setItem('parentId', `${idCategorie}`)}>
+                  <CatalogItem
+                    price={product.price}
+                    textBtn="Купить"
+                    title={product.title}
+                    url={ product.featured_image ?  product.featured_image.url :  product.images[0].formats.large.url } />
               </a>
-            </Link>
-          )
-        }) : [];
-        setProducts(arr);
-      })
+              </Link> 
+          )}) : []
+          setProducts(arr);
+        })
+      } else {
+        apiCategorie.getNew().then(categorie => {
+          const arr = categorie ? categorie.map((product) => {
+            return (
+              <Link
+                as={`/product/${product.id}`}
+                key={product.id}
+                href={'/product/[productId]'}>
+                <a onClick={() => localStorage.setItem('parentId', `${idCategorie}`)}>
+                  <CatalogItem
+                    price={product.price}
+                    textBtn="Купить"
+                    title={product.title}
+                    url={ product.featured_image ?  product.featured_image.url :  product.images[0].formats.large.url } />
+              </a>
+              </Link> 
+          )}) : []
+          setProducts(arr);
+        })
+      }
     }
+    
   }, [idCategorie, store.categories]);
 
   return (
