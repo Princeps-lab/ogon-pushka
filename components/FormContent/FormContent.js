@@ -5,6 +5,7 @@ import ButtonForm from '../ButtonForm';
 import style from './FormContent.module.css';
 import MaskedInput from "react-text-mask";
 import NewPoshta from '../NewPoshta';
+import Liqpay from '../Liqpay';
 
 import apiOrder from '../../api/apiOrder';
 const api = new apiOrder();
@@ -95,10 +96,29 @@ const FormContent = () => {
     {name : "Укр Почта", id: 1}
   ];
 
+  const buyes = [
+    {
+      name: "Приват Банк",
+      id: 0
+    },
+    {
+      name: "Наложенный платеж",
+      id: 1
+    },
+  ]
+
   const [ city, setCity ]           = useState('');
   const [ warehouse, setWarehouse ] = useState('');
 
   const store = useContext(ProductsContext);
+
+  const [ delivery, setDelivery ] = useState(deliverys[0]);
+  const [ methodBuy, setMethodBuy ] = useState(buyes[0]);
+  const changeDelivery = (item) => setDelivery(item);
+  const changeBuy = (item) => setMethodBuy(item);
+  const changeDeliveryUserCity = (city) => setCity(city);
+  const changeDeliveryUserWarehouse = (warehouse) => setWarehouse(warehouse);
+
   const formik = useFormik({
     initialValues: {
       firstName: '',
@@ -128,14 +148,11 @@ const FormContent = () => {
           city,
           warehouse
         },
+        methodBuy
       }
       api.sendBuy(data).then(data => console.log(data));
     }
   });
-  const [ delivery, setDelivery ] = useState(deliverys[0]);
-  const changeDelivery = (item) => setDelivery(item);
-  const changeDeliveryUserCity = (city) => setCity(city);
-  const changeDeliveryUserWarehouse = (warehouse) => setWarehouse(warehouse);
 
   return (
     <div className={style.form}>
@@ -196,14 +213,19 @@ const FormContent = () => {
 
         {formik.errors.phone ? <div className={style.errors}>{formik.errors.phone}</div> : null}
         
-          <h3>Комментарий:</h3>
-          <textarea
+        <h3>Оплата:</h3>
+
+        <Select items={buyes} changeItem={changeBuy} />
+        <Liqpay />
+
+        <h3>Комментарий:</h3>
+        <textarea
           id="comment"
           name="comment"
           type="text"
           onChange={formik.handleChange}
           value={formik.values.comment}
-          />
+        />
 
         <div className={style.sum}>
           <div>К оплате</div>
