@@ -4,7 +4,7 @@ import styles from './Main.module.css';
 
 const Main = ({hero}) => {
   const store = useContext(ProductsContext);
-  const bg = store.desktop ? {"background" : `url(${hero.featured_image.url}) center / cover`} : {"background" : `url(${hero.featured_image_mobile.url}) center / cover`};
+  const bg = store.desktop && hero ? {"background" : `url(${hero.featured_image.url}) center / cover`} : {"background" : `url(${hero.featured_image_mobile.url}) center / cover`};
 
   return (
     <div className={styles.main}

@@ -1,24 +1,18 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext} from 'react';
 import Head from 'next/head'
+import dynamic from 'next/dynamic'
 import Header from './Header';
 import MobHeader from './MobHeader';
-import Footer from './Footer';
-import Preloader from './Preloader';
 import { ProductsContext } from '../context/context.js';
 
-
+const Footer = dynamic(
+  () => import('../components/Footer')
+)
 export const siteTitle = 'Ogon Pushka';
 
 const Layout = ({children}) => {
   const store = useContext(ProductsContext);
-  const [ loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setLoading(false);
-  }, []);
-
   return (
-    loading ? <Preloader /> :
     <div>
       <Head> 
       <meta
@@ -29,7 +23,6 @@ const Layout = ({children}) => {
       { store.desktop ? <Header /> : <MobHeader /> }
       <main>{children}</main>
       <Footer />
-      
     </div>
   );
 };
