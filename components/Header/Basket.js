@@ -86,7 +86,6 @@ const Basket = () => {
       key={product.id}
       product={product}
       favorites={store.favorites}
-      
       />);
 
   const showOff = () => {
@@ -157,9 +156,9 @@ const Basket = () => {
 
         {
           products.length ?
-          <div className={style.basketBtn}>
+          <div onClick={() => store.setShow(false)} className={style.basketBtn}>
             <Link href="/form">
-              <a onClick={() => store.setShow(false)}>
+              <a>
                 Оформить
               </a>
             </Link>
@@ -170,7 +169,11 @@ const Basket = () => {
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M8 0.5C3.86 0.5 0.5 3.86 0.5 8C0.5 12.14 3.86 15.5 8 15.5C12.14 15.5 15.5 12.14 15.5 8C15.5 3.86 12.14 0.5 8 0.5ZM11.15 11.15L7.25 8.75V4.25H8.375V8.15L11.75 10.175L11.15 11.15Z" fill="black"/>
           </svg>
-          <span style={{"marginLeft": ".5rem"}}>Доставка и возврат</span>
+          <Link href="/faq">
+            <a onClick={() => showOff()} >
+              <span style={{"marginLeft": ".5rem"}}>Доставка и возврат</span>
+            </a>
+          </Link>
         </div>
 
       </div>

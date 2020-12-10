@@ -20,7 +20,7 @@ const App = () => {
       </Head>
       { context.home ? <Main hero={context.home.hero} /> : null }
       { context.desktop ? <Extra /> : <MobExtra mobExtra /> }
-      {/* <VideoPlayer /> */}
+      <VideoPlayer />
       { context.desktop ? <MainCatalog /> : <MobExtra /> }
       { context.desktop ? <Description /> : <Description /> }
       { context.desktop ? <SocialBlock /> : <MobSocial /> }
@@ -29,4 +29,3 @@ const App = () => {
 };
 
 export default App;
-

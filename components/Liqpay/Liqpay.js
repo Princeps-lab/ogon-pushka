@@ -1,7 +1,7 @@
 
 import { LiqPayPay } from "react-liqpay";
 
-const Liqpay = ({amount = 100}) => {
+const Liqpay = ({amount = 1}) => {
 
   return (
     <div style={{ display: "flex" }}>
@@ -20,5 +20,4 @@ const Liqpay = ({amount = 100}) => {
     </div>
   );
 };
-https://ogonpushka.com.ua/
 export default Liqpay;

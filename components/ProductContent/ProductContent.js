@@ -7,7 +7,9 @@ import Link from 'next/link';
 
 const ItemGalery = ({url}) => {
   return (
-    <div  style={{"background" : `url(${url}) center / cover`}}></div>
+    <div>
+      <img src={url} />
+    </div>
   )
 };
 
