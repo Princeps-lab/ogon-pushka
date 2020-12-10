@@ -3,14 +3,6 @@ import {ProductsContext} from '../context/context.js';
 import Head from 'next/head';
 import dynamic from 'next/dynamic'
 import Layout, { siteTitle } from '../components/Layout';
-// import Main from '../components/Main';
-import Extra from '../components/Extra';
-import Description from '../components/Description';
-import MainCatalog from '../components/MainCatalog';
-// import SocialBlock from '../components/SocialBlock';
-import MobSocial from '../components/MobSocial';
-import MobExtra from '../components/MobExtra/index.js';
-import VideoPlayer from '../components/VideoPlayer/index.js';
 import Preloader from '../components/Preloader/index.js';
 
 const Main = dynamic(
@@ -18,9 +10,13 @@ const Main = dynamic(
   { loading: () => <Preloader/> }
 )
 
-const SocialBlock = dynamic(
-  () => import('../components/SocialBlock')
-)
+const SocialBlock = dynamic(() => import('../components/SocialBlock'));
+const MobSocial = dynamic(() => import('../components/MobSocial'));
+const MainCatalog = dynamic(() => import('../components/MainCatalog'));
+const MobExtra = dynamic(() => import('../components/MobExtra'));
+const Extra = dynamic(() => import('../components/Extra'));
+const Description = dynamic(() => import('../components/Description'));
+const VideoPlayer = dynamic(() => import('../components/VideoPlayer'), {ssr: false});
 
 const App = () => {
   const context = useContext(ProductsContext);
@@ -33,7 +29,7 @@ const App = () => {
         { context.desktop ? <Extra /> : <MobExtra mobExtra /> }
         {typeof window !== 'undefined' ?<VideoPlayer /> : null}
         { context.desktop ? <MainCatalog /> : <MobExtra /> }
-        { context.desktop ? <Description /> : <Description /> }
+        <Description />
         { context.desktop ? <SocialBlock /> : <MobSocial /> }
       </Layout>
   )

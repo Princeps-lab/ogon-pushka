@@ -19,7 +19,7 @@
   transition: all .3s;
 }
 
-.social div:hover {
+.social a:hover {
   filter: grayscale(100%);
   transition: all .3s linear;
 }
