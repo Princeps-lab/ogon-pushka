@@ -216,7 +216,6 @@ const FormContent = () => {
         <h3>Оплата:</h3>
 
         <Select items={buyes} changeItem={changeBuy} />
-        <Liqpay />
 
         <h3>Комментарий:</h3>
         <textarea
@@ -235,6 +234,8 @@ const FormContent = () => {
         <div className={style.btn}>
           <ButtonForm />
         </div>
+
+        <Liqpay />
       </form>
     </div>
   );

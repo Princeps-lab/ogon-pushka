@@ -1,11 +1,10 @@
 
 import { LiqPayPay } from "react-liqpay";
-
+import style from "./Liqpay.module.css";
 const Liqpay = ({amount = 1}) => {
 
   return (
-    
-    <div style={{ display: "flex" }}>
+    <div className={style.liqpay} style={{ display: "flex" }}>
       {typeof window !== 'undefined' ?
       <LiqPayPay
         publicKey="i26566116946"
@@ -17,7 +16,8 @@ const Liqpay = ({amount = 1}) => {
         result_url="https://ogonpushka.com.ua"
         server_url="http://server.domain.com/liqpay"
         product_description="Online courses"
-        style={{ margin: "8px" }}
+        style={{ margin: "2rem 0px", width: "100%" }}
+        title="Оплатить"
       /> : null}
     </div>
   );
