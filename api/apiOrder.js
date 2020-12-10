@@ -23,10 +23,10 @@ export default class apiOrder {
   };
 
   sendFastBuy = (data) => {
-    this.postResourseAdd('orders', data);
+    this.postResourseAdd('/orders', data);
   }
 
   sendBuy = (data) => {
-    this.postResourseAdd('orders', data);
+    this.postResourseAdd('/orders', data);
   }
 };

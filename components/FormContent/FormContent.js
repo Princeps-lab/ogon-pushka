@@ -109,7 +109,7 @@ const FormContent = () => {
 
   const [ city, setCity ]           = useState('');
   const [ warehouse, setWarehouse ] = useState('');
-
+  const [ buyed, setBuyed ] = useState(false);
   const store = useContext(ProductsContext);
 
   const [ delivery, setDelivery ] = useState(deliverys[0]);
@@ -160,6 +160,7 @@ const FormContent = () => {
       <h3>Информация о получателе:</h3>
       <form onSubmit={formik.handleSubmit}>
         <input
+          autocomplete="off"
           placeholder="Имя"
           id="firstName"
           name="firstName"
@@ -169,6 +170,7 @@ const FormContent = () => {
         />
         {formik.errors.firstName ? <div className={style.errors}>{formik.errors.firstName}</div> : null}
         <input
+          autocomplete="off"
           placeholder="Фамилия"
           id="lastName"
           name="lastName"
@@ -178,6 +180,7 @@ const FormContent = () => {
         />
         {formik.errors.lastName ? <div className={style.errors}>{formik.errors.lastName}</div> : null}
         <input
+          autocomplete="off"
           placeholder="Email"
           id="email"
           name="email"
@@ -189,7 +192,7 @@ const FormContent = () => {
 
         <h3>Телефон:</h3>
         <div className={style.phone}>
-          <input disabled value="+38" />
+          <input disabled value="+38" autocomplete="off" />
           <MaskedInput
             mask={phoneNumberMask}
             id="phone"
@@ -201,6 +204,7 @@ const FormContent = () => {
           />
           
         </div>
+        {formik.errors.phone ? <div className={style.errors}>{formik.errors.phone}</div> : null}
 
         <h3>Доставка:</h3>
 
@@ -210,8 +214,6 @@ const FormContent = () => {
           changeDeliveryUserCity={changeDeliveryUserCity}
           changeDeliveryUserWarehouse={changeDeliveryUserWarehouse}
          /> : null}
-
-        {formik.errors.phone ? <div className={style.errors}>{formik.errors.phone}</div> : null}
         
         <h3>Оплата:</h3>
 
@@ -235,7 +237,8 @@ const FormContent = () => {
           <ButtonForm />
         </div>
 
-        <Liqpay />
+        {buyed ? <Liqpay /> : null}
+        
       </form>
     </div>
   );

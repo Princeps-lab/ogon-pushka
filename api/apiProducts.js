@@ -19,8 +19,6 @@ export default class apiProducts {
   getNew = () => this.getResourse('products?_where[new]=true')
 };
 
-// https://dev-ogon.herokuapp.com/products?_where[new]=true
-
 const api = new apiProducts();
 api.getNew().then(products => console.log(products));
 // api.getFaqs().then(products => console.log(products));
