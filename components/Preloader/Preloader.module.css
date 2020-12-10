@@ -20,7 +20,7 @@
 .preloader div svg  {
   width: 80%;
   animation-duration: 1s;
-  animation-name: show;
+  /* animation-name: show; */
   /* animation-iteration-count: infinite; */
   animation-direction: alternate;
   overflow: overlay;
@@ -84,5 +84,11 @@
 
   to {
     opacity: 0;
+  }
+}
+
+@media ( max-width:599px ) {
+  .preloader div svg  {
+    width: 30%;
   }
 }
