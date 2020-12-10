@@ -31,7 +31,7 @@ const App = () => {
         </Head>
         {context.home ?  <Main hero={context.home.hero} /> : <Preloader/>}
         { context.desktop ? <Extra /> : <MobExtra mobExtra /> }
-        <VideoPlayer />
+        {typeof window !== 'undefined' ?<VideoPlayer /> : null}
         { context.desktop ? <MainCatalog /> : <MobExtra /> }
         { context.desktop ? <Description /> : <Description /> }
         { context.desktop ? <SocialBlock /> : <MobSocial /> }
