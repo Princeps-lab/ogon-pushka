@@ -146,7 +146,8 @@ const FormContent = () => {
         products: store.products,
         delivery_city: city,
         delivery_warehouse: warehouse,
-        payment_type: methodBuy.title 
+        payment_type: methodBuy.title,
+        total: store.sum
       }
       api.sendBuy(data).then(request => {
         setOrderId(request.id)
