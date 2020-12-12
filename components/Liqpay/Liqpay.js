@@ -9,8 +9,7 @@ const Liqpay = ({ amount, orderId }) => {
         <LiqPayPay
           publicKey="i26566116946"
           privateKey="2k5aXB6HlzTujc32TMfVzmGCeY7TBG0f3kF7qY3I"
-          // amount={amount}
-          amount={'2'}
+          amount={amount}
           description="Payment for product"
           currency="UAH"
           orderId={orderId}
