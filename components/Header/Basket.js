@@ -7,7 +7,6 @@ import style from "./header.module.css";
 import BuyForm from '../BuyForm/index.js';
 
 const ProductItem = ({product, deleteProduct, addFavor, deleteFavor, favorites}) => {
-  const {url} = product.img;
   const [itFavor, setItFavor] = useState(null);
   const store = useContext(ProductsContext);
   
@@ -36,7 +35,7 @@ const ProductItem = ({product, deleteProduct, addFavor, deleteFavor, favorites})
     <div>
       <h3 className={style.BasketTitleProduct}>{product.title}</h3>
       <div className={style.product}>
-        <div className={style.img}  style={{"background" : `url(${url}) center / cover`}} />
+        <div className={style.img}  style={{"background" : `url(${product.img}) center / cover`}} />
         <div className={style.description}>
           <span className={style.price}>Цена: <span>{product.price} грн</span></span>
           {
@@ -114,7 +113,7 @@ const Basket = () => {
       <div className={style.iconsItem}>
         <div>
           <Link href="/favorites">
-            <a><img  src="/icons/heart.svg" /></a>
+            <a><img src="/icons/heart.svg" /></a>
           </Link>
         </div>
         <div onClick={() => showOn()}>

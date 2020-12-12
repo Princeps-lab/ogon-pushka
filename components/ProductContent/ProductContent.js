@@ -71,10 +71,12 @@ const ProductContent = ({product}) => {
     id: product.id,
     color: color ? color.name : null,
     size,
-    img: product.featured_image ? product.featured_image.url : product.images[0].url,
+    img: product.featured_image ? product.featured_image.url : product.images[0].formats.large,
     count
   };
 
+  console.log(store)
+  
   useEffect(() => {
     const isFavor = store.favorites.some((element) => element.id === product.id);
     isFavor ? setFavoriteAction(true) : setFavoriteAction(false); 
