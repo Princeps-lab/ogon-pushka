@@ -33,7 +33,7 @@ const Search = ({items, placeholder, id, name, change, setCity}) => {
   return (
     <div>
       <input
-        autocomplete="off" 
+        autoComplete="off" 
         placeholder={placeholder}
         id={id}
         name={name}
@@ -78,7 +78,7 @@ const SearchWr = ({items, placeholder, id, name, change}) => {
   return (
     <div>
       <input
-        autocomplete="off" 
+        autoComplete="off" 
         placeholder={placeholder}
         id={id}
         name={name}

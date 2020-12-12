@@ -71,7 +71,7 @@ const ProductContent = ({product}) => {
     id: product.id,
     color: color ? color.name : null,
     size,
-    img: product.featured_image ? product.featured_image.formats.large : product.images[0].formats.large,
+    img: product.featured_image ? product.featured_image.url : product.images[0].url,
     count
   };
 
@@ -104,7 +104,7 @@ const ProductContent = ({product}) => {
 
       <div className={style.galery}>
         {product.images.map(item => {
-          return <ItemGalery key={item.id} url={item.formats.large.url} />
+          return <ItemGalery key={item.id} url={item.url} />
         })}
       </div>
 

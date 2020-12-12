@@ -78,6 +78,10 @@ const Footer = () => {
         <div>Работаем без выходных с 9:00 до 20:00</div>
         <div className={styles.number}>068 482 72 75</div>
       </div>
+
+      <div className={styles.footerBayed}>
+        <img src="./images/master-visa-logo.svg" />
+      </div>
     </>
   );
 };

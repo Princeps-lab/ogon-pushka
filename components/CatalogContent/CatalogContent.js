@@ -50,7 +50,7 @@ const CatalogContent = ({idCategorie}) => {
                     price={product.price}
                     textBtn="Купить"
                     title={product.title}
-                    url={ product.featured_image ?  product.featured_image.url :  product.images[0].formats.large.url } />
+                    url={ product.featured_image.url ?  product.featured_image.url :  product.images[0].url } />
               </a>
               </Link> 
           )}) : []

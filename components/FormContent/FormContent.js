@@ -107,13 +107,14 @@ const FormContent = () => {
     },
   ]
 
+  const store = useContext(ProductsContext);
   const [ city, setCity ]           = useState('');
   const [ warehouse, setWarehouse ] = useState('');
   const [ buyed, setBuyed ] = useState(false);
-  const store = useContext(ProductsContext);
-
+  const [ orderId, setOrderId ] = useState(null);
   const [ delivery, setDelivery ] = useState(deliverys[0]);
   const [ methodBuy, setMethodBuy ] = useState(buyes[0]);
+  const [ status, setStatus ] = useState('Подтвердить заказ');
   const changeDelivery = (item) => setDelivery(item);
   const changeBuy = (item) => setMethodBuy(item);
   const changeDeliveryUserCity = (city) => setCity(city);
@@ -134,7 +135,6 @@ const FormContent = () => {
     "validateOnChange": false,
     "validateOnBlur": true,
     validate,
-    
     onSubmit: values => {
       const {firstName,lastName,email,phone,comment} = values;
       const data = {
@@ -144,13 +144,15 @@ const FormContent = () => {
         user_phone: phone,
         user_comment: comment,
         products: store.products,
-        delivery: {
-          city,
-          warehouse
-        },
-        methodBuy
+        delivery_city: city,
+        delivery_warehouse: warehouse,
+        payment_type: methodBuy.title 
       }
-      api.sendBuy(data).then(data => console.log(data));
+      api.sendBuy(data).then(request => {
+        setOrderId(request.id)
+        setStatus('Заказ подтвержден');
+        setBuyed(true);
+      });
     }
   });
 
@@ -160,7 +162,7 @@ const FormContent = () => {
       <h3>Информация о получателе:</h3>
       <form onSubmit={formik.handleSubmit}>
         <input
-          autocomplete="off"
+          autoComplete="off"
           placeholder="Имя"
           id="firstName"
           name="firstName"
@@ -170,7 +172,7 @@ const FormContent = () => {
         />
         {formik.errors.firstName ? <div className={style.errors}>{formik.errors.firstName}</div> : null}
         <input
-          autocomplete="off"
+          autoComplete="off"
           placeholder="Фамилия"
           id="lastName"
           name="lastName"
@@ -180,7 +182,7 @@ const FormContent = () => {
         />
         {formik.errors.lastName ? <div className={style.errors}>{formik.errors.lastName}</div> : null}
         <input
-          autocomplete="off"
+          autoComplete="off"
           placeholder="Email"
           id="email"
           name="email"
@@ -192,7 +194,7 @@ const FormContent = () => {
 
         <h3>Телефон:</h3>
         <div className={style.phone}>
-          <input disabled value="+38" autocomplete="off" />
+          <input disabled value="+38" autoComplete="off" />
           <MaskedInput
             mask={phoneNumberMask}
             id="phone"
@@ -234,12 +236,10 @@ const FormContent = () => {
         </div>
 
         <div className={style.btn}>
-          <ButtonForm />
+          <ButtonForm text={status} />
         </div>
-
-        {buyed ? <Liqpay /> : null}
-        
       </form>
+      {buyed && orderId ? <Liqpay orderId={orderId} amount={String(store.sum)} /> : null}
     </div>
   );
 };

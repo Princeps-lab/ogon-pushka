@@ -87,6 +87,17 @@ div.number {
   opacity: .8;
 }
 
+.footerBayed {
+  display: flex;
+  justify-content: center;
+  padding: .6rem;
+  align-items: center;
+}
+
+.footerBayed img {
+  width: 5rem;
+}
+
 @media ( max-width:599px ) {
   .footerTop {
     flex-direction: column;
