@@ -46,11 +46,14 @@ const CatalogContent = ({idCategorie}) => {
                 key={product.id}
                 href={'/product/[productId]'}>
                 <a onClick={() => localStorage.setItem('parentId', `${idCategorie}`)}>
-                  <CatalogItem
+                  {
+                    product.featured_image ?
+                    <CatalogItem
                     price={product.price}
                     textBtn="Купить"
                     title={product.title}
-                    url={ product.featured_image.url ?  product.featured_image.url :  product.images[0].url } />
+                    url={ product.featured_image.url ?  product.featured_image.url :  product.images[0].url } /> : null
+                  }
               </a>
               </Link> 
           )}) : []
