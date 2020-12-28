@@ -13,6 +13,16 @@
   margin-bottom: 2rem;
 }
 
+.description {
+  margin: 2rem 0;
+  color: #141414;
+  width: 50%;
+}
+
+.description strong {
+  font-weight: 300;
+}
+
 @media ( max-width:599px ) {
   .about {
     padding: 4.5rem 1.2rem;
@@ -22,5 +32,11 @@
 
   .about h2 {
     font-size: 1.6rem;
+  }
+
+  .description {
+    margin: 2rem 0;
+    color: #141414;
+    width: 100%;
   }
 }

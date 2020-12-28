@@ -98,7 +98,7 @@ const FormContent = () => {
 
   const buyes = [
     {
-      name: "Приват Банк",
+      name: "Liqpay",
       id: 0
     },
     {

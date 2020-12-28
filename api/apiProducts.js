@@ -16,10 +16,11 @@ export default class apiProducts {
   getProduct = (id) => this.getResourse(`products/${id}`);
   getFaqs = () => this.getResourse('faqs');
   getHome = () => this.getResourse('home');
+  getAbout = () => this.getResourse('about');
   getNew = () => this.getResourse('products?_where[new]=true')
 };
 
 const api = new apiProducts();
 api.getNew().then(products => console.log(products));
-// api.getFaqs().then(products => console.log(products));
-// api.getHome().then(products => console.log(products));
+
+api.getAbout().then(products => console.log(products));

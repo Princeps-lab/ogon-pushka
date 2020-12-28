@@ -6,7 +6,7 @@ import Image from 'next/image'
 import style from "./header.module.css";
 import BuyForm from '../BuyForm/index.js';
 
-const ProductItem = ({product, deleteProduct, addFavor, deleteFavor, favorites}) => {
+const ProductItem = ({product, deleteProduct, addFavor, deleteFavor, favorites} ) => {
   const [itFavor, setItFavor] = useState(null);
   const store = useContext(ProductsContext);
   

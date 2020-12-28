@@ -4,7 +4,6 @@ import Button from '../Button';
 import { ProductsContext } from '../../context/context';
 
 const CatalogItem = ({url, title, price}) => {
-
   const store = useContext(ProductsContext);
   return(
     <div className={style.catalogItem}>
