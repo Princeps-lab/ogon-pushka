@@ -6,6 +6,7 @@ import style from './FormContent.module.css';
 import MaskedInput from "react-text-mask";
 import NewPoshta from '../NewPoshta';
 import Liqpay from '../Liqpay';
+import Link from 'next/link';
 
 import apiOrder from '../../api/apiOrder';
 const api = new apiOrder();
@@ -235,6 +236,15 @@ const FormContent = () => {
           <div>К оплате</div>
           <div>{store.sum} грн</div>
         </div>
+        
+        <p className={style.politic}>
+        Кликнув на "ПОДТВЕРДИТЬ ЗАКАЗ", 
+        <br/>
+        Вы соглашаетесь с 
+        <Link href="/politics">
+          <a> политикой безопасности и конфиденциальности</a>
+        </Link>.
+        </p>
 
         <div className={style.btn}>
           <ButtonForm text={status} />

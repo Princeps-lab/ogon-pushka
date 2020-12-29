@@ -1,0 +1,42 @@
+.polite {
+  padding-top: 4rem;
+  color: #141414;
+  padding: 4rem;
+}
+
+.polite h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.polite p {
+  margin-top: 2rem;
+}
+
+.list {
+  margin-top: 3rem;
+}
+
+.polite h2 {
+  margin-top: 2rem;
+}
+
+@media ( max-width:599px ) {
+
+  .polite {
+    padding: 1.2rem;
+  }
+
+  .polite h1 {
+    display: flex;
+    font-size: 1.2rem;
+    justify-content: center;
+    margin-top: 4rem;
+  }
+
+  .polite h2 {
+    margin-top: 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}
