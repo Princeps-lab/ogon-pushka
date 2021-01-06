@@ -250,7 +250,7 @@ const FormContent = () => {
           <ButtonForm text={status} />
         </div>
       </form>
-      {buyed && orderId ? <Liqpay orderId={orderId} amount={String(store.sum)} /> : null}
+      {buyed && orderId && methodBuy.id === 0 ? <Liqpay orderId={orderId} amount={String(store.sum)} /> : null}
     </div>
   );
 };
