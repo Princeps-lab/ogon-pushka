@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {ProductsContext} from '../../context/context.js';
 import { useFormik } from 'formik';
 import ButtonForm from '../ButtonForm';
@@ -7,9 +7,19 @@ import MaskedInput from "react-text-mask";
 import NewPoshta from '../NewPoshta';
 import Liqpay from '../Liqpay';
 import Link from 'next/link';
+import { useRouter } from 'next/router'
 
 import apiOrder from '../../api/apiOrder';
 const api = new apiOrder();
+
+const Succes = ({text}) => {
+  const classes = text === "Заказ подтвержден" ? style.succesActive : style.succes;
+  return (
+    <div className={classes}>
+      {text}
+    </div>
+  )
+};
 
 const Select = ({items, changeItem}) => {
 
@@ -107,7 +117,7 @@ const FormContent = () => {
       id: 1
     },
   ]
-
+  const router = useRouter()
   const store = useContext(ProductsContext);
   const [ city, setCity ]           = useState('');
   const [ warehouse, setWarehouse ] = useState('');
@@ -116,6 +126,7 @@ const FormContent = () => {
   const [ delivery, setDelivery ] = useState(deliverys[0]);
   const [ methodBuy, setMethodBuy ] = useState(buyes[0]);
   const [ status, setStatus ] = useState('Подтвердить заказ');
+  const [ btnActive, setBtn ] = useState(true);
   const changeDelivery = (item) => setDelivery(item);
   const changeBuy = (item) => setMethodBuy(item);
   const changeDeliveryUserCity = (city) => setCity(city);
@@ -153,13 +164,25 @@ const FormContent = () => {
       api.sendBuy(data).then(request => {
         setOrderId(request.id)
         setStatus('Заказ подтвержден');
+        setBtn(false);
         setBuyed(true);
       });
     }
   });
 
+  useEffect(() => {
+    if (status === "Заказ подтвержден") {
+      const timer = setTimeout(() => {
+        setStatus('Подтвердить заказ');
+        if(methodBuy.id !== 0) {router.push('/')}
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [status]);
+
   return (
     <div className={style.form}>
+      <Succes text={status} />
       <h2>Оформление заказа</h2>
       <h3>Информация о получателе:</h3>
       <form onSubmit={formik.handleSubmit}>
@@ -245,10 +268,11 @@ const FormContent = () => {
           <a> политикой безопасности и конфиденциальности</a>
         </Link>.
         </p>
-
-        <div className={style.btn}>
-          <ButtonForm text={status} />
-        </div>
+        
+        {btnActive ? 
+          <div className={style.btn}>
+            <ButtonForm text={status} />
+          </div>: null}
       </form>
       {buyed && orderId && methodBuy.id === 0 ? <Liqpay orderId={orderId} amount={String(store.sum)} /> : null}
     </div>

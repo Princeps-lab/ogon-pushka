@@ -1,9 +1,10 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import {ProductsContext} from '../../context/context.js';
 import { useFormik } from 'formik';
 import ButtonForm from '../ButtonForm';
 import style from '../FormContent/FormContent.module.css';
 import MaskedInput from "react-text-mask";
+import { useRouter } from 'next/router'
 
 import apiOrder from '../../api/apiOrder';
 const api = new apiOrder();
@@ -45,8 +46,19 @@ const phoneNumberMask = [
   /\d/
 ];
 
+const Succes = ({text}) => {
+  const classes = text === "Заказ подтвержден" ? style.succesActive : style.succes;
+  return (
+    <div className={classes}>
+      {text}
+    </div>
+  )
+};
+
 const FastBuy = () => {
+  const router = useRouter();
   const store = useContext(ProductsContext);
+  const [ status, setStatus ] = useState('Подтвердить заказ');
   const formik = useFormik({
     initialValues: {
       firstName: '',
@@ -62,12 +74,26 @@ const FastBuy = () => {
         user_phone: phone,
         products: store.products
       }
-      api.sendFastBuy(data).then(data => console.log(data));
+      api.sendFastBuy(data).then(data => {
+        setStatus("Заказ подтвержден")
+      });
     },
   });
 
+
+  useEffect(() => {
+    if (status === "Заказ подтвержден") {
+      const timer = setTimeout(() => {
+        setStatus('Подтвердить заказ');
+        router.push('/');
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [status]);
+
   return (
     <div className={style.form}>
+      <Succes  text={status} />
       <h2>Оформление заказа</h2>
       <h3>Информация о получателе:</h3>
       <form onSubmit={formik.handleSubmit}>
@@ -103,7 +129,7 @@ const FastBuy = () => {
         </div>
 
         <div className={style.btn}>
-          <ButtonForm />
+          <ButtonForm text={status} />
         </div>
       </form>
     </div>
