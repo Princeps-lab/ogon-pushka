@@ -1,4 +1,5 @@
 import {useContext} from 'react';
+import Link from 'next/link';
 import Button from '../Button';
 import style from "./extra.module.css";
 import {ProductsContext} from '../../context/context.js';
@@ -8,7 +9,11 @@ const Top = ({title,description}) => {
     <div className={style.top}>
       <div className={style.topTitle}>{title}</div>
         <p>{description}</p>
-      <Button text="Подробнее"/>
+      <Link href="/categories">
+        <a>
+          <Button text="Подробнее"/>
+        </a>
+      </Link>
     </div>
   )
 };
