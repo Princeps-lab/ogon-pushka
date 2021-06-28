@@ -28,16 +28,22 @@ const Extra = () => {
   const context = useContext(ProductsContext);
   const extra = context.home ? context.home.extra : null;
   return(
-    extra ?
+    extra?.images.length && extra.featured_image.formats ?
       <div className={style.extra}>
         <div className={style.left}>
           <Top description={extra.description} title={extra.title} />
           <div className={style.bottom}>
-            <ExtraItem url={extra.images[0].formats.large.url}/>
-            <ExtraItem url={extra.images[1].formats.large.url}/>
+            {
+             extra.images.length ?
+              <>
+                <ExtraItem url={extra.images[0].formats.large.url}/>
+                <ExtraItem url={extra.images[1].formats.large.url}/>
+              </>
+              : null
+            }
           </div>
         </div>
-        <div  className={style.right}>
+        <div className={style.right}>
           <FullItem url={extra.featured_image.formats.large.url} />
         </div>
       </div> : null
