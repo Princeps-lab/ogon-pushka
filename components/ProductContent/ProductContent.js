@@ -71,7 +71,7 @@ const ProductContent = ({product}) => {
     id: product.id,
     color: color ? color.name : null,
     size,
-    img: product.featured_image ? product.featured_image.url : product.images[0].formats.large,
+    img: product.images[0].formats.large,
     count
   };
 
