@@ -36,8 +36,13 @@ const Extra = () => {
             {
              extra.images.length ?
               <>
-                <ExtraItem url={extra.images[0].formats.large.url}/>
-                <ExtraItem url={extra.images[1].formats.large.url}/>
+                {/* <ExtraItem url={extra.images[0].formats.large.url}/> */}
+                { extra.images[0]?.formats?.large.url ?
+                  <ExtraItem url={extra.images[0].formats.large.url}/> : null
+                }
+                { extra.images[1]?.formats?.large.url ?
+                  <ExtraItem url={extra.images[1].formats.large.url}/> : null
+                }
               </>
               : null
             }
