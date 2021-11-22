@@ -9,7 +9,6 @@ import BuyForm from '../BuyForm/index.js';
 const ProductItem = ({product, deleteProduct, addFavor, deleteFavor, favorites} ) => {
   const [itFavor, setItFavor] = useState(null);
   const store = useContext(ProductsContext);
-  
   useEffect(() => {
     const arr = store.favorites.filter(favor => favor.id === product.id);
     if(arr.length) {
@@ -35,7 +34,7 @@ const ProductItem = ({product, deleteProduct, addFavor, deleteFavor, favorites} 
     <div>
       <h3 className={style.BasketTitleProduct}>{product.title}</h3>
       <div className={style.product}>
-        <div className={style.img}  style={{"background" : `url(${product.img}) center / cover`}} />
+        <div className={style.img}  style={{"background" : `url(${product?.img?.url}) center / cover`}} />
         <div className={style.description}>
           <span className={style.price}>Цена: <span>{product.price} грн</span></span>
           {
