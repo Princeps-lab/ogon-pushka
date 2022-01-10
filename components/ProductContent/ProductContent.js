@@ -203,7 +203,7 @@ const ProductContent = ({product}) => {
         </div>
 
         {
-          product.size_image ?
+          product?.size_image ?
             <div className={style.sized}>
             <span 
               onClick={() => setShowModalSize(true)}>

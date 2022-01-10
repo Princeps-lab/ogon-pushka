@@ -94,8 +94,14 @@ div.number {
   align-items: center;
 }
 
-.footerBayed img {
-  width: 5rem;
+.footerBayed div {
+  width: 80px;
+  height: 20px;
+}
+
+.footerBayed div svg {
+  width: 100%;
+  height: 100%;
 }
 
 @media ( max-width:599px ) {
