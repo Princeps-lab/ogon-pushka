@@ -57,7 +57,7 @@ const ModalSize = ({url, setShow}) => {
 const ProductContent = ({product}) => {
   const store = useContext(ProductsContext);
   const defofltSize = product.sizes.length ? product.sizes[0] : null
-  const [descriptionShow, setDescriptionShow] = useState(false);
+  const [descriptionShow, setDescriptionShow] = useState(true);
   const [ buyed, setBuyed ] = useState(false);
   const [ color, setColor ] = useState(product.colors[0]);
   const [ size, setSize ] = useState(defofltSize);
