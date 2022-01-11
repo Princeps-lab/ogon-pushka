@@ -6,12 +6,12 @@ import SliderProduct from './SliderProduct';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const ItemGalery = ({url, priority}) => {
+const ItemGalery = ({url, priority, title}) => {
   let w = 1920;
   let h = 2560;
   return (
     <div>
-      <Image src={url} layout='responsive' objectFit='cover' width={w} height={h} priority={priority} />
+      <Image src={url} layout='responsive' objectFit='cover' width={w} height={h} priority={priority} alt={title} />
     </div>
   )
 };
@@ -107,7 +107,7 @@ const ProductContent = ({product}) => {
 
       <div className={style.galery}>
         {product.images.map((item, id) => {
-          return <ItemGalery key={item.id} url={item.url} priority={id <= 2 ? true : false } />
+          return <ItemGalery title={product.title} key={item.id} url={item.formats.large.url ? item.formats.large.url : item.url} priority={id <= 2 ? true : false } />
         })}
       </div>
 
