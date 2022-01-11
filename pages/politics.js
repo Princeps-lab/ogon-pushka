@@ -1,6 +1,6 @@
 import Layout, { siteTitle } from '../components/Layout';
 import Head from 'next/head';
-import polits from '../api/apiPolite';
+import polits from '../helpers/apiPolite';
 import PoliteContent from '../components/PoliteContent';
 
 const Politics = () => {

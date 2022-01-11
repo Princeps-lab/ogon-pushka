@@ -3,7 +3,7 @@ import Link from 'next/link';
 import CatalogItem from '../CatalogItem';
 import style from './CatalogContent.module.css';
 import { ProductsContext } from '../../context/context.js';
-import apiProducts from '../../api/apiProducts';
+import apiProducts from '../../helpers/apiProducts';
 
 
 const apiCategorie = new apiProducts();

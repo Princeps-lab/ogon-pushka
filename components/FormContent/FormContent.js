@@ -9,7 +9,7 @@ import Liqpay from '../Liqpay';
 import Link from 'next/link';
 import { useRouter } from 'next/router'
 
-import apiOrder from '../../api/apiOrder';
+import apiOrder from '../../helpers/apiOrder';
 const api = new apiOrder();
 
 const Succes = ({text}) => {

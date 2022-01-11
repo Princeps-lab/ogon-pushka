@@ -5,7 +5,7 @@ import Layout, { siteTitle } from '../components/Layout';
 import CategoriesMenu from '../components/CategoriesMenu';
 import Extra from '../components/Extra';
 
-import apiProducts from '../api/apiProducts';
+import apiProducts from '../helpers/apiProducts';
 
 const api = new apiProducts();
 

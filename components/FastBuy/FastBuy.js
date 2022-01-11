@@ -6,7 +6,7 @@ import style from '../FormContent/FormContent.module.css';
 import MaskedInput from "react-text-mask";
 import { useRouter } from 'next/router'
 
-import apiOrder from '../../api/apiOrder';
+import apiOrder from '../../helpers/apiOrder';
 const api = new apiOrder();
 
 const validate = values => {

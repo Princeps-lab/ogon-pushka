@@ -6,7 +6,7 @@ import Layout, { siteTitle } from '../../components/Layout';
 import MainCatalog from '../../components/MainCatalog';
 import MobExtra from '../../components/MobExtra';
 import ProductContent from '../../components/ProductContent';
-import apiProducts from '../../api/apiProducts';
+import apiProducts from '../../helpers/apiProducts';
 
 const api = new apiProducts();
 

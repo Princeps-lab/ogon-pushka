@@ -1,4 +1,4 @@
-import apiProducts from '../../api/apiProducts';
+import apiProducts from '../../helpers/apiProducts';
 import style from './AboutContent.module.css';
 import VideoPlayer from '../VideoPlayer';
 import { useEffect, useState } from 'react';

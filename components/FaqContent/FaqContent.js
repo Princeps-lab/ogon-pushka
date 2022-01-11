@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 
 import style from './fagContent.module.css';
-import apiProducts from '../../api/apiProducts';
+import apiProducts from '../../helpers/apiProducts';
 
 const api = new apiProducts();
 

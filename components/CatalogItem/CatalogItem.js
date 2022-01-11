@@ -13,7 +13,7 @@ const CatalogItem = ({url, title, price}) => {
       <div className={style.title}>
         <div className={style.name}>
           <div className={style.itemTitle}>{title}</div>
-          { store.desktop ? <img width="20px" height="auto" src="/icons/basket.svg"/> : null }
+          { store.desktop ? <img width="20px" height="auto" src="/icons/basket.svg" alt='basket'/> : null }
         </div>
         <div className={style.itemTitle}>{price}.грн</div>
       </div>

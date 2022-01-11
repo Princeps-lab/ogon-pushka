@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import ReactPlayer from 'react-player';
 
-import apiProduct from '../../api/apiProducts';
+import apiProduct from '../../helpers/apiProducts';
 import style from './VideoPlayer.module.css';
 
 const api = new apiProduct();

@@ -1,6 +1,6 @@
 import React, {createContext,useState, useEffect} from 'react';
 import useWindowDimensions from './useWindowDimensions';
-import apiProducts from '../api/apiProducts';
+import apiProducts from '../helpers/apiProducts';
 
 const api = new apiProducts();
 const ProductsContext = createContext();
