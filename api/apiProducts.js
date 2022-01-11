@@ -19,8 +19,3 @@ export default class apiProducts {
   getAbout = () => this.getResourse('about');
   getNew = () => this.getResourse('products?_where[new]=true')
 };
-
-const api = new apiProducts();
-api.getNew().then(products => console.log(products));
-
-api.getAbout().then(products => console.log(products));

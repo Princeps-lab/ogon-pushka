@@ -1,7 +1,6 @@
 import { LiqPayPay } from "react-liqpay";
 import style from "./Liqpay.module.css";
 const Liqpay = ({ amount, orderId }) => {
-  console.log(typeof amount);
   return (
     <div className={style.liqpay} style={{ display: "flex" }}>
       {typeof window !== "undefined" ? (

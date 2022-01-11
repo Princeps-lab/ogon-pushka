@@ -4,11 +4,14 @@ import React, { useContext, useEffect, useState } from 'react';
 import SliderProduct from './SliderProduct';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
-const ItemGalery = ({url}) => {
+const ItemGalery = ({url, priority}) => {
+  let w = 1920;
+  let h = 2560;
   return (
     <div>
-      <img src={url} />
+      <Image src={url} layout='responsive' objectFit='cover' width={w} height={h} priority={priority} />
     </div>
   )
 };
@@ -74,8 +77,6 @@ const ProductContent = ({product}) => {
     img: product.images[0].formats.large,
     count
   };
-
-  console.log(store)
   
   useEffect(() => {
     const isFavor = store.favorites.some((element) => element.id === product.id);
@@ -105,8 +106,8 @@ const ProductContent = ({product}) => {
       }
 
       <div className={style.galery}>
-        {product.images.map(item => {
-          return <ItemGalery key={item.id} url={item.url} />
+        {product.images.map((item, id) => {
+          return <ItemGalery key={item.id} url={item.url} priority={id <= 2 ? true : false } />
         })}
       </div>
 

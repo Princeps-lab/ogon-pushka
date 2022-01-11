@@ -136,8 +136,6 @@ export default function NewPoshta({changeDeliveryUserCity,changeDeliveryUserWare
 
   const changeCity = (city) => {
     setCity(city);
-    console.log(city);
-    console.log(warehouse)
   };
   const changeWarehouse = (warehouse) => setWarehouse(warehouse);
   return (

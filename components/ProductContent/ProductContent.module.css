@@ -12,13 +12,9 @@
 }
 
 .galery > div {
-  display: flex;
   width: 50%;
   border: 1px solid #fff;
-}
-
-.galery > div img {
-  flex-grow: 1;
+  position: relative;
 }
 
 .description {

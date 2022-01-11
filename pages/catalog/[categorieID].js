@@ -11,7 +11,6 @@ import CatalogContent from '../../components/CatalogContent';
 const Catalog = () => {
   const router = useRouter();
   const context = useContext(ProductsContext);
-  console.log(router.query.categorieID)
   return (
     <Layout>
       <Head>
