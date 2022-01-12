@@ -5,6 +5,11 @@
   flex-direction: column;
 }
 
+.catalogItem div:first-child {
+  border: 1px solid #fff;
+  position: relative;
+}
+
 .button {
   position: absolute;
   bottom: 40px;

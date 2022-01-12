@@ -1,5 +1,6 @@
 .catalog {
   padding-top: 4rem;
+  padding-bottom: 4rem;
   display: flex;
 }
 
@@ -7,9 +8,16 @@
   width: 20%;
   padding-top: 4rem;
   padding-left: 2rem;
+  padding-bottom: 4rem;
+  position: relative;
 }
 
-.nav > div {
+.navStiky {
+  position: sticky;
+  top: 8rem;
+}
+
+.navStiky > div {
   margin-bottom: 1.2rem;
   display: flex;
   flex-direction: column;
@@ -47,7 +55,6 @@
 
 .items > a {
   width: 50%;
-  height: 90vh;
   border: 1px solid #fff;
   padding: 1rem;
 }

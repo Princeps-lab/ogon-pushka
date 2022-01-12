@@ -2,13 +2,16 @@ import React, {useContext} from 'react';
 import style from './CatalogItem.module.css';
 import Button from '../Button';
 import { ProductsContext } from '../../context/context';
+import Image from 'next/image';
 
 const CatalogItem = ({url, title, price}) => {
   const store = useContext(ProductsContext);
+  let w = 1920;
+  let h = 2560;
   return(
     <div className={style.catalogItem}>
-      <div style={{"background" : `url(${url}) center / cover`,
-      "height" :"100%", "position": "relative"}}>
+      <div>
+        <Image src={url} layout='responsive' priority objectFit='cover' width={w} height={h} alt={title}/>
       </div>
       <div className={style.title}>
         <div className={style.name}>

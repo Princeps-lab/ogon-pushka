@@ -10,20 +10,8 @@ import apiProducts from '../../helpers/apiProducts';
 
 const api = new apiProducts();
 
-const Product = () => {
-  const [ product, setProduct ] = useState(false);
-  const router = useRouter();
+const Product = ({product}) => {
   const context = useContext(ProductsContext);
-  const productId = router.query.productId;
-
-  useEffect(() => {
-    if(productId) {
-      api.getProduct(productId).then(product => {
-        setProduct(product);
-      });
-    }
-  }, [productId]);
-
   return (
     <Layout>
       <Head>
@@ -37,6 +25,36 @@ const Product = () => {
       : null}
     </Layout>
   );
+};
+
+export async function getServerSideProps(ctx) {
+  const { params } = ctx;
+  ctx.res.setHeader(
+    'Cache-Control',
+    'public, max-age=604800'
+  )
+  console.log(params, 'param');
+  if (!params?.productId) {
+    return {
+      notFound: true
+    }
+  }
+  try {
+    const [ product ] = await Promise.all([
+      api.getProduct(params.productId).then(prod => prod)
+    ])
+    return {
+      props: {
+        product
+      }
+    }
+  }
+
+  catch (error) {
+    return {
+      props: {}
+    }
+  }
 };
 
 export default Product;

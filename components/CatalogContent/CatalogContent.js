@@ -40,6 +40,10 @@ const CatalogContent = ({idCategorie}) => {
       if ( idCategorie !== "new" ) {
         apiCategorie.getCategorie(idCategorie).then(categorie => {
           const arr = categorie ? categorie.map((product) => {
+            const url =
+              product?.featured_image?.formats?.large?.url ? 
+              product?.featured_image?.formats?.large?.url :
+              product?.images[0]?.formats?.large?.url;
             return (
               <Link
                 as={`/product/${product.id}`}
@@ -49,10 +53,10 @@ const CatalogContent = ({idCategorie}) => {
                   {
                     product.featured_image ?
                     <CatalogItem
-                    price={product.price}
-                    textBtn="Купить"
-                    title={product.title}
-                    url={ product.featured_image.url ?  product.featured_image.url :  product.images[0].url } /> : null
+                      price={product.price}
+                      textBtn="Купить"
+                      title={product.title}
+                      url={url} /> : null
                   }
               </a>
               </Link> 
@@ -86,12 +90,14 @@ const CatalogContent = ({idCategorie}) => {
   return (
     <div className={style.catalog}>
       <div className={style.nav} >
-        {
-          categories.map(item => {
-            return <NavItem arr={item.categories} title={item.name} key={item.id}/>
-          })
-        }
-        <NavItem arr={[]} title="New"/>
+        <div className={style.navStiky}>
+          {
+            categories.map(item => {
+              return <NavItem arr={item.categories} title={item.name} key={item.id}/>
+            })
+          }
+          <NavItem arr={[]} title="New"/>
+        </div>
       </div>
 
       <div className={style.items} >
