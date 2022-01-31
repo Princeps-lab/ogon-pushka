@@ -38,12 +38,12 @@ const CatalogContent = ({categorie}) => {
           as={`/product/${product.id}`}
           key={product.id}
           href={'/product/[productId]'}>
-          <a onClick={() => localStorage.setItem('parentId', `${idCategorie}`)}>
+          <a onClick={() => localStorage.setItem('parentId', `${categorie.idCategorie}`)}>
             <CatalogItem
               price={product.price}
               textBtn="Купить"
               title={product.title}
-              url={ product.featured_image ?  product.featured_image.url :  product.images[0].formats.large.url } />
+              url={ product.featured_image?.formats?.large?.url ?  product.featured_image?.formats?.large?.url : product.featured_image?.url ? product.featured_image?.url : product.images[0].formats.large.url } />
         </a>
         </Link> 
     )}) : []

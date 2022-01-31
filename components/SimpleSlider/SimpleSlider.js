@@ -31,7 +31,6 @@ const SimpleSlider = ({slidesPerView = 4, products, mobExtra}) => {
     <Swiper
       slidesPerView={slidesPerView}
       navigation
-      loop
     >
       {
         products && !mobExtra ?

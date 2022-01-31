@@ -2,7 +2,7 @@ import style from './ProductContent.module.css';
 import { ProductsContext } from '../../context/context.js';
 import React, { useContext, useEffect, useState } from 'react';
 import SliderProduct from './SliderProduct';
-
+import ReactTooltip from 'react-tooltip';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
@@ -105,6 +105,11 @@ const ProductContent = ({product}) => {
 
   return (
     <div className={style.product}>
+      <ReactTooltip
+        effect='solid'
+        place='bottom'
+        class={style.tooltip}
+        id="main"/>
       { showModalSize ?
         <ModalSize setShow={() => setShowModalSize(false)} url={product?.size_image?.url} /> : null
       }
@@ -280,7 +285,10 @@ const ProductContent = ({product}) => {
             </Link>
           </div>
 
-          <div>
+          <div
+            className={style.tooltipBlock}
+            data-for="main"
+            data-tip={product.availability ? "Есть в наличии" : "Нет в наличии"}>
             <span>Наличие в магазине</span>
               <svg  style={{"marginLeft": ".5rem"}} width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6 7.625C4.965 7.625 4.125 6.785 4.125 5.75C4.125 4.715 4.965 3.875 6 3.875C7.035 3.875 7.875 4.715 7.875 5.75C7.875 6.785 7.035 7.625 6 7.625ZM6 0.5C3.0975 0.5 0.75 2.8475 0.75 5.75C0.75 9.6875 6 15.5 6 15.5C6 15.5 11.25 9.6875 11.25 5.75C11.25 2.8475 8.9025 0.5 6 0.5Z" fill="black"/>
@@ -295,7 +303,6 @@ const ProductContent = ({product}) => {
             </svg>
             <span style={{"marginLeft": ".5rem"}}>Описание товара</span>
           </div>
-
             <div>
               <a href={urlShare} target="_blank" rel="noreferrer">
                 <span >Поделиться</span>

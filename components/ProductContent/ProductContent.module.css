@@ -167,7 +167,14 @@ div.heart svg {
   font-weight: bold;
 }
 
-.nav div, .nav div > a {
+.tooltip {
+  background-color: #000;
+  margin-top: 20px !important;
+  opacity: 1 !important;
+  color: #fff;
+}
+
+.nav div {
   display: flex;
   align-items: center;
   width: 50%;
@@ -175,8 +182,17 @@ div.heart svg {
   transition: all .3s;
 }
 
+.nav div > a {
+  display: flex;
+  align-items: center;
+}
+
 .nav div:hover {
   opacity: .8;
+}
+
+.nav .tooltipBlock:hover {
+  opacity: 1;
 }
 
 .nav div:last-child {
