@@ -167,7 +167,7 @@ div.heart svg {
   font-weight: bold;
 }
 
-.nav div {
+.nav div, .nav div > a {
   display: flex;
   align-items: center;
   width: 50%;

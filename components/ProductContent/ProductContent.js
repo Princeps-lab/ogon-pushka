@@ -296,7 +296,6 @@ const ProductContent = ({product}) => {
             <span style={{"marginLeft": ".5rem"}}>Описание товара</span>
           </div>
 
-          
             <div>
               <a href={urlShare}>
               <span >Поделиться</span>
