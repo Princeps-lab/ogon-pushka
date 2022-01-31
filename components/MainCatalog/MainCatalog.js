@@ -53,11 +53,11 @@ const MainCatalog = () => {
     recommended ?
       <div className={style.catalog}>
       <div className={style.top}>
-        <Left title={recommended.title} description={recommended.description} />
-        <Right products={[recommended.products[0],recommended.products[1]]} />
+        <Left title={recommended?.title} description={recommended?.description} />
+        <Right products={[recommended?.products[0],recommended?.products[1]]} />
       </div>
       <div className={style.bottom}>
-        <SimpleSlider products={recommended.products} />
+        <SimpleSlider products={recommended?.products?.filter(((item, id) => id !== 0 && id !== 1))} />
       </div>
     </div> : null
   );

@@ -5,6 +5,7 @@ import SliderProduct from './SliderProduct';
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 const ItemGalery = ({url, title}) => {
   let w = 1920;
@@ -68,6 +69,10 @@ const ProductContent = ({product}) => {
   const [ count, setCount ] = useState(1);
   const [ showModalSize, setShowModalSize ] = useState(false);
 
+  console.log(product, 'prd');
+  const {asPath} = useRouter();
+  const urlShare = `https://t.me/share/url?https://ogonpushka.com.ua/${asPath}`
+
   const productBuyed = {
     title: product.title,
     price: product.price,
@@ -100,14 +105,13 @@ const ProductContent = ({product}) => {
 
   return (
     <div className={style.product}>
-
       { showModalSize ?
-        <ModalSize setShow={() => setShowModalSize(false)} url={product.size_image.url} /> : null
+        <ModalSize setShow={() => setShowModalSize(false)} url={product?.size_image?.url} /> : null
       }
 
       <div className={style.galery}>
         {product.images.map((item, id) => {
-          return <ItemGalery title={product.title} key={item.id} url={item.formats.large.url ? item.formats.large.url : item.url} />
+          return <ItemGalery title={product.title} key={item.id} url={item?.formats?.large?.url ? item?.formats?.large?.url : item?.url} />
         })}
       </div>
 
@@ -277,7 +281,7 @@ const ProductContent = ({product}) => {
           </div>
 
           <div>
-            <span >Наличие в магазине</span>
+            <span>Наличие в магазине</span>
               <svg  style={{"marginLeft": ".5rem"}} width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6 7.625C4.965 7.625 4.125 6.785 4.125 5.75C4.125 4.715 4.965 3.875 6 3.875C7.035 3.875 7.875 4.715 7.875 5.75C7.875 6.785 7.035 7.625 6 7.625ZM6 0.5C3.0975 0.5 0.75 2.8475 0.75 5.75C0.75 9.6875 6 15.5 6 15.5C6 15.5 11.25 9.6875 11.25 5.75C11.25 2.8475 8.9025 0.5 6 0.5Z" fill="black"/>
               </svg>
@@ -292,12 +296,15 @@ const ProductContent = ({product}) => {
             <span style={{"marginLeft": ".5rem"}}>Описание товара</span>
           </div>
 
-          <div>
-            <span >Поделиться</span>
-            <svg style={{"marginLeft": ".5rem"}} width="19" height="15" viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15.2019 6.66667L12.5086 3.92259L13.6653 2.74408L18.3333 7.5L13.6653 12.2559L12.5086 11.0774L15.2019 8.33333H4.9076V6.66667H15.2019ZM0 13.3333V1.66667V0H8.17933V1.66667H1.63587V13.3333H8.17933V15H0V13.3333Z" fill="black"/>
-            </svg>
-          </div>
+          
+            <div>
+              <a href={urlShare}>
+              <span >Поделиться</span>
+              <svg style={{"marginLeft": ".5rem"}} width="19" height="15" viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.2019 6.66667L12.5086 3.92259L13.6653 2.74408L18.3333 7.5L13.6653 12.2559L12.5086 11.0774L15.2019 8.33333H4.9076V6.66667H15.2019ZM0 13.3333V1.66667V0H8.17933V1.66667H1.63587V13.3333H8.17933V15H0V13.3333Z" fill="black"/>
+              </svg>
+              </a>
+            </div>
         </div>
         
         {
