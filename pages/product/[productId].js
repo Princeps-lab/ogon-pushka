@@ -1,6 +1,5 @@
-import React, {useEffect, useState, useContext} from 'react';
+import React, {useContext} from 'react';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import {ProductsContext} from '../../context/context.js';
 import Layout, { siteTitle } from '../../components/Layout';
 import MainCatalog from '../../components/MainCatalog';

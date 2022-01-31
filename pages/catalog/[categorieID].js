@@ -1,25 +1,57 @@
 import Head from 'next/head';
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import {ProductsContext} from '../../context/context.js';
-import { useRouter } from 'next/router';
-
+import apiProducts from '../../helpers/apiProducts';
 import Layout, { siteTitle } from '../../components/Layout';
 import SocialBlock from '../../components/SocialBlock';
 import MobSocial from '../../components/MobSocial';
 import CatalogContent from '../../components/CatalogContent';
 
-const Catalog = () => {
-  const router = useRouter();
+const api = new apiProducts();
+
+const Catalog = ({categorie}) => {
   const context = useContext(ProductsContext);
   return (
     <Layout>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <CatalogContent idCategorie={router.query.categorieID} />
-      { context.desktop ? <SocialBlock /> : <MobSocial /> }
+      <CatalogContent categorie={categorie} />
+      {context.desktop ? <SocialBlock /> : <MobSocial />}
     </Layout>
   )
 };
+
+export async function getServerSideProps(ctx) {
+  const { params } = ctx;
+  ctx.res.setHeader(
+    'Cache-Control',
+    'public, max-age=604800'
+  )
+  if (!params?.categorieID) {
+    return {
+      notFound: true
+    }
+  }
+  try {
+    const [ categorie ] = await Promise.all([
+      params?.categorieID !== "new" ?
+      api.getCategorie(params?.categorieID).then(categorie => categorie) :
+      api.getNew().then(categorie => categorie)
+    ])
+    return {
+      props: {
+        categorie
+      }
+    }
+  }
+
+  catch (error) {
+    return {
+      props: {}
+    }
+  }
+
+}
 
 export default Catalog;
