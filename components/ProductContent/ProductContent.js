@@ -201,7 +201,7 @@ const ProductContent = ({product}) => {
               }}
               style={{'width' : "100%"}} className={style.basket}>
               Добавлено корзину
-            </div>
+            </div> 
           }
 
           <div onClick={() => {setFavoriteAction(!favoriteAction)}}
