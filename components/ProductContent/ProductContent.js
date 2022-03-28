@@ -203,6 +203,7 @@ const ProductContent = ({product}) => {
               Добавлено корзину
             </div>
           }
+          
 
           <div onClick={() => {setFavoriteAction(!favoriteAction)}}
             className={favoriteAction ? style.heart : style.heartInAction}>
