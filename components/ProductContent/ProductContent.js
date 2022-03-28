@@ -186,7 +186,7 @@ const ProductContent = ({product}) => {
             : null
           }
 
-          {
+          {/* {
             !buyed ? 
             <div onClick={() => {
               store.addProduct(productBuyed);
@@ -202,7 +202,7 @@ const ProductContent = ({product}) => {
               style={{'width' : "100%"}} className={style.basket}>
               Добавлено корзину
             </div>
-          }
+          } */}
 
           <div onClick={() => {setFavoriteAction(!favoriteAction)}}
             className={favoriteAction ? style.heart : style.heartInAction}>
