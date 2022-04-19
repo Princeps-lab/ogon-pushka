@@ -1,5 +1,6 @@
 import Layout, { siteTitle } from '../components/Layout';
 import Head from 'next/head';
+import FormContent from '../components/FormContent'
 
 const Form = () => {
   return (
@@ -7,7 +8,7 @@ const Form = () => {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      {/* <FormContent/> */}
+      <FormContent/>
     </Layout>
   );
 };
