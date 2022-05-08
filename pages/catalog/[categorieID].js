@@ -24,10 +24,6 @@ const Catalog = ({categorie}) => {
 
 export async function getServerSideProps(ctx) {
   const { params } = ctx;
-  ctx.res.setHeader(
-    'Cache-Control',
-    'public, max-age=604800'
-  )
   if (!params?.categorieID) {
     return {
       notFound: true

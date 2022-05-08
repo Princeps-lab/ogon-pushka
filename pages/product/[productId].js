@@ -28,11 +28,6 @@ const Product = ({product}) => {
 
 export async function getServerSideProps(ctx) {
   const { params } = ctx;
-  ctx.res.setHeader(
-    'Cache-Control',
-    'public, max-age=604800'
-  )
-  console.log(params, 'param');
   if (!params?.productId) {
     return {
       notFound: true
