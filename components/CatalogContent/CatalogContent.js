@@ -32,7 +32,8 @@ const CatalogContent = ({categorie}) => {
   const [ products, setProducts ] = useState([]);
 
   useEffect(() => {
-    const arr = categorie ? categorie.map((product) => {
+    const reverse = categorie.reverse()
+    const arr = reverse ? reverse.map((product) => {
       return (
         <Link
           as={`/product/${product.id}`}
