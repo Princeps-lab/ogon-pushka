@@ -14,7 +14,8 @@
   "dependencies": {
     "formik": "^2.2.9",
     "next": "^12.0.7",
-    "npm": "^7.20.6",
+    "node": "^19.3.0",
+    "npm": "^9.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-id-swiper": "^4.0.0",
@@ -22,12 +23,12 @@
     "react-player": "^2.6.2",
     "react-text-mask": "^5.4.3",
     "react-tooltip": "^4.2.21",
-    "sharp": "^0.29.3",
+    "sharp": "^0.31.3",
     "strip-ansi": "^7.0.1",
     "swiper": "^6.8.4"
   },
   "devDependencies": {
     "eslint": "8.6.0",
-    "eslint-config-next": "12.0.7"
+    "eslint-config-next": "^12.0.4"
   }
 }
