@@ -4,8 +4,8 @@ import style from './ContactBlock.module.css';
 const ContactBlock = () => {
   return (
     <div className={style.contact}>
-      <h2>Контакты</h2>
-      <p>Пушка Огонь - бренд пылающих шмоток Украина, г. Харьков</p>
+      <h2>Контакти</h2>
+      <p>OGONPUSHKA - бренд палаючого одягу. Україна, м. Харків</p>
       <div className={style.number}>068 482 72 75</div>
 
       <div className={style.socialLinks}>

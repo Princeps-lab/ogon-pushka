@@ -7,7 +7,7 @@ const ItemSlider = ({url, title}) => {
     <div className={style.catalogItem} style={{"background" : `url(${url}) center / cover`}}>
       <div className={style.button}>
         <div className={style.itemTitle}>{title}</div>
-        <Button text="Подробнее" />
+        <Button text="ДЕТАЛЬНІШЕ" />
       </div>
     </div>
   );
@@ -46,7 +46,7 @@ const CategoriesMenu = ({arr}) => {
       <div className={style.rightBlock}  style={{"background" : `url("/images/CatalogMenu.jpg") center / cover`}} >
         <div className={style.content}>
           <p>Paragraph</p>
-          <Button white text="Подробнее" />
+          <Button white text="ДЕТАЛЬНІШЕ" />
         </div>
       </div>
     </div>

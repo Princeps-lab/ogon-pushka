@@ -17,7 +17,7 @@ const AboutContent = () => {
 
   return (
     <div className={style.about}>
-      <h2>О нас</h2>
+      <h2>Про Нас</h2>
       <div className={style.description} dangerouslySetInnerHTML={createMarkup(content)}></div>
       <VideoPlayer/>
     </div>

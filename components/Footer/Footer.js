@@ -5,25 +5,25 @@ import styles from './Footer.module.css';
 const pagesLink = [
   {
     link: "/categories",
-    name: "категории товаров",
+    name: "категорії товарів",
     id: 0,
     as: "/categories"
   },
   {
     link: "/contacts",
-    name: "контакты",
+    name: "контакти",
     id: 1,
     as: "/contacts"
   },
   {
     link: "/faq",
-    name: "частые вопросы",
+    name: "часті запитання",
     id: 2,
     as: "/faq"
   },
   {
     link: "/about",
-    name: "о нас",
+    name: "про нас",
     id: 3,
     as: "/aboutUs"
   },
@@ -54,7 +54,7 @@ const Footer = () => {
 
         <div className={styles.socialLinks}>
           <div>
-            <div className={styles.socialLinksTitle}>Социальные сети:</div>
+            <div className={styles.socialLinksTitle}>Соціальні мережі::</div>
             <div className={styles.socialLinksList}>
               <a href="https://teleg.run/pushka_ogon">
                 <Image width="100%" height="100%" src="/icons/Telegram/white.svg" alt="telegram"/>
@@ -74,8 +74,8 @@ const Footer = () => {
       </div>
 
       <div className={styles.footerBotoom}>
-        <div>Пушка Огонь - бренд пылающих шмоток Украина, г. Харьков</div>
-        <div>Работаем без выходных с 9:00 до 20:00</div>
+        <div>OGONPUSHKA - бренд палаючого одягу. Україна, м. Харків</div>
+        <div>Працюємо без вихідних з 9:00 до 20:00</div>
         <div className={styles.number}>068 482 72 75</div>
       </div>
 

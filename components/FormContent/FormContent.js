@@ -108,10 +108,10 @@ const FormContent = () => {
   ];
 
   const buyes = [
-    // {
-    //   name: "Liqpay",
-    //   id: 0
-    // },
+    {
+      name: "Liqpay",
+      id: 0
+    },
     {
       name: "Оплата на карту",
       id: 1
@@ -183,8 +183,8 @@ const FormContent = () => {
   return (
     <div className={style.form}>
       <Succes text={status} />
-      <h2>Оформление заказа</h2>
-      <h3>Информация о получателе:</h3>
+      <h2>Оформлення замовлення</h2>
+      <h3>Інформація про одержувача:</h3>
       <form onSubmit={formik.handleSubmit}>
         <input
           autoComplete="off"
@@ -246,7 +246,7 @@ const FormContent = () => {
 
         <Select items={buyes} changeItem={changeBuy} />
 
-        <h3>Комментарий:</h3>
+        <h3>Коментар:</h3>
         <textarea
           id="comment"
           name="comment"
@@ -256,16 +256,16 @@ const FormContent = () => {
         />
 
         <div className={style.sum}>
-          <div>К оплате</div>
+          <div>До оплати</div>
           <div>{store.sum} грн</div>
         </div>
         
         <p className={style.politic}>
-        Кликнув на "ПОДТВЕРДИТЬ ЗАКАЗ", 
+        Клікнувши на "ПІДТВЕРДИТИ ЗАМОВЛЕННЯ", 
         <br/>
-        Вы соглашаетесь с 
+        Ви погоджуєтесь з 
         <Link href="/politics">
-          <a> политикой безопасности и конфиденциальности</a>
+          <a> політикою безпеки та конфіденційності</a>
         </Link>.
         </p>
         

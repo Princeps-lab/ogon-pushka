@@ -19,7 +19,7 @@ const ItemSlider = ({url, title}) => {
     <div className={style.catalogItem} style={{"background" : `url(${url}) center / cover`}}>
       <div className={style.button}>
         {/* <div className={style.itemTitle}>{title}</div> */}
-        <Button text="Подробнее" />
+        <Button text="ДЕТАЛЬНІШЕ" />
       </div>
     </div>
   );

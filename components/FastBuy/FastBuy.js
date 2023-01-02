@@ -94,8 +94,8 @@ const FastBuy = () => {
   return (
     <div className={style.form}>
       <Succes  text={status} />
-      <h2>Оформление заказа</h2>
-      <h3>Информация о получателе:</h3>
+      <h2>Оформлення замовлення</h2>
+      <h3>Інформація про одержувача:</h3>
       <form onSubmit={formik.handleSubmit}>
         <input
           placeholder="Имя"
@@ -124,7 +124,7 @@ const FastBuy = () => {
         {formik.errors.phone ? <div className={style.errors}>{formik.errors.phone}</div> : null}
 
         <div className={style.sum}>
-          <div>К оплате</div>
+          <div>До оплати</div>
           <div>{store.sum} грн</div>
         </div>
 

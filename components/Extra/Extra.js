@@ -11,7 +11,7 @@ const Top = ({title,description}) => {
         <p>{description}</p>
       <Link href="/categories">
         <a>
-          <Button text="Подробнее"/>
+          <Button text="ДЕТАЛЬНІШЕ"/>
         </a>
       </Link>
     </div>

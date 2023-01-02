@@ -36,18 +36,18 @@ const ProductItem = ({product, deleteProduct, addFavor, deleteFavor, favorites} 
       <div className={style.product}>
         <div className={style.img}  style={{"background" : `url(${product?.img?.url}) center / cover`}} />
         <div className={style.description}>
-          <span className={style.price}>Цена: <span>{product.price} грн</span></span>
+          <span className={style.price}>Ціна: <span>{product.price} грн</span></span>
           {
             product.size ? 
-            <span>Размер: <span>{product.size.name}</span></span> : null
+            <span>Розмір: <span>{product.size.name}</span></span> : null
           }
           { product.color ?
             <span>
-              Цвет: 
+              Колір: 
               <span className={style.color}>{product.color}</span>
             </span> : null
           }
-          <span>Количество: <span>{product.count}</span></span>
+          <span>Кількість: <span>{product.count}</span></span>
 
           <div className={style.iconsProduct}>
             <div onClick={() => deleteProduct(product.id)} >
@@ -122,7 +122,7 @@ const Basket = () => {
 
       <div className={store.basketShow ? style.basket : style.basketOff}>
         <div className={style.basketHeader}>
-          <h2>Корзина</h2>
+          <h2>Кошик</h2>
           <div onClick={() => showOff()}>
             <img src="/icons/close.svg" alt="close" />
           </div>
@@ -130,13 +130,13 @@ const Basket = () => {
 
         {
           products.length ?
-          <div onClick={() => store.deleteAll()} className={style.deleteAll}>Удалить все товары</div> : null
+          <div onClick={() => store.deleteAll()} className={style.deleteAll}>Видалити всі товари</div> : null
         }
 
         {
           !products.length ?
           <div className={style.logo}>
-            <span>Корзина пуста</span>
+            <span>Кошик пустий</span>
             <Image  width="100%" height="100%" src='/images/logo.svg' />
           </div>
           : null
@@ -147,7 +147,7 @@ const Basket = () => {
         {
           products.length ?
           <div className={style.sum}>
-            <div>Всего :</div>
+            <div>Усього :</div>
             <div>{store.sum} грн</div>
           </div> : null
         }
@@ -157,7 +157,7 @@ const Basket = () => {
           <div>
             <Link href="/form">
               <a onClick={() => showOff()} className={style.basketBtn}>
-                Оформить
+                Оформити
               </a>
             </Link>
           </div> : null
@@ -169,7 +169,7 @@ const Basket = () => {
           </svg>
           <Link href="/faq">
             <a onClick={() => showOff()} >
-              <span style={{"marginLeft": ".5rem"}}>Доставка и возврат</span>
+              <span style={{"marginLeft": ".5rem"}}>Доставка та повернення</span>
             </a>
           </Link>
         </div>

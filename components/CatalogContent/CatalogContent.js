@@ -42,7 +42,7 @@ const CatalogContent = ({categorie}) => {
           <a onClick={() => localStorage.setItem('parentId', `${categorie.idCategorie}`)}>
             <CatalogItem
               price={product.price}
-              textBtn="Купить"
+              textBtn="Купити"
               title={product.title}
               url={ product.featured_image?.formats?.large?.url ?  product.featured_image?.formats?.large?.url : product.featured_image?.url ? product.featured_image?.url : product.images[0].formats.large.url } />
         </a>

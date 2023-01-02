@@ -6,25 +6,25 @@ import SubMenu from './SubMenu';
 const pagesLink = [
   {
     link: "/categories",
-    name: "категории товаров",
+    name: "категорії товарів",
     id: 0,
     as: "/categories"
   },
   {
     link: "/contacts",
-    name: "контакты",
+    name: "контакти",
     id: 1,
     as: "/contacts"
   },
   {
     link: "/faq",
-    name: "частые вопросы",
+    name: "часті запитання",
     id: 2,
     as: "/faq"
   },
   {
     link: "/about",
-    name: "о нас",
+    name: "про нас",
     id: 3,
     as: "/aboutUs"
   },

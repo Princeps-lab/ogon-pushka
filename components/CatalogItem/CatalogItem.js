@@ -21,7 +21,7 @@ const CatalogItem = ({url, title, price}) => {
         <div className={style.itemTitle}>{price}.грн</div>
       </div>
       { !store.desktop ?
-        <div className={style.btn}><Button text="Подробнее" /> </div>: null
+        <div className={style.btn}><Button text="ДЕТАЛЬНІШЕ" /> </div>: null
         }
     </div>
   )

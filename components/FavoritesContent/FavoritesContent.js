@@ -14,15 +14,15 @@ const FavItem = ({product, deleteFavor}) => {
       <div className={style.img}><img src={url} alt="Photo"/></div>
       <div className={style.description}>
         <h3>{product.title}</h3>
-        <span>Цена: <span>{product.price}</span></span>
+        <span>Ціна: <span>{product.price}</span></span>
         {
-          product.size ? <span>Размер: <span>{product.size.name}</span></span> : null
+          product.size ? <span>Розмір: <span>{product.size.name}</span></span> : null
         }
         {
           product.color ?
-          <span>Цвет: <span className={style.color} style={{"background" : `#${product.color.colorTitle}`}}/></span> : null
+          <span>Колір: <span className={style.color} style={{"background" : `#${product.color.colorTitle}`}}/></span> : null
         }
-        <span>Количество: <span>1</span></span>
+        <span>Кількість: <span>1</span></span>
 
         <div className={style.iconsProduct}>
           <div onClick={() => deleteFavor(product.id)} >
@@ -39,7 +39,7 @@ const FavItem = ({product, deleteFavor}) => {
             <Link 
               as={`/product/${product.id}`}
               href={'/product/[productId]'}>
-              <a><Button text="Купить" /></a>
+              <a><Button text="Купити" /></a>
             </Link>
           </div>
         </div>
@@ -56,7 +56,7 @@ const FavoritesContent = () => {
 
   return (
     <div className={style.favorites}>
-      <h2>Избранное</h2>
+      <h2>Обране</h2>
 
       {
         store.favorites.length ?
@@ -64,8 +64,8 @@ const FavoritesContent = () => {
           {products}
         </div> :
         <>
-          <span>Ваш список любимых вещей пуст.</span>
-          <span>Сохраните понравившиеся модели в избранное, чтобы не потерять их из вида.</span>
+          <span>Ваш список улюблених речей порожній.</span>
+          <span>Збережіть уподобані моделі у вибране, щоб не втратити їх з виду.</span>
         </>
       }
     </div>
