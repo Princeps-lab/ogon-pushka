@@ -27,7 +27,7 @@ const App = () => {
         </Head>
         {context.home ?  <Main hero={context.home.hero} /> : <Preloader/>}
         { context.desktop ? <Extra /> : <MobExtra mobExtra /> }
-        {typeof window !== 'undefined' ?<VideoPlayer /> : null}
+        {/* {typeof window !== 'undefined' ?<VideoPlayer /> : null} */}
         { context.desktop ? <MainCatalog /> : <MobExtra /> }
         <Description />
         { context.desktop ? <SocialBlock /> : <MobSocial /> }

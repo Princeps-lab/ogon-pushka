@@ -30,7 +30,7 @@ const Right = ({products}) => {
     return (
       <Link
         key={product.id}
-        as={`/product/${product.id}`}>
+        passHref={`/product/${product.id}`}>
           <ItemSlider title={product.title} url={product.images[0].formats.large.url} />
       </Link>
     )

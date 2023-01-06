@@ -45,9 +45,7 @@ const Footer = () => {
         </div>
 
         <div className={styles.logo}>
-          <Link href="/">
-            <Image width="100%" height="100%" src="/images/logoFooter.svg" alt="logo"/>
-          </Link>
+          <Image width="100" height="100" src="/images/logoFooter.svg" alt="logo"/>
         </div>
 
         <div className={styles.socialLinks}>
@@ -55,16 +53,16 @@ const Footer = () => {
             <div className={styles.socialLinksTitle}>Соціальні мережі::</div>
             <div className={styles.socialLinksList}>
               <a href="https://teleg.run/pushka_ogon">
-                <Image width="100%" height="100%" src="/icons/Telegram/white.svg" alt="telegram"/>
+                <Image width="100" height="100" src="/icons/Telegram/white.svg" alt="telegram"/>
               </a>
               <a href="https://www.tiktok.com/@ogonpushka">
-                <Image width="100%" height="100%" src="/icons/TikTok/white.svg" alt="tik-tok"/>
+                <Image width="100" height="100" src="/icons/TikTok/white.svg" alt="tik-tok"/>
               </a>
               <a href="https://www.instagram.com/ogonpushka">
-                <Image width="100%" height="100%"  src="/icons/Instagram/white.svg" alt="instagram"/>
+                <Image width="100" height="100"  src="/icons/Instagram/white.svg" alt="instagram"/>
               </a>
               <a href="https://fb.me/ogonpushka">
-                <Image width="100%" height="100%" src="/icons/Facebook/white.svg" alt="facebook"/>
+                <Image width="100" height="100" src="/icons/Facebook/white.svg" alt="facebook"/>
               </a>
             </div>
           </div>
