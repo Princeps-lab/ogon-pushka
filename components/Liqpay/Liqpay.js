@@ -5,8 +5,8 @@ const Liqpay = ({ amount, orderId }) => {
     <div className={style.liqpay} style={{ display: "flex" }}>
       {typeof window !== "undefined" ? (
         <LiqPayPay
-          publicKey="i5737972172"
-          privateKey="nZyKusiVEnhZ2VSi0pSiYPxJ5EHvxpJZtiiVikDg"
+          publicKey="i58476922278"
+          privateKey="XKkn2frDXrSYRxuSzpLKJXsaM9iAQCdmVPxTzW5S"
           amount={amount}
           description="Payment for product"
           currency="UAH"
