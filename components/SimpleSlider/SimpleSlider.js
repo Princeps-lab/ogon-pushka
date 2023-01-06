@@ -39,11 +39,10 @@ const SimpleSlider = ({slidesPerView = 4, products, mobExtra}) => {
             <SwiperSlide 
               key={product.id}>
               <Link
-              as={`/product/${product.id}`}
-              href={'/product/[productId]'}>
-              <a>
+              as={`/product/${product.id}`}>
+              
                 <ItemSlider url={product.images[0].formats.large.url} title={product.title} />
-              </a>
+              
             </Link>
             </SwiperSlide>
           )

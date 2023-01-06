@@ -37,9 +37,8 @@ const FavItem = ({product, deleteFavor}) => {
 
           <div>
             <Link 
-              as={`/product/${product.id}`}
-              href={'/product/[productId]'}>
-              <a><Button text="Купити" /></a>
+              as={`/product/${product.id}`}>
+              <Button text="Купити" />
             </Link>
           </div>
         </div>

@@ -30,8 +30,8 @@ const MobNavHeader = ({isShown, setShow}) => {
   const links = pagesLink.map(item => {
     return (
       <div key={item.id} onClick={() => setShow()}>
-        <Link href={item.link}>
-          <a className={style.linkMain}>{item.name}</a></Link>
+        <Link className={style.linkMain} href={item.link}>{item.name}
+          </Link>
       </div>
      );
   });
@@ -40,7 +40,7 @@ const MobNavHeader = ({isShown, setShow}) => {
     <div className={ isShown ? style.headerNav : style.headerNavOff }>
       <div className={style.logoNav} onClick={() => setShow()}>
         <Link href="/">
-          <a><Logo/></a>
+          <Logo/>
         </Link>
         <div><img src="/icons/close.svg" alt="close" /></div>
       </div>

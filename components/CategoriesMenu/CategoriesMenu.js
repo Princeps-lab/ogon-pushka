@@ -17,8 +17,9 @@ const ButtonCategories = ({item}) => {
   return (
       <Link
         as={`/catalog/${item.id}`}
+        className={style.btnCategories}
         href={`/catalog/[categorieID]`}>
-        <a className={style.btnCategories}>{item.name}</a>
+        {item.name}
       </Link>
   );
 };

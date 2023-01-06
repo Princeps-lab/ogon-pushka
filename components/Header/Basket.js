@@ -112,7 +112,7 @@ const Basket = () => {
       <div className={style.iconsItem}>
         <div>
           <Link href="/favorites">
-            <a><img src="/icons/heart.svg" /></a>
+            <img src="/icons/heart.svg" />
           </Link>
         </div>
         <div onClick={() => showOn()}>
@@ -137,7 +137,7 @@ const Basket = () => {
           !products.length ?
           <div className={style.logo}>
             <span>Кошик пустий</span>
-            <Image  width="100%" height="100%" src='/images/logo.svg' />
+            <Image width="100" alt='logo' height="100" src='/images/logo.svg' />
           </div>
           : null
         }
@@ -155,10 +155,10 @@ const Basket = () => {
         {
           products.length ?
           <div>
-            <Link href="/form">
-              <a onClick={() => showOff()} className={style.basketBtn}>
+            <Link href="/form" onClick={() => showOff()} className={style.basketBtn}>
+              
                 Оформити
-              </a>
+              
             </Link>
           </div> : null
         }
@@ -167,10 +167,8 @@ const Basket = () => {
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M8 0.5C3.86 0.5 0.5 3.86 0.5 8C0.5 12.14 3.86 15.5 8 15.5C12.14 15.5 15.5 12.14 15.5 8C15.5 3.86 12.14 0.5 8 0.5ZM11.15 11.15L7.25 8.75V4.25H8.375V8.15L11.75 10.175L11.15 11.15Z" fill="black"/>
           </svg>
-          <Link href="/faq">
-            <a onClick={() => showOff()} >
-              <span style={{"marginLeft": ".5rem"}}>Доставка та повернення</span>
-            </a>
+          <Link href="/faq" onClick={() => showOff()}>
+            <span style={{"marginLeft": ".5rem"}}>Доставка та повернення</span>
           </Link>
         </div>
 

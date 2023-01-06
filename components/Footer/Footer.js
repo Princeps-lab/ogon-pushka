@@ -33,7 +33,7 @@ const Footer = () => {
 
   const links = pagesLink.map(item => {
     return (
-      <Link key={item.id} href={item.link}><a>{item.name}</a></Link>
+      <Link key={item.id} href={item.link}>{item.name}</Link>
     );
   });
 
@@ -46,9 +46,7 @@ const Footer = () => {
 
         <div className={styles.logo}>
           <Link href="/">
-            <a>
-              <Image width="100%" height="100%" src="/images/logoFooter.svg" alt="logo"/>
-            </a>
+            <Image width="100%" height="100%" src="/images/logoFooter.svg" alt="logo"/>
           </Link>
         </div>
 

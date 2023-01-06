@@ -15,7 +15,7 @@ const ItemSub = ({list = [], title}) => {
             return  <Link as={`/catalog/${item.id}`}
                       href={`/catalog/[categorieID]`}
                       key={item.id}>
-                        <a>{item.name}</a>
+                        {item.name}
                     </Link>
           })
         }
@@ -40,11 +40,9 @@ const SubMenu = ({isShown}) => {
       <Link
         as={`/catalog/new`}
         href={`/catalog/[categorieID]`}
+        className={styles.subBg}
+          style={{"background" : `url('/images/CatalogMenu.jpg') center / cover`}}
         >
-        <a
-          className={styles.subBg}
-          style={{"background" : `url('/images/CatalogMenu.jpg') center / cover`}} >
-        </a>
       </Link>
       
     </div>

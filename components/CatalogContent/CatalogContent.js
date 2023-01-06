@@ -11,13 +11,9 @@ const NavItem = ({arr, title}) => {
         return (
           <Link
             as={`/catalog/${item.id}`}
-            href={`/catalog/[categorieID]`}
             key={item.id}>
-            <a>
-              <span
-              className={style.link}>
-              {item.name}</span>
-            </a>
+            <span className={style.link}>
+              {item.name}</span> 
           </Link>
         )
       })}
@@ -38,14 +34,12 @@ const CatalogContent = ({categorie}) => {
         <Link
           as={`/product/${product.id}`}
           key={product.id}
-          href={'/product/[productId]'}>
-          <a onClick={() => localStorage.setItem('parentId', `${categorie.idCategorie}`)}>
+          onClick={() => localStorage.setItem('parentId', `${categorie.idCategorie}`)}>
             <CatalogItem
               price={product.price}
               textBtn="Купити"
               title={product.title}
               url={ product.featured_image?.formats?.large?.url ?  product.featured_image?.formats?.large?.url : product.featured_image?.url ? product.featured_image?.url : product.images[0].formats.large.url } />
-        </a>
         </Link> 
     )}) : []
     setProducts(arr);

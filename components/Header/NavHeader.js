@@ -36,9 +36,9 @@ const NavHeader = ({setShow, isShown}) => {
     return (
       item.id === 0 ?
       <Link key={item.id}
-        href={item.link}>
-        <a onMouseEnter={() => setShow(true)}>{item.name}</a></Link> :
-      <Link key={item.id} href={item.link}><a onMouseEnter={() => setShow(false)}>{item.name}</a></Link>
+        href={item.link} onMouseEnter={() => setShow(true)}>
+        {item.name}</Link> :
+      <Link key={item.id} href={item.link} onMouseEnter={() => setShow(false)}>{item.name}</Link>
      );
   });
 

@@ -15,7 +15,7 @@ const ItemSub = ({list, title, setShow}) => {
         {
           list.map((item) => {
             return <Link as={`/catalog/${item.id}`}
-            href={`/catalog/[categorieID]`} key={item.id}><a>{item.name}</a></Link>
+            href={`/catalog/[categorieID]`} key={item.id}>{item.name}</Link>
           })
         }
       </div>
@@ -43,14 +43,13 @@ const MobSubMenu = ({setShow}) => {
   return (
     <div>
       {listMenu}
-      <Link as={`/catalog/new`}
-        href={`/catalog/[categorieID]`}>
-        <a onClick={() => setShow()}>
+      <Link as={`/catalog/new`} onClick={() => setShow()}>
+        
           <ItemSub
             
             title="new"
             list={[]} />
-        </a></Link>
+        </Link>
     </div>
   )
 };

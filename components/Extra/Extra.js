@@ -10,9 +10,7 @@ const Top = ({title,description}) => {
       <div className={style.topTitle}>{title}</div>
         <p>{description}</p>
       <Link href="/categories">
-        <a>
           <Button text="ДЕТАЛЬНІШЕ"/>
-        </a>
       </Link>
     </div>
   )
