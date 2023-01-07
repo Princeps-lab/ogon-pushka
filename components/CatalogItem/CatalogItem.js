@@ -11,7 +11,7 @@ const CatalogItem = ({url, title, price}) => {
   return(
     <div className={style.catalogItem}>
       <div>
-        <Image src={url} layout='responsive' priority objectFit='cover' width={w} height={h} alt={title}/>
+        <Image src={url} priority width={w} height={h} alt={title}/>
       </div>
       <div className={style.title}>
         <div className={style.name}>

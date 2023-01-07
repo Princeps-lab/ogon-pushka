@@ -11,8 +11,8 @@ const ItemGalery = ({url, title}) => {
   let w = 1920;
   let h = 2560;
   return (
-    <div>
-      <Image src={url} layout='responsive' objectFit='cover' width={w} height={h} priority alt={title} />
+    <div className={style.ItemGalery}>
+      <Image src={url} width={w} height={h} priority alt={title} />
     </div>
   )
 };
@@ -105,14 +105,14 @@ const ProductContent = ({product}) => {
 
   return (
     <div className={style.product}>
-      <ReactTooltip
+      {/* <ReactTooltip
         effect='solid'
         place='bottom'
         class={style.tooltip}
         id="main"/>
       { showModalSize ?
         <ModalSize setShow={() => setShowModalSize(false)} url={product?.size_image?.url} /> : null
-      }
+      } */}
 
       <div className={style.galery}>
         {product.images.map((item, id) => {
@@ -275,7 +275,7 @@ const ProductContent = ({product}) => {
 
         <div className={style.nav}>
           <div>
-            <Link href="/faq">
+            <Link href="/faq" passHref>
             
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8 0.5C3.86 0.5 0.5 3.86 0.5 8C0.5 12.14 3.86 15.5 8 15.5C12.14 15.5 15.5 12.14 15.5 8C15.5 3.86 12.14 0.5 8 0.5ZM11.15 11.15L7.25 8.75V4.25H8.375V8.15L11.75 10.175L11.15 11.15Z" fill="black"/>

@@ -19,7 +19,7 @@ const Product = ({product}) => {
       {product ?
         <>
           <ProductContent product={product}/>
-          { context.desktop ? <MainCatalog  /> : <MobExtra /> }
+          {/* { context.desktop ? <MainCatalog  /> : <MobExtra /> } */}
         </>
       : null}
     </Layout>
