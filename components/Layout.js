@@ -21,7 +21,7 @@ const Layout = ({children}) => {
           content=" width=device-width, initial-scale=1 maximum-scale=1"/>
           <link rel="icon" href="/favicon.ico" />
       </Head>
-      { store.desktop ? <Header /> : <MobHeader /> }
+      { store?.desktop ? <Header /> : <MobHeader /> }
       <main>{children}</main>
       <Footer />
     </div>

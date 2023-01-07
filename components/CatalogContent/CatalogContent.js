@@ -10,7 +10,8 @@ const NavItem = ({arr, title}) => {
       {arr.map((item) => {
         return (
           <Link
-            as={`/catalog/${item.id}`}
+            passHref
+            href={`/catalog/${item.id}`}
             key={item.id}>
             <span className={style.link}>
               {item.name}</span> 
@@ -32,7 +33,8 @@ const CatalogContent = ({categorie}) => {
     const arr = reverse ? reverse.map((product) => {
       return (
         <Link
-          as={`/product/${product.id}`}
+          passHref
+          href={`/product/${product.id}`}
           key={product.id}
           onClick={() => localStorage.setItem('parentId', `${categorie.idCategorie}`)}>
             <CatalogItem

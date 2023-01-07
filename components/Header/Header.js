@@ -15,7 +15,7 @@ const Header = () => {
     <div
       onMouseLeave={() => setIsShown(false)}
       className={style.header}>
-      <Link href="/"><Logo /></Link>
+      <Link href="/" passHref><Logo/></Link>
       <div><NavHeader isShown={isShown} setShow={setSub} /></div> 
       <div onMouseEnter={() => setIsShown(false)}><Basket /></div>
     </div>
