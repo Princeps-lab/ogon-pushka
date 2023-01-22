@@ -211,6 +211,10 @@ div.heart svg {
   position: relative;
 }
 
+.slides > div {
+  height: 100%;
+}
+
 .imgProductSlide {
   height: 100%;
   width: 100%;
