@@ -47,7 +47,7 @@ const phoneNumberMask = [
 ];
 
 const Succes = ({text}) => {
-  const classes = text === "Заказ подтвержден" ? style.succesActive : style.succes;
+  const classes = text === "Замовлення підтверджено" ? style.succesActive : style.succes;
   return (
     <div className={classes}>
       {text}
@@ -75,14 +75,14 @@ const FastBuy = () => {
         products: store.products
       }
       api.sendFastBuy(data).then(data => {
-        setStatus("Заказ подтвержден")
+        setStatus("Замовлення підтверджено")
       });
     },
   });
 
 
   useEffect(() => {
-    if (status === "Заказ подтвержден") {
+    if (status === "Замовлення підтверджено") {
       const timer = setTimeout(() => {
         setStatus('Підтвердити замовлення');
         router.push('/');

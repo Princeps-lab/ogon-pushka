@@ -13,7 +13,7 @@ import apiOrder from '../../helpers/apiOrder';
 const api = new apiOrder();
 
 const Succes = ({text}) => {
-  const classes = text === "Заказ подтвержден" ? style.succesActive : style.succes;
+  const classes = text === "Замовлення підтверджено" ? style.succesActive : style.succes;
   return (
     <div className={classes}>
       {text}
@@ -162,7 +162,7 @@ const FormContent = () => {
       }
       api.sendBuy(data).then(request => {
         setOrderId(request.id)
-        setStatus('Заказ подтвержден');
+        setStatus("Замовлення підтверджено");
         setBtn(false);
         setBuyed(true);
       });
@@ -170,7 +170,7 @@ const FormContent = () => {
   });
 
   useEffect(() => {
-    if (status === "Заказ подтвержден") {
+    if (status === "Замовлення підтверджено") {
       const timer = setTimeout(() => {
         setStatus('Підтвердити замовлення');
         if(methodBuy.id !== 0) {router.push('/')}
