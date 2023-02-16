@@ -12,18 +12,18 @@ const api = new apiOrder();
 const validate = values => {
   const errors = {};
   if (!values.firstName) {
-    errors.firstName = 'Это обязательное поле.';
+    errors.firstName = "Це обов'язкове поле.";
   } else if (values.firstName.length > 15) {
-    errors.firstName = 'Должно быть не более 15 символов';
+    errors.firstName = 'Має бути не більше 15 символів';
   }
 
   const num = values.phone.replace(/[^0-9]/g, '');
   const arr = num.split('');
 
   if (!values.phone) {
-    errors.phone = 'Это обязательное поле.';
+    errors.phone = "Це обов'язкове поле.";
   } else if (arr.length != 10) {
-    errors.phone = 'Проверьте формат номера мобильного телефона';
+    errors.phone = 'Перевірте формат номера мобільного телефону';
   }
 
   return errors;

@@ -58,27 +58,26 @@ const Select = ({items, changeItem}) => {
 const validate = values => {
   const errors = {};
   if (!values.firstName) {
-    errors.firstName = 'Это обязательное поле.';
+    errors.firstName = "Це обов'язкове поле.";
   } else if (values.firstName.length > 15) {
-    errors.firstName = 'Должно быть не более 15 символов';
+    errors.firstName = 'Має бути не більше 15 символів';
   }
 
   if (!values.lastName) {
-    errors.lastName = 'Это обязательное поле.';
+    errors.lastName = "Це обов'язкове поле.";
   } else if (values.lastName.length > 20) {
-    errors.lastName = 'Должно быть не более 20 символов';
+    errors.lastName = 'Має бути не більше 20 символів';
   }
 
   if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email) && values.email.length !== 0) {
-    errors.email = 'Введите правильный e-mail (например, imya@gmail.com)';
+    errors.email = 'Введіть правильний e-mail (наприклад, imya@gmail.com)';
   }
-  
   const num = values.phone.replace(/[^0-9]/g, '');
   const arr = num.split('');
   if (!values.phone) {
-    errors.phone = 'Это обязательное поле.';
+    errors.phone = "Це обов'язкове поле.";
   } else if (arr.length != 10) {
-    errors.phone = 'Проверьте формат номера мобильного телефона';
+    errors.phone = ' Перевірте формат номера мобільного телефону';
   }
 
   return errors;
@@ -103,7 +102,7 @@ const phoneNumberMask = [
 
 const FormContent = () => {
   const deliverys = [
-    {name : "Новая Почта", id: 0},
+    {name : "Нова Пошта", id: 0},
     {name : "Укр Почта", id: 1}
   ];
 
