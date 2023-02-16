@@ -113,7 +113,7 @@ const FormContent = () => {
       id: 0
     },
     {
-      name: "Оплата на карту",
+      name: "Переказ на картку ФОП",
       id: 1
     },
   ]
@@ -125,7 +125,7 @@ const FormContent = () => {
   const [ orderId, setOrderId ] = useState(null);
   const [ delivery, setDelivery ] = useState(deliverys[0]);
   const [ methodBuy, setMethodBuy ] = useState(buyes[0]);
-  const [ status, setStatus ] = useState('Подтвердить заказ');
+  const [ status, setStatus ] = useState('Підтвердити замовлення');
   const [ btnActive, setBtn ] = useState(true);
   const changeDelivery = (item) => setDelivery(item);
   const changeBuy = (item) => setMethodBuy(item);
@@ -173,7 +173,7 @@ const FormContent = () => {
   useEffect(() => {
     if (status === "Заказ подтвержден") {
       const timer = setTimeout(() => {
-        setStatus('Подтвердить заказ');
+        setStatus('Підтвердити замовлення');
         if(methodBuy.id !== 0) {router.push('/')}
       }, 2000);
       return () => clearTimeout(timer);
@@ -198,7 +198,7 @@ const FormContent = () => {
         {formik.errors.firstName ? <div className={style.errors}>{formik.errors.firstName}</div> : null}
         <input
           autoComplete="off"
-          placeholder="Фамилия"
+          placeholder="Прізвище"
           id="lastName"
           name="lastName"
           type="text"

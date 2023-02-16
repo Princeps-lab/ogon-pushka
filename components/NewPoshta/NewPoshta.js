@@ -140,7 +140,7 @@ export default function NewPoshta({changeDeliveryUserCity,changeDeliveryUserWare
   const changeWarehouse = (warehouse) => setWarehouse(warehouse);
   return (
     <div>
-      <Search setCity={() => setWarehouses([])} placeholder='Выберите город' items={cities} name="city" id="city" change={changeCity} />
+      <Search setCity={() => setWarehouses([])} placeholder='Оберіть місто' items={cities} name="city" id="city" change={changeCity} />
       {
         warehouses.length ? <SearchWr  items={warehouses} placeholder='Выберите отделение' name="warehouses" id="warehouses" change={changeWarehouse}  /> : null
       }

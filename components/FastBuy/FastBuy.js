@@ -58,7 +58,7 @@ const Succes = ({text}) => {
 const FastBuy = () => {
   const router = useRouter();
   const store = useContext(ProductsContext);
-  const [ status, setStatus ] = useState('Подтвердить заказ');
+  const [ status, setStatus ] = useState('Підтвердити замовлення');
   const formik = useFormik({
     initialValues: {
       firstName: '',
@@ -84,7 +84,7 @@ const FastBuy = () => {
   useEffect(() => {
     if (status === "Заказ подтвержден") {
       const timer = setTimeout(() => {
-        setStatus('Подтвердить заказ');
+        setStatus('Підтвердити замовлення');
         router.push('/');
       }, 2000);
       return () => clearTimeout(timer);
@@ -98,7 +98,7 @@ const FastBuy = () => {
       <h3>Інформація про одержувача:</h3>
       <form onSubmit={formik.handleSubmit}>
         <input
-          placeholder="Имя"
+          placeholder="Ім’я"
           id="firstName"
           name="firstName"
           type="text"
