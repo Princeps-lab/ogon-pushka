@@ -142,7 +142,7 @@ export default function NewPoshta({changeDeliveryUserCity,changeDeliveryUserWare
     <div>
       <Search setCity={() => setWarehouses([])} placeholder='Оберіть місто' items={cities} name="city" id="city" change={changeCity} />
       {
-        warehouses.length ? <SearchWr  items={warehouses} placeholder='Выберите отделение' name="warehouses" id="warehouses" change={changeWarehouse}  /> : null
+        warehouses.length ? <SearchWr  items={warehouses} placeholder='Виберіть відділення' name="warehouses" id="warehouses" change={changeWarehouse}  /> : null
       }
     </div>
   );

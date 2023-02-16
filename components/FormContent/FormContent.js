@@ -187,7 +187,7 @@ const FormContent = () => {
       <form onSubmit={formik.handleSubmit}>
         <input
           autoComplete="off"
-          placeholder="Имя"
+          placeholder="Ім'я"
           id="firstName"
           name="firstName"
           type="text"
