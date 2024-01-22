@@ -103,7 +103,8 @@ const phoneNumberMask = [
 const FormContent = () => {
   const deliverys = [
     {name : "Нова Пошта", id: 0},
-    {name : "Укр Почта", id: 1}
+    {name : "Укр Почта", id: 1},
+    {name : "Точка видачі ROZETKA", id: 2},
   ];
 
   const buyes = [
