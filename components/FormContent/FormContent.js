@@ -115,6 +115,10 @@ const FormContent = () => {
       name: "Оплата при отриманні",
       id: 1
     },
+    {
+      name: "Оплата частинами від Моно",
+      id: 2
+    },
   ]
   const router = useRouter()
   const store = useContext(ProductsContext);
