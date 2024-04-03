@@ -7,11 +7,13 @@ SwiperCore.use([Navigation]);
 
 const SliderProduct = ({product}) => {
   const sliders = product.images.map(item => {
-    return (
-      <SwiperSlide key={item.id}>
-        <div className={style.imgProductSlide} style={{"background" : `url(${item.formats.small.url}) center / cover`}}/>
-      </SwiperSlide>
-    )
+    if(item?.formats) {
+      return (
+        <SwiperSlide key={item.id}>
+          <div className={style.imgProductSlide} style={{"background" : `url(${item?.formats?.small?.url}) center / cover`}}/>
+        </SwiperSlide>
+      )
+    }
   });
   return (
     <div className={style.slides}>
