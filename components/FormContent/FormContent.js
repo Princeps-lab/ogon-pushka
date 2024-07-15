@@ -108,10 +108,10 @@ const FormContent = () => {
   ];
 
   const buyes = [
-    {
-      name: "Liqpay",
-      id: 0
-    },
+    // {
+    //   name: "Liqpay",
+    //   id: 0
+    // },
     {
       name: "Оплата при отриманні",
       id: 1
