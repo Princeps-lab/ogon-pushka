@@ -55,7 +55,7 @@ const Footer = () => {
               <a href="https://teleg.run/ogonpushka_insta">
                 <Image width="100" height="100" src="/icons/Telegram/white.svg" alt="telegram"/>
               </a>
-              <a href="https://www.tiktok.com/@ogonpushka">
+              <a href="https://www.tiktok.com/@ogonpushka2023?_t=8oe3M64lrcG&_r=1">
                 <Image width="100" height="100" src="/icons/TikTok/white.svg" alt="tik-tok"/>
               </a>
               <a href="https://www.instagram.com/ogonpushka">
